@@ -12,8 +12,8 @@
           "description": "The name of python module",
           "type": "string"
         },
-        "path": {
-          "description": "The unique identifier",
+        "from": {
+          "description": "The source unique identifier",
           "type": "string"
         }
       },
