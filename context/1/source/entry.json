@@ -6,14 +6,18 @@
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "schema for an source entry",
       "type": "object",
-      "required": ["name"],
+      "required": ["@id", "name"],
       "properties": {
+        "@id": {
+          "description": "The source unique identifier in local ns",
+          "type": "string"
+        },
         "name": {
           "description": "The name of python module",
           "type": "string"
         },
         "from": {
-          "description": "The source unique identifier",
+          "description": "The source path",
           "type": "string"
         }
       },
