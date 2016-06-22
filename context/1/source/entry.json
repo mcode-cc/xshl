@@ -1,0 +1,23 @@
+{
+  "module": {
+    "method": "_import_module",
+    "validate": {
+      "id": "http://xshl.org/schema/1/source/entry#module",
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "schema for an source entry",
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "description": "The name of python module",
+          "type": "string"
+        },
+        "path": {
+          "description": "The unique identifier",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
