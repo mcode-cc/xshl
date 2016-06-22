@@ -1,6 +1,6 @@
 {
   "module": {
-    "method": "_import_module",
+    "method": "_import",
     "validate": {
       "id": "http://xshl.org/schema/1/source/entry#module",
       "$schema": "http://json-schema.org/draft-04/schema#",
@@ -18,6 +18,31 @@
         },
         "from": {
           "description": "The source path",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "property": {
+    "method": "_attribute",
+    "validate": {
+      "id": "http://xshl.org/schema/1/source/entry#property",
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "description": "schema for an source entry",
+      "type": "object",
+      "required": ["@id", "name"],
+      "properties": {
+        "@id": {
+          "description": "The source unique identifier in local ns",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of attribute",
+          "type": "string"
+        },
+        "from": {
+          "description": "The source name",
           "type": "string"
         }
       },
