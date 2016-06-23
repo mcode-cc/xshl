@@ -1,7 +1,9 @@
 {
   "module": {
-    "method": "_import",
-    "validate": {
+    "payload": {
+      "method": "_import"
+    },
+    "schema": {
       "id": "http://xshl.org/schema/1/source/entry#module",
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "schema for an source entry",
@@ -25,8 +27,10 @@
     }
   },
   "property": {
-    "method": "_attribute",
-    "validate": {
+    "payload": {
+      "method": "_attribute"
+    },
+    "schema": {
       "id": "http://xshl.org/schema/1/source/entry#property",
       "$schema": "http://json-schema.org/draft-04/schema#",
       "description": "schema for an source entry",
