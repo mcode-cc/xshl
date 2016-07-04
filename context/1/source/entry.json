@@ -1,5 +1,7 @@
 {
   "module": {
+    "$qtl": -1,
+    "$ttl": 86400,
     "payload": {
       "method": "_import"
     },
@@ -31,6 +33,8 @@
     }
   },
   "property": {
+    "$qtl": -1,
+    "$ttl": 86400,
     "payload": {
       "method": "_attribute"
     },

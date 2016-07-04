@@ -1,4 +1,6 @@
 module:
+  $qtl: -1,
+  $ttl: 86400,
   payload:
     method: "_import"
   schema:
@@ -24,6 +26,8 @@ module:
         type: "string"
     additionalProperties: false
 property:
+  $qtl: -1,
+  $ttl: 86400,
   payload:
     method: "_attribute"
   schema:
