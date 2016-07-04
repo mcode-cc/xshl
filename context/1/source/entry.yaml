@@ -10,10 +10,10 @@ module:
       - "@id"
       - "name"
     properties:
-      @context:
+      "@context":
         description: "The source context"
         type: "string"
-      @id:
+      "@id":
         description: "The source unique identifier in local ns"
         type: "string"
       name:
@@ -35,10 +35,10 @@ property:
       - "@id"
       - "name"
     properties:
-      @context:
+      "@context":
         description: "The source context"
         type: "string"
-      @id:
+      "@id":
         description: "The source unique identifier in local ns"
         type: "string"
       name:
