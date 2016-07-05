@@ -1,25 +1,25 @@
 {
   "@context": "http://xshl.org/context/1/namespace",
-  "payload": {
+  "_payload": {
     "$qtl": -1,
     "$ttl": 86400
   },
-  "schema": {
+  "_schema": {
     "id": "http://xshl.org/schema/1/namespace",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "schema for an namespace",
     "type": "object",
-    "required": ["payload", "schema"],
+    "required": ["_payload", "_schema"],
     "properties": {
       "@context": {
         "description": "The source context",
         "type": "string"
       },
-      "payload": {
+      "_payload": {
         "description": "The source context",
         "type": "object"
       },
-      "schema": {
+      "_schema": {
         "description": "Core schema meta-schema",
         "definitions": {
           "schemaArray": {
