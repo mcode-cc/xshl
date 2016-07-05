@@ -1,7 +1,10 @@
 {
   "@context": "http://xshl.org/context/1/namespace",
-  "$qtl": -1,
-  "$ttl": 86400,
+  "payload": {
+    "$qtl": -1,
+    "$ttl": 86400
+  },
+  "fragments": ["module", "property"],
   "module": {
     "payload": {
       "method": "_import"
