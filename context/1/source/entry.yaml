@@ -1,6 +1,7 @@
+"@context": "http://xshl.org/context/1/namespace"
+$qtl: -1
+$ttl: 86400
 module:
-  $qtl: -1
-  $ttl: 86400
   payload:
     method: "_import"
   schema:
@@ -26,8 +27,6 @@ module:
         type: "string"
     additionalProperties: false
 property:
-  $qtl: -1
-  $ttl: 86400
   payload:
     method: "_attribute"
   schema:
