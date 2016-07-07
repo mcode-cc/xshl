@@ -1,4 +1,4 @@
-id: "http://xshl.org/schema/1/source/entry"
+id: "http://xshl.org/schemas/1/source/entry"
 $schema: "http://json-schema.org/draft-04/schema#"
 description: "schema for an source entry"
 type: "object"
