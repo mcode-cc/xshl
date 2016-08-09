@@ -1,52 +1,129 @@
 {
-  "id": "https://www.xshl.org/schemas/1/content/chunk/photo",
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "A representation of text in photo",
-  "type": "object",
-  "properties": {
-    "@context": {"type": "string"},
-    "@class": {
-      "oneOf": [
-        {"type": "integer", "minimum": 1},
-        {"type": "string"}
-      ]
-    },
-    "@id": {
-      "oneOf": [
-        {"type": "integer", "minimum": 1},
-        {"type": "string"}
-      ]
-    },
-    "ru": {"$ref": "#/definitions/locale"},
-    "by": {"$ref": "#/definitions/locale"},
-    "md": {"$ref": "#/definitions/locale"},
-    "kg": {"$ref": "#/definitions/locale"},
-    "en": {"$ref": "#/definitions/locale"}
-  },
-  "additionalProperties": false,
-  "definitions": {
-    "locale": {
-      "type": "object",
-      "required": ["text"],
-      "properties": {
-        "title": {"type": "string"},
-        "hashtags": {
-          "type": "array",
-          "minItems": 1,
-          "items": {"type": "string"},
-          "uniqueItems": true
+    "id": "https://www.xshl.org/schemas/1/content/chunk/photo",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A representation of text in photo",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string"
         },
-        "stats": {
-          "type": "object",
-          "required": ["noun", "text", "words"],
-          "properties": {
-            "noun":{"type": "integer", "minimum": 0},
-            "text":{"type": "integer", "minimum": 0},
-            "words":{"type": "integer", "minimum": 0}
-          },
-          "additionalProperties": false
+        "@type": {
+            "type": "string"
+        },
+        "@class": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@id": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "url": {
+            "type": "string"
+        },
+        "ru": {
+            "$ref": "#/definitions/locale"
+        },
+        "by": {
+            "$ref": "#/definitions/locale"
+        },
+        "md": {
+            "$ref": "#/definitions/locale"
+        },
+        "kg": {
+            "$ref": "#/definitions/locale"
+        },
+        "en": {
+            "$ref": "#/definitions/locale"
+        },
+        "meta": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "value"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "oneOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "author": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/person"
         }
-      }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "locale": {
+            "type": "object",
+            "required": [
+                "title"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "hashtags": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "string"
+                    },
+                    "uniqueItems": true
+                },
+                "stats": {
+                    "type": "object",
+                    "required": [
+                        "noun",
+                        "text",
+                        "words"
+                    ],
+                    "properties": {
+                        "noun": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "text": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "words": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            }
+        }
     }
-  }
 }

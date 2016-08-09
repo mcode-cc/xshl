@@ -1,0 +1,36 @@
+{
+    "id": "https://www.xshl.org/schemas/1/content/chunk/person",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A representation of text in photo",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string"
+        },
+        "@class": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@id": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}
