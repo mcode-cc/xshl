@@ -1,10 +1,10 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/photo.json",
+    "id": "https://www.xshl.org/schemas/1/content/chunk/video.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A represantion objects of photo",
+    "description": "A represantion objects of video",
     "type": "object",
-    "required": ["@id", "@class", "@context"],
     "additionalProperties": false,
+    "required": ["@id", "@class", "@context"],
     "properties": {
         "@id": {
             "oneOf": [
@@ -30,7 +30,7 @@
         },
         "@context": {
             "type": "string",
-            "enum": ["photo", "banner"]
+            "enum": ["video", "wait"]
         },
         "@type": {
             "type": "array",
@@ -43,6 +43,17 @@
         "url": {
             "type": "string",
             "format": "uriref"
+        },
+        "height": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "width": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "banner": {
+            "ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json" 
         },
         "author": {
             "anyOf": [
@@ -58,22 +69,22 @@
             ]
         },
         "ru": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
         },
         "en": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
         },
         "by": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
         },
         "md": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
         },
         "kg": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
         },
         "meta": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/meta.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/meta.json" 
         }
     }
 }

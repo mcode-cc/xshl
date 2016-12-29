@@ -1,0 +1,149 @@
+{
+    "id": "https://www.xshl.org/schemas/1/content/chunk/quote.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A represantion object of quote",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@id", "@class", "@context", "@type", "@tag"],
+    "properties": {
+        "@id": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@class": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@context": {
+            "type": "string",
+            "enum": ["quote"]
+        },
+        "@type": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["video", "audio", "animation", "article", "news"]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "@tag": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "author": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/person.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/person.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "image": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "video": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/video.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/video.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "audio": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/audio.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/audio.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "animation": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/animation.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/animation.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "url": {
+            "type": "string",
+            "format": "uriref"
+        },
+        "scale": {
+            "type": "string"
+        },
+        "issue": {
+            "type": "string"
+        },
+        "tags": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/tags.json"
+        },
+        "ru": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+        },
+        "by": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+        },
+        "md": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+        },
+        "kg": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+        },
+        "en": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+        },
+        "meta": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/meta.json" 
+        }
+    }
+}

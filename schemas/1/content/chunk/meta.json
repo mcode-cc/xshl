@@ -1,0 +1,30 @@
+{
+    "id": "https://www.xshl.org/schemas/1/content/chunk/meta.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A represantion objects of meta",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "type": "object",
+        "required": ["name", "value"],
+        "additionalProperties": false,
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "value": {
+                "oneOf": [
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "boolean"
+                    }
+                ]
+            }
+        }
+    }
+}

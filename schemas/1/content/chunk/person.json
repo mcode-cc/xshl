@@ -1,14 +1,21 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/person",
+    "id": "https://www.xshl.org/schemas/1/content/chunk/person.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A representation of text in photo",
+    "description": "A represantion objects of person",
     "type": "object",
+    "required": ["@id", "@class", "@context", "name"],
+    "additionalProperties": false,
     "properties": {
-        "@context": {
-            "type": "string"
-        },
-        "@type": {
-            "type": "string"
+        "@id": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "@class": {
             "oneOf": [
@@ -21,16 +28,41 @@
                 }
             ]
         },
-        "@id": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
+        "@context": {
+            "type": "string",
+            "enum": ["person"]
+        },
+        "@type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "familyName": {
+            "type": "string"
+        },
+        "givenName": {
+            "type": "string"
+        },
+        "jobTitle": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "scale": {
+            "type": "string"
+        },
+        "issue": {
+            "type": "string"
+        },
+        "image": {
+            "$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"
         }
     }
 }
