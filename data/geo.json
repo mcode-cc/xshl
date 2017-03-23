@@ -197,7 +197,10 @@
         "@context": "geo/map",
         "district": "balkans.kp.ru"
     },
-    "RS": "balkans.kp.ru", 
+    "RS": {
+        "@context": "geo/map",
+        "district": "balkans.kp.ru"
+    },
     "BY": "kp.by", 
     "KG": "kp.kg", 
     "CY": "cyprus.kp.ru", 
