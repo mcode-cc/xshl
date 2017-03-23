@@ -193,7 +193,10 @@
             }
         }
     },
-    "BG": "balkans.kp.ru", 
+    "BG": {
+        "@context": "geo/map",
+        "district": "balkans.kp.ru"
+    },
     "RS": "balkans.kp.ru", 
     "BY": "kp.by", 
     "KG": "kp.kg", 
