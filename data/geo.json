@@ -201,7 +201,10 @@
         "@context": "geo/map",
         "district": "balkans.kp.ru"
     },
-    "BY": "kp.by", 
+    "BY": {
+        "@context": "geo/map",
+        "district": "kp.by"
+    },
     "KG": "kp.kg", 
     "CY": "cyprus.kp.ru", 
     "MD": "kp.md", 
