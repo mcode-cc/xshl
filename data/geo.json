@@ -205,16 +205,52 @@
         "@context": "geo/map",
         "district": "kp.by"
     },
-    "KG": "kp.kg", 
-    "CY": "cyprus.kp.ru", 
-    "MD": "kp.md", 
-    "RO": "kp.md", 
-    "EE": "kompravda.eu", 
-    "LV": "kompravda.eu", 
-    "LT": "kompravda.eu", 
-    "FI": "kompravda.eu", 
-    "SE": "kompravda.eu", 
-    "NO": "kompravda.eu", 
-    "DK": "kompravda.eu", 
-    "IS": "kompravda.eu" 
+    "KG": {
+        "@context": "geo/map",
+        "district": "kp.kg"
+    },
+    "CY": {
+        "@context": "geo/map",
+        "district": "cyprus.kp.ru"
+    },
+    "MD": {
+        "@context": "geo/map",
+        "district": "kp.md"
+    },
+    "RO": {
+        "@context": "geo/map",
+        "district": "kp.md"
+    },
+    "EE": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "LV": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "LT": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "FI": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "SE": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "NO": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "DK": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    },
+    "IS": {
+        "@context": "geo/map",
+        "district": "kompravda.eu"
+    }
 }
