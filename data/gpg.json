@@ -1,0 +1,19 @@
+{
+    "@context": "wh:execute",
+    "pipe": true,
+    "uri": [
+        [
+            "/bin/echo",
+            "-n"
+        ],
+        [
+            "gpg",
+            "--symmetric",
+            "--armor",
+            "--cipher-algo",
+            "AES256",
+            "--textmode",
+            "--passphrase"
+        ]
+    ]
+}
