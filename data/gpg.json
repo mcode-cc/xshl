@@ -13,6 +13,7 @@
             "--cipher-algo",
             "AES256",
             "--textmode",
+            "--batch",
             "--passphrase"
         ]
     ]
