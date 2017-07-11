@@ -18,6 +18,50 @@
                     "description": "Node name for the result returned by the method. The result of the last method is available in $.<local scope>.__last__"
                 }
             }
+        },
+        "itemLong": {
+            "id": "/definitions/itemLong",
+            "required": ["method"],
+            "properties": {
+                "method": {
+                    "onyOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/methodObject"}
+                    ]
+                },
+                "args": {
+                    "id": "/properties/xshl/items/properties/args",
+                    "type": "array"
+                },
+                "kwargs": {
+                    "id": "/properties/xshl/items/properties/kwargs",
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "itemShort": {
+            "id": "/definitions/itemShort",
+            "required": ["m"],
+            "properties": {
+                "m": {
+                    "onyOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/methodObject"}
+                    ]
+                },
+                "*": {
+                    "id": "/properties/xshl/items/properties/args",
+                    "type": "array"
+                },
+                "**": {
+                    "id": "/properties/xshl/items/properties/kwargs",
+                    "type": "object"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
         }
     },
     "id": "https://xshl.org/schemas/1/macro/schema.json",
@@ -38,26 +82,10 @@
         "xshl": {
             "id": "/properties/xshl",
             "items": {
-                "id": "/properties/xshl/items",
-                "required": ["method"],
-                "properties": {
-                    "method": {
-                        "oneOf": [
-                            {"type": "string"},
-                            {"$ref": "#/definitions/methodObject"}
-                        ]
-                    },
-                    "args": {
-                        "id": "/properties/xshl/items/properties/args",
-                        "type": "array"
-                    },
-                    "kwargs": {
-                        "id": "/properties/xshl/items/properties/kwargs",
-                        "type": "object"
-                    }
-                },
-                "additionalProperties": false,
-                "type": "object"
+                "onyOf": [
+                    { "$ref": "#/definitions/itemShort" },
+                    { "$ref": "#/definitions/itemLong" }
+                ]
             },
             "type": "array"
         }
