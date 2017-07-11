@@ -1,10 +1,10 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
-        "method": {
-            "id": "/properties/xshl/items/properties/method",
+        "methodObject": {
             "type": "object",
             "required": ["path"],
+            "additionalProperties": false,
             "properties": {
                 "scope": {
                     "type": "string",
@@ -44,7 +44,7 @@
                     "method": {
                         "oneOf": [
                             {"type": "string"},
-                            {"$ref": "#/definitions/method"}
+                            {"$ref": "#/definitions/methodObject"}
                         ]
                     },
                     "args": {
