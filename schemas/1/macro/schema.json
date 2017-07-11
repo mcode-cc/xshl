@@ -44,8 +44,8 @@
             "id": "/properties/xshl",
             "items": {
                 "id": "/properties/xshl/items",
+                "required": ["method"],
                 "properties": {
-                    "required": ["method"],
                     "method": { "$ref": "#/definitions/method" },
                     "args": {
                         "id": "/properties/xshl/items/properties/args",
@@ -54,9 +54,9 @@
                     "kwargs": {
                         "id": "/properties/xshl/items/properties/kwargs",
                         "type": "object"
-                    },
-                    "additionalProperties": false
+                    }
                 },
+                "additionalProperties": false,
                 "type": "object"
             },
             "type": "array"
