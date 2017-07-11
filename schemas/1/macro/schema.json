@@ -14,7 +14,7 @@
                 "path": {"type": "string"},
                 "result": {
                     "type": "string",
-                    "title": "Result node name",
+                    "title": "Result node name.",
                     "description": "Node name for the result returned by the method. The result of the last method is available in $.<local scope>.__last__"
                 }
             }
