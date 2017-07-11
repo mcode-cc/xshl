@@ -23,19 +23,13 @@
             "required": ["method"],
             "properties": {
                 "method": {
-                    "onyOf": [
+                    "oneOf": [
                         {"type": "string"},
                         {"$ref": "#/definitions/methodObject"}
                     ]
                 },
-                "args": {
-                    "id": "/properties/xshl/items/properties/args",
-                    "type": "array"
-                },
-                "kwargs": {
-                    "id": "/properties/xshl/items/properties/kwargs",
-                    "type": "object"
-                }
+                "args": { "type": "array" },
+                "kwargs": { "type": "object" }
             },
             "additionalProperties": false,
             "type": "object"
@@ -44,19 +38,13 @@
             "required": ["m"],
             "properties": {
                 "m": {
-                    "onyOf": [
+                    "oneOf": [
                         {"type": "string"},
                         {"$ref": "#/definitions/methodObject"}
                     ]
                 },
-                "*": {
-                    "id": "/properties/xshl/items/properties/args",
-                    "type": "array"
-                },
-                "**": {
-                    "id": "/properties/xshl/items/properties/kwargs",
-                    "type": "object"
-                }
+                "*": { "type": "array" },
+                "**": { "type": "object" }
             },
             "additionalProperties": false,
             "type": "object"
@@ -66,21 +54,20 @@
     "required": ["@context", "xshl"],
     "properties": {
         "@context": {
-            "id": "/properties/@context",
+            "id": "#/properties/@context",
             "enum": [ "wh:macro" ],
             "description": "An explanation about the purpose of this instance.",
             "title": "The @context Schema"
         },
         "name": {
             "description": "An explanation about the purpose of this instance.",
-            "id": "/properties/@id",
             "title": "The @id Schema",
             "type": "string"
         },
         "xshl": {
-            "id": "/properties/xshl",
+            "id": "#/properties/xshl",
             "items": {
-                "onyOf": [
+                "oneOf": [
                     { "$ref": "#/definitions/itemShort" },
                     { "$ref": "#/definitions/itemLong" }
                 ]
