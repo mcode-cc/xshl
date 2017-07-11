@@ -3,26 +3,21 @@
     "definitions": {
         "method": {
             "id": "/properties/xshl/items/properties/method",
-            "oneOf": [
-                {"type": "string"},
-                {
-                    "type": "object",
-                    "required": ["path"],
-                    "properties": {
-                        "scope": {
-                            "type": "string",
-                            "title": "Source scope for method",
-                            "description": "Default globals"
-                        },
-                        "path": {"type": "string"},
-                        "result": {
-                            "type": "string",
-                            "title": "Result node name",
-                            "description": "Node name for the result returned by the method. The result of the last method is available in $.<local scope>.__last__"
-                        }
-                    }
+            "type": "object",
+            "required": ["path"],
+            "properties": {
+                "scope": {
+                    "type": "string",
+                    "title": "Source scope for method",
+                    "description": "Default globals"
+                },
+                "path": {"type": "string"},
+                "result": {
+                    "type": "string",
+                    "title": "Result node name",
+                    "description": "Node name for the result returned by the method. The result of the last method is available in $.<local scope>.__last__"
                 }
-            ]
+            }
         }
     },
     "id": "https://xshl.org/schemas/1/macro/schema.json",
@@ -46,7 +41,12 @@
                 "id": "/properties/xshl/items",
                 "required": ["method"],
                 "properties": {
-                    "method": { "$ref": "#/definitions/method" },
+                    "method": {
+                        "oneOf": [
+                            {"type": "string"},
+                            {"$ref": "#/definitions/method"}
+                        ]
+                    },
                     "args": {
                         "id": "/properties/xshl/items/properties/args",
                         "type": "array"
