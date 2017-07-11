@@ -20,7 +20,6 @@
             }
         },
         "itemLong": {
-            "id": "/definitions/itemLong",
             "required": ["method"],
             "properties": {
                 "method": {
@@ -42,7 +41,6 @@
             "type": "object"
         },
         "itemShort": {
-            "id": "/definitions/itemShort",
             "required": ["m"],
             "properties": {
                 "m": {
