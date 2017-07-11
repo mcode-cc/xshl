@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "id": "http://example.com/example.json",
+    "properties": {
+        "@context": {
+            "default": "wh:macro",
+            "description": "An explanation about the purpose of this instance.",
+            "id": "/properties/@context",
+            "title": "The @context Schema",
+            "type": "string"
+        },
+        "@id": {
+            "default": "scope_name",
+            "description": "An explanation about the purpose of this instance.",
+            "id": "/properties/@id",
+            "title": "The @id Schema",
+            "type": "string"
+        },
+        "xshl": {
+            "id": "/properties/xshl",
+            "items": {
+                "id": "/properties/xshl/items",
+                "properties": {
+                    "args": {
+                        "id": "/properties/xshl/items/properties/args",
+                        "items": {
+                            "default": "/usr/bin/exiftool -a -u -g1 -j {filename}",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/xshl/items/properties/args/items",
+                            "title": "The Empty Schema",
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "kwargs": {
+                        "id": "/properties/xshl/items/properties/kwargs",
+                        "properties": {
+                            "filename": {
+                                "default": "args:[0]",
+                                "description": "An explanation about the purpose of this instance.",
+                                "id": "/properties/xshl/items/properties/kwargs/properties/filename",
+                                "title": "The Filename Schema",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "method": {
+                        "default": "ns:from.name#result",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/xshl/items/properties/method",
+                        "title": "The Method Schema",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
