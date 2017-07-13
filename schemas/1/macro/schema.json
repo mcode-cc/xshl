@@ -56,7 +56,7 @@
     "properties": {
         "@context": {
             "id": "#/properties/@context",
-            "enum": [ "wh:macro" ],
+            "enum": [ "xshl:macro" ],
             "description": "An explanation about the purpose of this instance.",
             "title": "The @context Schema"
         },
@@ -65,8 +65,8 @@
             "title": "The @id Schema",
             "type": "string"
         },
-        "xshl": {
-            "id": "#/properties/xshl",
+        "macro": {
+            "id": "#/properties/macro",
             "items": {
                 "oneOf": [
                     { "$ref": "#/definitions/itemShort" },
