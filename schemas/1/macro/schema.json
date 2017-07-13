@@ -51,7 +51,7 @@
             "type": "object"
         }
     },
-    "required": ["@context", "xshl"],
+    "required": ["@context", "macro"],
     "additionalProperties": false,
     "properties": {
         "@context": {
