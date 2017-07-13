@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://xshl.org/schemas/1/macro/schema.json",
     "definitions": {
         "methodObject": {
             "type": "object",
@@ -14,7 +15,7 @@
                 "path": {"type": "string"},
                 "result": {
                     "type": "string",
-                    "title": "Result node name.",
+                    "title": "Result node name",
                     "description": "Node name for the result returned by the method. The result of the last method is available in $.<local scope>.__last__"
                 }
             }
@@ -50,8 +51,8 @@
             "type": "object"
         }
     },
-    "id": "https://xshl.org/schemas/1/macro/schema.json",
     "required": ["@context", "xshl"],
+    "additionalProperties": false,
     "properties": {
         "@context": {
             "id": "#/properties/@context",
