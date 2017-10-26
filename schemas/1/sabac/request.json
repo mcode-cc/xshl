@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://xshl.org/schemas/1/sabac/schema.json",
+    "definitions": {
+        "request": {
+            "subject": {
+                "meta": [
+                    {
+                        "name": "sender",
+                        "value": {
+                            "ip": "127.0.0.1"
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "value": "Gamla Stan"
+                    }
+                ]
+            },
+            "action": {
+                "Attribute":
+                {
+                    "name": "action-id",
+                    "value": "http://example.com/buy",
+                    "DataType": "anyURI"
+                }
+            },
+            "resource": {
+                "Attribute": [
+                    {
+                        "name": "book-title",
+                        "value": "Learn German in 90 days"
+                    },
+                    {
+                        "AttributeId": "currency",
+                        "Value": "SEK"
+                    },
+                    {
+                        "AttributeId": "price",
+                        "Value": 123.34
+                    }
+                ]
+            },
+            "environment": {}
+        }
+    }
+}

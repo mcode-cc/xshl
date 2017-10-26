@@ -58,22 +58,22 @@
             ]
         },
         "ru": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"
         },
         "en": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"
         },
         "by": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"
         },
         "md": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"
         },
         "kg": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"
         },
         "meta": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/meta.json"
+            "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
         }
     }
 }

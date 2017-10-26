@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://xshl.org/schemas/1/sabac/schema.json",
+    "definitions": {
+        "rule": {
+            "type": "object",
+            "title": "Правило",
+            "description": "Результатом вычисления правила может быть одно из четырех значений: «разрешить», «запретить», «не применимо», «не определено».",
+            "required": ["name", "target", "effect"],
+            "additionalProperties": false,
+            "properties": {
+                "name": {"type": "string"},
+                "target": {
+                    "type": "object",
+                    "title": "Цель",
+                    "description": "Цель представляет собой логическое выражение, которое должно состоять только из атрибутов и констант"
+                },
+                "condition": {
+                    "type": "object",
+                    "title": "Условие",
+                    "description": "Часть бизнес-правила (если такая есть), содержащая сложное, динамически вычисляемое логическое выражение"
+                },
+                "effect": {
+                    "enum": ["permit", "deny"],
+                    "title": "Эффект",
+                    "description": "Эффект может принимать значения «разрешить» (permit) или «запретить» (deny) для разрешающих и запрещающих бизнес-правил соотвественно. Эффект правила применяется только в случае, когда результатом вычисления логического условия в цели и в условии будет «истина» (true)."
+                },
+                "obligation": {
+                    "type": "object",
+                    "title": "Обязательство",
+                    "description": "Обязательства описывают эффект правила, к которому они применимы, действие, которое необходимо выполнить, и выражения для получения параметров этого действия на основе текущего контекста."
+                },
+                "advice": {
+                    "type": "object",
+                    "title": "Рекомендация",
+                    "description": "В отличии от обязательства, рекомендации можно проигнорировать."
+                }
+            }
+        },
+        "itemLong": {
+            "required": ["method"],
+            "properties": {
+                "method": {
+                    "oneOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/methodObject"}
+                    ]
+                },
+                "args": { "type": "array" },
+                "kwargs": { "type": "object" }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "itemShort": {
+            "required": ["m"],
+            "properties": {
+                "m": {
+                    "oneOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/methodObject"}
+                    ]
+                },
+                "*": { "type": "array" },
+                "**": { "type": "object" }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        }
+    },
+    "required": ["@context", "macro"],
+    "additionalProperties": false,
+    "properties": {
+        "@context": {
+            "id": "#/properties/@context",
+            "enum": [ "xshl:macro" ],
+            "description": "An explanation about the purpose of this instance.",
+            "title": "The @context Schema"
+        },
+        "name": {
+            "description": "An explanation about the purpose of this instance.",
+            "title": "The @id Schema",
+            "type": "string"
+        },
+        "macro": {
+            "id": "#/properties/macro",
+            "items": {
+                "oneOf": [
+                    { "$ref": "#/definitions/itemShort" },
+                    { "$ref": "#/definitions/itemLong" }
+                ]
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}

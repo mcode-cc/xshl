@@ -1,0 +1,12 @@
+{
+    "response": {
+        "ok": 1,
+        "decision": "permit",
+        "status":{
+            "code":{
+                "name": "result",
+                "value": "http://example.com"
+            }
+        }
+    }
+}
