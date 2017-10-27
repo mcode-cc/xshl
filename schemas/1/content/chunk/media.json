@@ -1,7 +1,7 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/video.json",
+    "id": "https://www.xshl.org/schemas/1/content/chunk/media.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A represantion objects of video",
+    "description": "A represantion objects of multimedia",
     "type": "object",
     "additionalProperties": false,
     "required": ["@id", "@class", "@context"],
@@ -89,7 +89,7 @@
             "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
         },
         "meta": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/meta.json" 
+            "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
         }
     }
 }

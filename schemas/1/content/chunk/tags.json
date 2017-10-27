@@ -50,19 +50,24 @@
                 "type": "string"
             },
             "ru": {
-                "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
-            },
-            "by": {
-                "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
-            },
-            "md": {
-                "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
-            },
-            "kg": {
-                "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
             },
             "en": {
-                "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json"
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            },
+            "by": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            },
+            "md": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            },
+            "kg": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
             }
         }
     }
