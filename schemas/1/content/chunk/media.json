@@ -30,7 +30,7 @@
         },
         "@context": {
             "type": "string",
-            "enum": ["video", "wait"]
+            "enum": ["audio", "video", "animation", "panorama"]
         },
         "@type": {
             "type": "array",
@@ -69,19 +69,24 @@
             ]
         },
         "ru": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
         },
         "en": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
         },
         "by": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
         },
         "md": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
         },
         "kg": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/locale.json" 
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
         },
         "meta": {
             "$ref": "https://www.xshl.org/schemas/1/content/chunk/meta.json" 
