@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/person.json",
+    "id": "https://www.xshl.org/schemas/1/content/share/person.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of person",
     "type": "object",

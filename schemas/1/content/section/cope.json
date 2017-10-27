@@ -1,10 +1,10 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/photo.json",
+    "id": "https://www.xshl.org/schemas/1/content/section/cope.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A represantion objects of photo",
+    "description": "A represantion object of section",
     "type": "object",
-    "required": ["@id", "@class", "@context"],
     "additionalProperties": false,
+    "required": ["@id", "@class", "@context", "@type", "@tag"],
     "properties": {
         "@id": {
             "oneOf": [
@@ -30,19 +30,24 @@
         },
         "@context": {
             "type": "string",
-            "enum": ["photo", "banner"]
+            "enum": ["page", "cope", "digest"]
         },
         "@type": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["article", "news"]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "@tag": {
             "type": "array",
             "items": {
                 "type": "string"
             },
             "minItems": 1,
             "uniqueItems": true
-        },
-        "url": {
-            "type": "string",
-            "format": "uriref"
         },
         "author": {
             "anyOf": [
@@ -56,6 +61,40 @@
                     "uniqueItems": true
                 }
             ]
+        },
+        "childs": {
+            "type": "array",
+            "items": [
+                {
+                    "anyOf": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/header.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/paragraph.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/quote.json"}
+                    ]
+                }
+            ],
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "url": {
+            "type": "string",
+            "format": "uriref"
+        },
+        "scale": {
+            "type": "string"
+        },
+        "issue": {
+            "type": "string"
+        },
+        "tags": {
+            "type": "array",
+            "items": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/tag.json"}
+            ],
+            "minItems": 1,
+            "uniqueItems": true
         },
         "ru": {
             "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},

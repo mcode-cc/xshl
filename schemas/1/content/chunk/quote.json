@@ -127,7 +127,7 @@
         "tags": {
             "type": "array",
             "items": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/tag.json"}
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/tag.json"}
             ],
             "minItems": 1,
             "uniqueItems": true
