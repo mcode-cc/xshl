@@ -125,7 +125,12 @@
             "type": "string"
         },
         "tags": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/tags.json"
+            "type": "array",
+            "items": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/tag.json"}
+            ],
+            "minItems": 1,
+            "uniqueItems": true
         },
         "ru": {
             "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
