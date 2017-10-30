@@ -2,9 +2,6 @@
     "id": "https://www.xshl.org/schemas/1/content/chunk/photo.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of photo",
-    "type": "object",
-    "required": ["@id", "@class", "@context"],
-    "additionalProperties": false,
     "definitions": {
         "language": {
             "id": "#definitions/language",
@@ -16,6 +13,9 @@
             }
         }
     },
+    "type": "object",
+    "required": ["@id", "@class", "@context"],
+    "additionalProperties": false,
     "properties": {
         "@id": {
             "oneOf": [

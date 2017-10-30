@@ -2,6 +2,17 @@
     "id": "https://www.xshl.org/schemas/1/content/chunk/media.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of multimedia",
+    "definitions": {
+        "language": {
+            "id": "#definitions/language",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
+        }
+    },
     "type": "object",
     "additionalProperties": false,
     "required": ["@id", "@class", "@context"],
@@ -44,62 +55,25 @@
             "type": "string",
             "format": "uriref"
         },
-        "height": {
-            "type": "integer",
-            "minimum": 1
-        },
-        "width": {
-            "type": "integer",
-            "minimum": 1
-        },
-        "banner": {
-            "ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json" 
-        },
+        "height": {"type": "integer", "minimum": 1},
+        "width": {"type": "integer", "minimum": 1},
+        "banner": {"ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
         "author": {
             "anyOf": [
                 {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
                 {
                     "type": "array",
-                    "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
-                    ],
+                    "items": [{"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}],
                     "minItems": 1,
                     "uniqueItems": true
                 }
             ]
         },
-        "ru": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "en": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "by": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "md": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "kg": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
+        "ru": { "$ref": "#definitions/language"},
+        "en": { "$ref": "#definitions/language"},
+        "by": { "$ref": "#definitions/language"},
+        "md": { "$ref": "#definitions/language"},
+        "kg": { "$ref": "#definitions/language"},
         "meta": {
             "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
         }
