@@ -133,24 +133,34 @@
             "uniqueItems": true
         },
         "ru": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            "oneOf": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
         },
         "en": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            "oneOf": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
         },
         "by": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            "oneOf": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
         },
         "md": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            "oneOf": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
         },
         "kg": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            "oneOf": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
         },
         "meta": {
             "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
