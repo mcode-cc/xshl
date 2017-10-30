@@ -2,6 +2,17 @@
     "id": "https://www.xshl.org/schemas/1/content/chunk/quote.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion object of quote",
+    "definitions": {
+        "language": {
+            "id": "#definitions/language",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
+        }
+    },
     "type": "object",
     "additionalProperties": false,
     "required": ["@id", "@class", "@context", "@type", "@tag"],
@@ -132,36 +143,11 @@
             "minItems": 1,
             "uniqueItems": true
         },
-        "ru": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "en": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "by": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "md": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
-        "kg": {
-            "oneOf": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-            }
-        },
+        "ru": { "$ref": "#definitions/language"},
+        "en": { "$ref": "#definitions/language"},
+        "by": { "$ref": "#definitions/language"},
+        "md": { "$ref": "#definitions/language"},
+        "kg": { "$ref": "#definitions/language"},
         "meta": {
             "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
         }
