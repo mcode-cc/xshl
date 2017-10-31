@@ -22,27 +22,14 @@
             "minItems": 1,
             "items": {
                 "type": "object",
-                "required": [
-                    "@context",
-                    "indices"
-                ],
+                "required": ["@context", "indices"],
                 "properties": {
                     "@context": {
-                        "enum": [
-                            "mention",
-                            "accent",
-                            "link"
-                        ]
+                        "enum": ["mention", "accent", "link"]
                     },
-                    "@type": {
-                        "type": "string"
-                    },
-                    "class": {
-                        "type": "string"
-                    },
-                    "url": {
-                        "type": "string"
-                    },
+                    "@type": {"type": "string"},
+                    "class": {"type": "string"},
+                    "url": {"type": "string", "format": "uriref"},
                     "indices": {
                         "type": "array",
                         "minItems": 2,
