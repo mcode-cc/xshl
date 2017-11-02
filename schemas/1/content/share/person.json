@@ -43,6 +43,9 @@
         "familyName": {
             "type": "string"
         },
+        "homepage": {
+            "type": "string"
+        },
         "givenName": {
             "type": "string"
         },
