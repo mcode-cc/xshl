@@ -40,6 +40,9 @@
             "minItems": 1,
             "uniqueItems": true
         },
+        "disambiguatingDescription": {
+            "type": "string"
+        },
         "additionalName": {
             "type": "string"
         },
