@@ -40,6 +40,9 @@
             "minItems": 1,
             "uniqueItems": true
         },
+        "additionalName": {
+            "type": "string"
+        },
         "familyName": {
             "type": "string"
         },
