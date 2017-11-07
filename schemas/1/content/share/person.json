@@ -64,6 +64,9 @@
         "twitter": {
             "type": "string"
         },
+        "telegram": {
+            "type": "string"
+        },        
         "description": {
             "type": "string"
         },
