@@ -61,6 +61,6 @@
         "en": { "$ref": "#definitions/language"},
         "by": { "$ref": "#definitions/language"},
         "md": { "$ref": "#definitions/language"},
-        "kg": { "$ref": "#definitions/language"},
+        "kg": { "$ref": "#definitions/language"}
     }
 }
