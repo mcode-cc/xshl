@@ -12,7 +12,8 @@
             "additionalProperties": false,
             "properties": {
                 "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "name": {"type": "string"}
             }
         }
     },
