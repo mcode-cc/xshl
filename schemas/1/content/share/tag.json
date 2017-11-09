@@ -5,6 +5,17 @@
     "type": "object",
     "additionalProperties": false,
     "required": ["@id", "@class", "@context", "@type", "name"],
+    "definitions": {
+        "language": {
+            "id": "#definitions/language",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
+        }
+    },
     "properties": {
         "@id": {
             "oneOf": [
@@ -46,25 +57,10 @@
         "scale": {
             "type": "string"
         },
-        "ru": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "en": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "by": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "md": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "kg": {
-            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
-        }
+        "ru": { "$ref": "#definitions/language"},
+        "en": { "$ref": "#definitions/language"},
+        "by": { "$ref": "#definitions/language"},
+        "md": { "$ref": "#definitions/language"},
+        "kg": { "$ref": "#definitions/language"},
     }
 }
