@@ -58,6 +58,9 @@
         "scale": {
             "type": "string"
         },
+        "url": {
+            "type": "string"
+        },
         "ru": { "$ref": "#definitions/language"},
         "en": { "$ref": "#definitions/language"},
         "by": { "$ref": "#definitions/language"},
