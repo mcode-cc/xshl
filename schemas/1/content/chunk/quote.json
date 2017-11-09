@@ -125,6 +125,19 @@
                 }
             ]
         },
+        "photo": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },        
         "url": {
             "type": "string",
             "format": "uriref"
