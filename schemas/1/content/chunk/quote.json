@@ -142,6 +142,10 @@
             "type": "string",
             "format": "uriref"
         },
+        "site_name": {
+            "type": "string",
+            "format": "uriref"
+        },
         "scale": {
             "type": "string"
         },
