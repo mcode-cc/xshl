@@ -27,6 +27,7 @@
                     "@context": {
                         "enum": ["mention", "accent", "link"]
                     },
+                    "@type": {"type": "string"},
                     "class": {"type": "string"},
                     "url": {"type": "string", "format": "uriref"},
                     "indices": {
