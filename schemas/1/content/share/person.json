@@ -76,6 +76,9 @@
         "issue": {
             "type": "string"
         },
+        "url": {
+            "type": "string"
+        },
         "image": {
             "$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"
         }
