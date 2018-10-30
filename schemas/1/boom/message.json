@@ -1,7 +1,7 @@
 {
     "id": "https://www.xshl.org/schemas/1/boom/message.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "schema for an source entry",
+    "description": "Schema for an boom message",
     "type": "object",
     "required": ["@context", "body", "created", "sender", "subscribe", "token"],
     "properties": {
