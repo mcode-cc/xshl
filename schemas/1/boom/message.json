@@ -23,7 +23,8 @@
                         "required": ["$date"],
                         "properties": {
                             "$date": {"type": "integer"}
-                        }
+                        },
+                        "additionalProperties": false
                     }
                 ]
 
