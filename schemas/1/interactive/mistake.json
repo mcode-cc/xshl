@@ -1,116 +1,71 @@
 {
     "id": "https://www.xshl.org/schemas/1/interactive/mistake",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "schema for an source entry",
+    "description": "Schema for an interactive mistake",
     "type": "object",
-    "required": ["@context", "body", "created", "sender", "subscribe", "token"],
+    "required": ["kwargs"],
     "properties": {
-        "@context": {
-            "description": "The source context",
-            "type": "string"
-        },
-        "body": {
-            "description": "The body content",
+        "kwargs": {
+            "description": "schema for an source entry",
             "type": "object",
-            "required": ["kwargs"],
+            "required": ["payload", "region", "url"],
             "properties": {
-                "kwargs": {
-                    "description": "schema for an source entry",
+                "payload": {
+                    "description": "The mistake data",
                     "type": "object",
-                    "required": ["payload", "region", "url"],
+                    "required": ["text", "context"],
                     "properties": {
-                        "payload": {
-                            "description": "The mistake data",
-                            "type": "object",
-                            "required": ["text", "context"],
-                            "properties": {
-                                "text": {
-                                    "description": "The mistake content",
-                                    "type": "string"
-                                },
-                                "context": {
-                                    "description": "The mistake context",
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "description": "The mistake description",
-                                    "type": "string"
-                                }
-                            },
-                            "additionalProperties": false
+                        "text": {
+                            "description": "The mistake content",
+                            "type": "string"
                         },
-                        "region": {
-                            "description": "Region of site",
-                            "type": "integer",
-                            "minimum": 0
+                        "context": {
+                            "description": "The mistake context",
+                            "type": "string"
                         },
-                        "target": {
-                            "description": "Page data",
-                            "type": "object",
-                            "required": ["class", "id"],
-                            "properties": {
-                                "class": {
-                                    "description": "Page class",
-                                    "type": "integer",
-                                    "minimum": 1
-                                },
-                                "id": {
-                                    "description": "Page ID",
-                                    "type": "integer",
-                                    "minimum": 1
-                                }
-                            },
-                            "additionalProperties": false
-                        },
-                        "url": {
-                            "description": "Page URL",
+                        "description": {
+                            "description": "The mistake description",
                             "type": "string"
                         }
                     },
                     "additionalProperties": false
                 },
-                "method": {
-                    "description": "Method",
-                    "type": "string"
+                "region": {
+                    "description": "Region of site",
+                    "type": "integer",
+                    "minimum": 0
                 },
-                "schema": {
-                    "description": "Schema",
+                "target": {
+                    "description": "Page data",
+                    "type": "object",
+                    "required": ["class", "id"],
+                    "properties": {
+                        "class": {
+                            "description": "Page class",
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "id": {
+                            "description": "Page ID",
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "url": {
+                    "description": "Page URL",
                     "type": "string"
                 }
             },
             "additionalProperties": false
         },
-        "created": {
-            "description": "Time created",
-            "type": "integer",
-            "minimum": 1
-        },
-        "sender": {
-            "description": "Sender",
-            "type": "object",
-            "required": ["host", "ip", "uid"],
-            "properties": {
-                "host": {
-                    "description": "Host of page",
-                    "type": "string"
-                },
-                "ip": {
-                    "description": "User IP",
-                    "type": "string"
-                },
-                "uid": {
-                    "description": "User UID",
-                    "type": "string"
-                }
-            },
-            "additionalProperties": false
-        },
-        "subscribe": {
-            "description": "Subscribe uri",
+        "method": {
+            "description": "Method",
             "type": "string"
         },
-        "token": {
-            "description": "User token",
+        "schema": {
+            "description": "Schema",
             "type": "string"
         }
     },

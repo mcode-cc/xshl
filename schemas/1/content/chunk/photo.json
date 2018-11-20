@@ -14,7 +14,7 @@
         }
     },
     "type": "object",
-    "required": ["@id", "@class", "@context"],
+    "required": ["@type", "@id", "@class", "@context"],
     "additionalProperties": false,
     "properties": {
         "@id": {
