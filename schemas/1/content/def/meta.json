@@ -9,6 +9,9 @@
         "required": ["name", "value"],
         "additionalProperties": false,
         "properties": {
+            "@context": {
+                "type": "string"
+            },
             "name": {
                 "type": "string"
             },
@@ -22,6 +25,9 @@
                     },
                     {
                         "type": "boolean"
+                    },
+                    {
+                        "type": "object"
                     }
                 ]
             }
