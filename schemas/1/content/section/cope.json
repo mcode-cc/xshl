@@ -84,7 +84,8 @@
                         {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"},
                         {"$ref": "https://www.xshl.org/schemas/1/content/chunk/paragraph.json"},
                         {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
-                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/quote.json"}
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/quote.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/section/cope.json"}
                     ]
                 }
             ],
