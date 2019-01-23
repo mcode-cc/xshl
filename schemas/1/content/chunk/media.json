@@ -69,6 +69,17 @@
                 }
             ]
         },
+        "person": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "type": "array",
+                    "items": [{"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
         "ru": { "$ref": "#definitions/language"},
         "en": { "$ref": "#definitions/language"},
         "by": { "$ref": "#definitions/language"},
