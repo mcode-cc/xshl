@@ -1,0 +1,43 @@
+{
+    "id": "https://xshl.org/schemas/interactive/contest.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Request of contest",
+    "additionalProperties": false,
+    "required": [
+        "direction",
+        "target"
+    ],
+    "type": "object",
+    "properties": {
+        "direction": {
+            "enum": [
+                "page",
+                "first",
+                "last",
+                "count"
+            ]
+        },
+        "number": {
+            "minimum": 1,
+            "type": "integer"
+        },
+        "target": {
+            "additionalProperties": false,
+            "required": [
+                "class",
+                "id"
+            ],
+            "type": "object",
+            "properties": {
+                "class": {
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "id": {
+                    "minimum": 1,
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
