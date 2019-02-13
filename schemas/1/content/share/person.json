@@ -1,11 +1,33 @@
 {
     "id": "https://www.xshl.org/schemas/1/content/share/person.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A represantion objects of person",
+    "title": "Person",
+    "name": "Person",
+    "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
-    "required": ["@id", "@class", "@context", "name"],
+    "required": [
+        "@context",
+        "@type",
+        "@id",
+        "@class",
+        "name"
+    ],
     "additionalProperties": false,
     "properties": {
+        "@context": {
+            "type": "string",
+            "enum": [
+                "person"
+            ]
+        },
+        "@type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
         "@id": {
             "oneOf": [
                 {
@@ -28,46 +50,96 @@
                 }
             ]
         },
-        "@context": {
-            "type": "string",
-            "enum": ["person"]
+        "award": {
+            "id": "http://schema.org/award",
+            "title": "award",
+            "description": "An award won by this person or for this creative work. Supersedes awards.",
+            "type": "string"
         },
-        "@type": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true
+
+        "description": {
+            "id": "http://schema.org/description",
+            "title": "description",
+            "description": "A short description of the item.",
+            "type": "string"
         },
         "disambiguatingDescription": {
+            "id": "http://schema.org/disambiguatingDescription",
+            "title": "Disambiguating Description",
+            "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+            "type": "string"
+        },
+
+        "name": {
+            "id": "http://schema.org/name",
+            "title": "name",
+            "description": "The name of the item.",
             "type": "string"
         },
         "additionalName": {
+            "id": "http://schema.org/additionalName",
+            "title": "additionalName",
+            "description": "An additional name for a Person, can be used for a middle name.",
             "type": "string"
         },
         "familyName": {
-            "type": "string"
-        },
-        "homepage": {
+            "id": "http://schema.org/familyName",
+            "title": "familyName",
+            "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
             "type": "string"
         },
         "givenName": {
+            "id": "http://schema.org/givenName",
+            "title": "givenName",
+            "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+            "type": "string"
+        },
+        "gender": {
+            "id": "http://schema.org/gender",
+            "title": "gender",
+            "description": "Gender of the person.",
+            "type": "string"
+        },
+        "honorificPrefix": {
+            "id": "http://schema.org/honorificPrefix",
+            "title": "honorificPrefix",
+            "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+            "type": "string"
+        },
+        "honorificSuffix": {
+            "id": "http://schema.org/honorificSuffix",
+            "title": "honorificSuffix",
+            "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+            "type": "string"
+        },
+
+        "homepage": {
+            "title": "www",
+            "description": "Homepage address.",
+            "type": "string"
+        },
+        "email": {
+            "id": "http://schema.org/email",
+            "title": "email",
+            "description": "Email address.",
+            "type": "string"
+        },
+        "duns": {
+            "id": "http://schema.org/duns",
+            "title": "duns",
+            "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
             "type": "string"
         },
         "jobTitle": {
-            "type": "string"
-        },
-        "name": {
+            "id": "http://schema.org/jobTitle",
+            "title": "jobTitle",
+            "description": "The job title of the person (for example, Financial Manager).",
             "type": "string"
         },
         "twitter": {
             "type": "string"
         },
         "telegram": {
-            "type": "string"
-        },        
-        "description": {
             "type": "string"
         },
         "scale": {
@@ -76,8 +148,20 @@
         "issue": {
             "type": "string"
         },
+
+        "additionalType": {
+            "id": "http://schema.org/additionalType",
+            "title": "additionalType",
+            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+            "type": "string",
+            "format": "uri"
+        },
         "url": {
-            "type": "string"
+            "id": "http://schema.org/url",
+            "title": "url",
+            "description": "URL of the item.",
+            "type": "string",
+            "format": "uri"
         },
         "image": {
             "$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"
