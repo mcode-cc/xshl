@@ -112,7 +112,13 @@
             "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
             "type": "string"
         },
-
+        
+        "address": {
+            "id": "http://schema.org/address",
+            "title": "address",
+            "description": "Physical address of the item.",
+            "type": "string"
+        },
         "homepage": {
             "title": "www",
             "description": "Homepage address.",
