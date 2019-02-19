@@ -1,0 +1,134 @@
+{
+    "id": "https://www.xshl.org/schemas/1/content/section/cope.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A represantion object of section",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@id", "@class", "@context", "@type", "@tag"],
+    "properties": {
+        "@id": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@class": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@context": {
+            "type": "string",
+            "enum": ["page", "cope", "digest"]
+        },
+        "@type": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "@tag": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "author": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "person": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "childs": {
+            "type": "array",
+            "items": [
+                {
+                    "anyOf": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/header.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/paragraph.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/quote.json"},
+                        {"$ref": "https://www.xshl.org/schemas/1/content/section/cope.json"}
+                    ]
+                }
+            ],
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "url": {
+            "type": "string",
+            "format": "uriref"
+        },
+        "scale": {
+            "type": "string"
+        },
+        "issue": {
+            "type": "string"
+        },
+        "tags": {
+            "type": "array",
+            "items": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/tag.json"}
+            ],
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "ru": {
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+        },
+        "en": {
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+        },
+        "by": {
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+        },
+        "md": {
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+        },
+        "kg": {
+            "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+            "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+        },
+        "meta": {
+            "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
+        }
+    }
+}

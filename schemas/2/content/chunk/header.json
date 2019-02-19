@@ -1,0 +1,17 @@
+{
+    "id": "https://www.xshl.org/schemas/1/content/chunk/header.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A representation of text in header",
+    "type": "object",
+    "required": ["@context", "level", "ru"],
+    "properties": {
+        "@context": {"type": "string"},
+        "level": {"type": "integer", "minimum": 0, "maximum": 9},
+        "ru": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+        "by": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+        "md": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+        "kg": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+        "en": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+    },
+    "additionalProperties": false
+}

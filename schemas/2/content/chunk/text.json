@@ -1,0 +1,39 @@
+{
+    "id": "https://www.xshl.org/schemas/2/content/chunk/text.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A representation of text in paragraph",
+    "type": "object",
+    "required": ["@context", "@type", "content"],
+    "properties": {
+        "@context": {
+            "id": "http://schema.org/url",
+            "title": "Context",
+            "description": "JSON LD context",
+            "type": "string",
+            "format": "uri"
+        },
+        "@type": {
+            "id": "http://schema.org/url",
+            "title": "Context",
+            "description": "JSON LD type",
+            "type": "string",
+            "format": "uri"
+        },
+        "content": {
+            "oneOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://www.xshl.org/schemas/2/content/def/text.json"
+                    },
+                    "minItems": 2,
+                    "uniqueItems": true
+                },
+                {
+                    "$ref": "https://www.xshl.org/schemas/2/content/def/text.json"
+                }
+            ]
+        }
+    },
+    "additionalProperties": false
+}

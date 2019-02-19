@@ -8,8 +8,6 @@
     "required": [
         "@context",
         "@type",
-        "@id",
-        "@class",
         "name"
     ],
     "additionalProperties": false,
@@ -29,17 +27,6 @@
             "uniqueItems": true
         },
         "@id": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "@class": {
             "oneOf": [
                 {
                     "type": "integer",

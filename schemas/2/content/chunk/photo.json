@@ -1,0 +1,93 @@
+{
+    "id": "https://www.xshl.org/schemas/1/content/chunk/photo.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A represantion objects of photo",
+    "definitions": {
+        "language": {
+            "id": "#definitions/language",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+            }
+        }
+    },
+    "type": "object",
+    "required": ["@type", "@id", "@class", "@context"],
+    "additionalProperties": false,
+    "properties": {
+        "@id": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@class": {
+            "oneOf": [
+                {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "@context": {
+            "type": "string",
+            "enum": ["photo", "banner"]
+        },
+        "@type": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "url": {
+            "type": "string",
+            "format": "uriref"
+        },
+        "author": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "person": {
+            "anyOf": [
+                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                    ],
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "ru": { "$ref": "#definitions/language"},
+        "en": { "$ref": "#definitions/language"},
+        "by": { "$ref": "#definitions/language"},
+        "md": { "$ref": "#definitions/language"},
+        "kg": { "$ref": "#definitions/language"},
+        "meta": {
+            "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
+        }
+    }
+}
