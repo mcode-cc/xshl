@@ -1,18 +1,19 @@
 {
     "@context": {
         "@version": 1.1,
-        "person": "http://example.com/vocab/",
+        "schema": "http://schema.org/",
         "sec": "http://purl.org/security#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "dc": "http://purl.org/dc/terms/",
         "name": {
-            
             "@container": [
                 "@language",
                 "@set"
             ]
-        }
+        },
+        "family": "schema:familyName"
+        "additional": "schema:additionalName"
     },
     "name": {
         "ru": {
