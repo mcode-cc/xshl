@@ -8,14 +8,17 @@
         "dc": "http://purl.org/dc/terms/",
         "given": {
             "@id": "schema:givenName",
+            "@type": "@id",
             "@container": ["@language", "@set"]
         },
         "additional": {
             "@id": "schema:additionalName",
+            "@type": "@id",
             "@container": "@language"
         },
         "family": {
             "@id": "schema:familyName",
+            "@type": "@id",
             "@container": ["@language", "@set"]
         }
     },
