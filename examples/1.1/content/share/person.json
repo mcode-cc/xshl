@@ -22,8 +22,11 @@
             "@container": ["@language", "@set"]
         }
     },
-    "name": {
 
+        "@value": {
+            "ru": "Михаил Евграфович Салтыков-Щедрин",
+            "en": "Mr. Mikhail Yevgrafovich Saltykov-Shchedrin"
+        },
         "given": {
             "ru": "Михаил",
             "en": "Mikhail"
@@ -51,8 +54,8 @@
             "suffix": {
                 "en": ""
             }
-        }
-    },
+        },
+
     "gender": "male",
     "nationality": "Russian",
     "birth": {
