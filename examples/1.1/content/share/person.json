@@ -8,12 +8,9 @@
         "dc": "http://purl.org/dc/terms/",
         "name": {
             "@id": "schema",
-            "@container": [
-                "@language",
-                "@set"
-            ]
+            "@container": "@language"
         },
-        
+        "family": "schema:familyName",
         "additional": "schema:additionalName"
     },
     "name": {
