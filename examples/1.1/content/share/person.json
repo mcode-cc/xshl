@@ -6,34 +6,46 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "dc": "http://purl.org/dc/terms/",
-        "name": {
-            "@id": "schema",
-            "@container": "@language"
+        "family": {
+            "@id": "schema:familyName",
+            "@container": ["@language", "@set"]
         },
-        "family": "schema:familyName",
-        "additional": "schema:additionalName"
+        "additional": {
+            "@id": "schema:additionalName",
+            "@container": "@language"
+        }
     },
     "name": {
-        "ru": {
-            "@value": "Михаил Евграфович Салтыков-Щедрин",
-            "additional": "Евграфович",
-            "family": [
+        "@value": {
+            "ru": "Михаил Евграфович Салтыков-Щедрин",
+            "en": "Mr. Mikhail Yevgrafovich Saltykov-Shchedrin"
+        },
+        "additional": {
+            "ru": "Евграфович"
+        },
+        "family": {
+            "ru": [
                 "Салтыков",
                 "Щедрин"
             ],
-            "given": "Михаил"
-        },
-        "en": {
-            "@value": "Mr. Mikhail Yevgrafovich Saltykov-Shchedrin",
-            "family": [
+            "en": [
                 "Saltykov",
                 "Shchedrin"
-            ],
-            "given": "Mikhail",
-            "pseudonym": "Nikolai Shchedrin",
-            "honorific": {
-                "prefix": "Mr.",
-                "suffix": ""
+            ]
+        },
+        "given": {
+            "ru": "Михаил",
+            "en": "Mikhail"
+        },
+        "pseudonym": {
+            "en": "Nikolai Shchedrin"
+        },
+        "honorific": {
+            "prefix": {
+                "en": "Mr."
+            },
+            "suffix": {
+                "en": ""
             }
         }
     },
