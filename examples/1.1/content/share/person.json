@@ -6,19 +6,27 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "dc": "http://purl.org/dc/terms/",
-        "family": {
-            "@id": "schema:familyName",
+        "given": {
+            "@id": "schema:givenName",
             "@container": ["@language", "@set"]
         },
         "additional": {
             "@id": "schema:additionalName",
             "@container": "@language"
+        },
+        "family": {
+            "@id": "schema:familyName",
+            "@container": ["@language", "@set"]
         }
     },
     "name": {
         "@value": {
             "ru": "Михаил Евграфович Салтыков-Щедрин",
             "en": "Mr. Mikhail Yevgrafovich Saltykov-Shchedrin"
+        },
+        "given": {
+            "ru": "Михаил",
+            "en": "Mikhail"
         },
         "additional": {
             "ru": "Евграфович"
@@ -32,10 +40,6 @@
                 "Saltykov",
                 "Shchedrin"
             ]
-        },
-        "given": {
-            "ru": "Михаил",
-            "en": "Mikhail"
         },
         "pseudonym": {
             "en": "Nikolai Shchedrin"
