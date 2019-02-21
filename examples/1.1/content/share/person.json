@@ -13,7 +13,7 @@
                 "@set"
             ]
         },
-        "family": "schema:familyName",
+        
         "additional": "schema:additionalName"
     },
     "name": {
