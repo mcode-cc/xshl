@@ -1,29 +1,31 @@
 {
-    "@version": 1.1,
-    "schema": "http://schema.org/",
-    "sec": "http://purl.org/security#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "dc": "http://purl.org/dc/terms/",
-    "given": {
-        "@id": "schema:givenName",
-        "@type": "@id",
-        "@container": [
-            "@language",
-            "@set"
-        ]
-    },
-    "additional": {
-        "@id": "schema:additionalName",
-        "@type": "@id",
-        "@container": "@language"
-    },
-    "family": {
-        "@id": "schema:familyName",
-        "@type": "@id",
-        "@container": [
-            "@language",
-            "@set"
-        ]
+    "@context": {
+        "@version": 1.1,
+        "schema": "http://schema.org/",
+        "sec": "http://purl.org/security#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "dc": "http://purl.org/dc/terms/",
+        "given": {
+            "@id": "schema:givenName",
+            "@type": "@id",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "additional": {
+            "@id": "schema:additionalName",
+            "@type": "@id",
+            "@container": "@language"
+        },
+        "family": {
+            "@id": "schema:familyName",
+            "@type": "@id",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        }
     }
 }
