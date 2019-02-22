@@ -1,35 +1,32 @@
 {
-    "@context": "https://www.xshl.org/contexts/1.1/content/share/person.json",
-
-        "given": {
-            "ru": "Михаил",
-            "en": "Mikhail"
+    "given": {
+        "ru": "Михаил",
+        "en": "Mikhail"
+    },
+    "additional": {
+        "ru": "Евграфович"
+    },
+    "family": {
+        "ru": [
+            "Салтыков",
+            "Щедрин"
+        ],
+        "en": [
+            "Saltykov",
+            "Shchedrin"
+        ]
+    },
+    "pseudonym": {
+        "en": "Nikolai Shchedrin"
+    },
+    "honorific": {
+        "prefix": {
+            "en": "Mr."
         },
-        "additional": {
-            "ru": "Евграфович"
-        },
-        "family": {
-            "ru": [
-                "Салтыков",
-                "Щедрин"
-            ],
-            "en": [
-                "Saltykov",
-                "Shchedrin"
-            ]
-        },
-        "pseudonym": {
-            "en": "Nikolai Shchedrin"
-        },
-        "honorific": {
-            "prefix": {
-                "en": "Mr."
-            },
-            "suffix": {
-                "en": ""
-            }
-        },
-
+        "suffix": {
+            "en": ""
+        }
+    },
     "gender": "male",
     "nationality": "Russian",
     "birth": {
