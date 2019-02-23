@@ -1,5 +1,5 @@
 {
-    "@context": "https://www.xshl.org/contexts/1.1/content/share/person.json",
+    "@context": "person.json",
     "given": {
         "ru": "Михаил",
         "en": "Mikhail"
