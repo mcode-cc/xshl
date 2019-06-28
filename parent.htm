@@ -11,7 +11,7 @@
 	}
 	postRobot.on('foo', function(event) {
 		var el = document.getElementById('messages');
-		el.innerHTML += '\n' + event.data.message;
+		el.innerHTML += '\n' + event.data.message.uid;
 		return {
 			message: event.data.message
 		}
