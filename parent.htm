@@ -1,13 +1,71 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
+    <style type="text/css">
 
-<script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
+/*****UserInfo*******/
+
+.userInfo {
+    text-align: center;
+    position: relative;
+}
+
+.userInfo .btn { display: inline-block; }
+
+.userInfo, .authorizeBtn { background-color: #f8f8f8; padding: 25px 80px; text-align: left; }
+
+.userInfo .btn, .authorizeBtn .btn {
+    font-family: "OpenSans";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 34px;
+    text-transform: none;
+    width: 170px;
+    text-transform: none;
+    padding: 0;
+    margin-bottom: 0;
+    letter-spacing: normal;
+    z-index: 20;
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.authorizeBtn .btn { position: relative; right: auto; top: auto; }
+
+.authorizeBtn .btn.active { cursor: pointer; }
+
+.userInfo img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.userInfo p {
+    color: #40454c;
+    font-family: "OpenSans";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
 <button onclick="openWindow()">open</button>
 <div id="messages"></div>
-
+<div id="auth"></div>
 <script>
     var
         callback = Math.random().toString().replace(/[^a-z0-9]+/g, ''),
         openedWindow,
+        SUUID,
         identityDomain = 'https://identity.kpcdn.net',
         uidJsonPath = '/identity/api/1/auth/uid.json?callback=tmp',
         uidXmlPath =  '/identity/api/1/auth/uid.xml?callback=tmp',
@@ -17,11 +75,14 @@
 
     fetch(identityDomain + uidJsonPath + callback, {credentials: 'include'})
         .then(function (response) {
-            return response.json();
+            return response.json()
         })
-        .then(function (data) {
-            console.log(JSON.stringify(data));
-            initAuth(data['tmp' + callback].uid, data['tmp' + callback].access_token)
+        .then(function (value) {
+            console.log('tmp' + callback);
+            var s = value['tmp' + callback];
+            console.log(s);
+            SUUID = s;
+            initAuth(s.uid, s.access_token)
         });
 
     function initAuth(uid, token) {
@@ -34,13 +95,48 @@
     }
 
     function loadProfile(url) {
+
+        // Запрашиваем профайл пользователя
         fetch(url + callback, {credentials: 'include'})
         .then(function (response) {
-            return response.json();
+            return response.json()
         })
-        .then(function (data) {
+        .then(function (value) {
+            var s = value['tmp' + callback];
+            console.log(s);
+            // Проверяем поддерживает ли браузер тег <template>
+            // проверив наличие аттрибута content у элемента template
+            if ('content' in document.createElement('template')) {
 
-            el.innerHTML += '\n' + JSON.stringify(data)
+              // Instantiate the table with the existing HTML tbody and the row with the template
+              var t = document.querySelector('#profile'),
+              p = t.content.querySelectorAll("p");
+              img = t.content.querySelector("img");
+              img.src = s.avatar;
+              img.alt = s.name;
+              img.title = s.name;
+              p[0].textContent = s.name;
+              p[0].className = SUUID.country;
+              p[1].textContent = SUUID.uid;
+
+              // клонируем новую строку и вставляем её в таблицу
+              var emAuth = document.querySelector("#auth");
+              var clone = document.importNode(t.content, true);
+              emAuth.appendChild(clone);
+
+             //  // создаём новую строку
+             //  li[0].textContent = "0384928528";
+             //  li[1].textContent = "Acme Kidney Beans";
+             //
+             // // клонируем новую строку и вставляем её в таблицу
+             //  var clone2 = document.importNode(t.content, true);
+             //  tb[0].appendChild(clone2);
+
+            } else {
+              // необходимо найти другой способ добавить строку в таблицу т.к.
+              // тег <template> не поддерживатся браузером
+            }
+
         });
     }
 
@@ -56,3 +152,14 @@
 		}
 	});
 </script>
+
+<template id="profile">
+    <div class="userInfo">
+        <img src="" alt="ФИО" title="ФИО">
+        <p>name</p><br />
+        <p>uid</p>
+        <button class="btn logout"><span>Logout</span></button>
+    </div>
+</template>
+</body>
+</html>
