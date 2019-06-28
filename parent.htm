@@ -5,13 +5,16 @@
 <div id="messages"></div>
 
 <script>
+    var callback = Math.random().toString().replace(/[^a-z0-9]+/g, '');
+    var openedWindow;
     postRobot.bridge.openBridge('https://identity.developers.kp.house/identity/api/1/auth/bridge.xml', 'https://identity.developers.kp.house');
 	function openWindow() {
-		window.open('https://identity.developers.kp.house/identity/api/1/auth/uid.xml', Math.random().toString().replace(/[^a-z0-9]+/g, ''));
+		openedWindow = window.open('https://identity.developers.kp.house/identity/api/1/auth/uid.xml?callback=tmp' + callback, callback);
 	}
-	postRobot.on('foo', function(event) {
+	postRobot.on('tmp' + callback, function(event) {
 		var el = document.getElementById('messages');
 		el.innerHTML += '\n' + event.data.message.uid;
+		openedWindow.close();
 		return {
 			message: event.data.message
 		}
