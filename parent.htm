@@ -13,7 +13,7 @@
 	}
 	postRobot.on('tmp' + callback, function(event) {
 		var el = document.getElementById('messages');
-		el.innerHTML += '\n' + event.data.message.uid;
+		el.innerHTML += '\n' + event.data.message.uid + ' ' + event.data.message.access_token;
 		openedWindow.close();
 		return {
 			message: event.data.message
