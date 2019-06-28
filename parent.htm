@@ -7,9 +7,9 @@
 <script>
     var callback = Math.random().toString().replace(/[^a-z0-9]+/g, '');
     var openedWindow;
-    postRobot.bridge.openBridge('https://identity.developers.kp.house/identity/api/1/auth/bridge.xml', 'https://identity.developers.kp.house');
+    postRobot.bridge.openBridge('https://identity.kpcdn.net/identity/api/1/auth/bridge.xml', 'https://identity.kpcdn.net');
 	function openWindow() {
-		openedWindow = window.open('https://identity.developers.kp.house/identity/api/1/auth/uid.xml?callback=tmp' + callback, callback);
+		openedWindow = window.open('https://identity.kpcdn.net/identity/api/1/auth/uid.xml?callback=tmp' + callback, callback);
 	}
 	postRobot.on('tmp' + callback, function(event) {
 		var el = document.getElementById('messages');
