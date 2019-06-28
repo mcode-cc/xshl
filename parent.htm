@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 
-<script src="./dist/post-robot.ie.min.js"></script>
+<script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
 <button onclick="openWindow()">open</button>
 <div id="messages"></div>
 
 <script>
-    var callback = Math.random().toString().replace(/[^a-z0-9]+/g, '');
-    var openedWindow;
-    postRobot.bridge.openBridge('https://identity.kpcdn.net/identity/api/1/auth/bridge.xml', 'https://identity.kpcdn.net');
+    var
+        callback = Math.random().toString().replace(/[^a-z0-9]+/g, ''),
+        openedWindow,
+        identityDomain = 'https://identity.kpcdn.net',
+        uidJsonPath = '/identity/api/1/auth/uid.json?callback=tmp',
+        uidXmlPath =  '/identity/api/1/auth/uid.xml?callback=tmp',
+        profileJsonPath = '/identity/api/1/auth/profile.json?callback=tmp',
+        bridgePath = '/identity/api/1/auth/bridge.xml',
+        el = document.getElementById('messages');
+
+    fetch(identityDomain + uidJsonPath + callback, {credentials: 'include'})
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(JSON.stringify(data));
+            initAuth(data['tmp' + callback].uid, data['tmp' + callback].access_token)
+        });
+
+    function initAuth(uid, token) {
+        if (uid.startsWith("8")) {
+            loadProfile(identityDomain + profileJsonPath)
+        } else {
+
+        }
+        el.innerHTML += '\n' + uid + ' ' + token
+    }
+
+    function loadProfile(url) {
+        fetch(url + callback, {credentials: 'include'})
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            el.innerHTML += '\n' + JSON.stringify(data)
+        });
+    }
+
+    postRobot.bridge.openBridge(identityDomain + bridgePath, identityDomain);
 	function openWindow() {
-		openedWindow = window.open('https://identity.kpcdn.net/identity/api/1/auth/uid.xml?callback=tmp' + callback, callback);
+		openedWindow = window.open(identityDomain + uidXmlPath + callback, callback);
 	}
 	postRobot.on('tmp' + callback, function(event) {
-		var el = document.getElementById('messages');
 		el.innerHTML += '\n' + event.data.message.uid + ' ' + event.data.message.access_token;
 		openedWindow.close();
 		return {
