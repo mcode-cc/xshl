@@ -9,7 +9,6 @@
 	function openWindow() {
 		window.open('https://espectro.github.io/sw-test/child.htm', Math.random().toString().replace(/[^a-z0-9]+/g, ''));
 	}
-
 	postRobot.on('foo', function(event) {
 		var el = document.getElementById('messages');
 		el.innerHTML += '\n' + event.data.message;
