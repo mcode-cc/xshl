@@ -79,6 +79,17 @@ span.flag {
     margin: 0;
 }
 
+.authorizeBtn .buttons a {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    text-indent: -10000px;
+}
+
 .authorizeBtn .social { width: auto; display: inline-block; }
 .authorizeBtn p {
     color: black;
