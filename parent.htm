@@ -95,17 +95,18 @@
         // проверив наличие аттрибута content у элемента template
         if ('content' in document.createElement('template')) {
             var t = document.querySelector('#social'),
-            p = t.content.querySelectorAll("p");
-            p.forEach(function(em){
+            a = t.content.querySelectorAll(".buttons a");
+            a.forEach(function(em){
                 if (value.hasOwnProperty(em.id)) {
-                    em.href = value[em.id]
+                    console.log(value[em.id]);
+                    em.setAttribute('href', value[em.id]);
                 } else {
                     em.style.display = "none";
                 }
                 console.log(em)
             });
-            var emAuth = document.querySelector("#auth");
-            var clone = document.importNode(t.content, true);
+            var emAuth = document.querySelector("#auth"),
+                clone = document.importNode(t.content, true);
             emAuth.appendChild(clone);
         } else {
         // необходимо найти другой способ
