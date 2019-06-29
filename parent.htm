@@ -2,64 +2,10 @@
 <html lang="ru">
 <head>
     <script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
-    <style type="text/css">
-
-/*****UserInfo*******/
-
-.userInfo {
-    text-align: center;
-    position: relative;
-}
-
-.userInfo .btn { display: inline-block; }
-
-.userInfo, .authorizeBtn { background-color: #f8f8f8; padding: 25px 80px; text-align: left; }
-
-.userInfo .btn, .authorizeBtn .btn {
-    font-family: "OpenSans";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 34px;
-    text-transform: none;
-    width: 170px;
-    text-transform: none;
-    padding: 0;
-    margin-bottom: 0;
-    letter-spacing: normal;
-    z-index: 20;
-    position: absolute;
-    right: 20px;
-    top: 32px;
-}
-
-.authorizeBtn .btn { position: relative; right: auto; top: auto; }
-
-.authorizeBtn .btn.active { cursor: pointer; }
-
-.userInfo img {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 20px;
-}
-
-.userInfo p {
-    color: #40454c;
-    font-family: "OpenSans";
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 50px;
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
-}
-
-    </style>
+    <link rel="stylesheet" media="screen" href="//xshl.org/images/flags.css">
+    <link rel="stylesheet" media="screen" href="//xshl.org/images/inc.css">
 </head>
 <body>
-<button onclick="openWindow()">open</button>
-<div id="messages"></div>
 <div id="auth"></div>
 <script>
     var
@@ -70,9 +16,10 @@
         uidJsonPath = '/identity/api/1/auth/uid.json?callback=tmp',
         uidXmlPath =  '/identity/api/1/auth/uid.xml?callback=tmp',
         profileJsonPath = '/identity/api/1/auth/profile.json?callback=tmp',
-        bridgePath = '/identity/api/1/auth/bridge.xml',
-        el = document.getElementById('messages');
+        oauthJsonPath = '/auth/oauth.json?callback=tmp',
+        bridgePath = '/identity/api/1/auth/bridge.xml';
 
+    // Загружаем SUUID обычным способом из домена идентити
     fetch(identityDomain + uidJsonPath + callback, {credentials: 'include'})
         .then(function (response) {
             return response.json()
@@ -87,15 +34,37 @@
 
     function initAuth(uid, token) {
         if (uid.startsWith("8")) {
+            // Бинго пользователь аутентифицирован, кроме прочего это говорит
+            // о том что куки на идентити стоят
+            // по этому тянем профиль из идентити
             loadProfile(identityDomain + profileJsonPath)
         } else {
+            // Вот сейчас у нас две возможных ситуации
+            // 1. Не аутентифицирован удачная для нас
+            // 2. В дело вмешалось Intelligent Tracking Prevention
+            // Запрашиваем список доступных OAuth провайдеров
+            fetch(identityDomain + oauthJsonPath + callback, {credentials: 'include'})
+                .then(function (response) {
+                    return response.json()
+                })
+                .then(function (value) {
+                    console.log('tmp' + callback);
+                    var social = value['tmp' + callback];
+                    console.log(social);
+                    var client = value['client'];
+                    console.log(client);
+                    if (client.uid == SUUID.uid) {
+                        // Ситуация номер 1.
 
+                    } else {
+                        // Генерал! Наши карты – дерьмо.
+
+                    }
+                });
         }
-        el.innerHTML += '\n' + uid + ' ' + token
     }
 
     function loadProfile(url) {
-
         // Запрашиваем профайл пользователя
         fetch(url + callback, {credentials: 'include'})
         .then(function (response) {
@@ -104,39 +73,7 @@
         .then(function (value) {
             var s = value['tmp' + callback];
             console.log(s);
-            // Проверяем поддерживает ли браузер тег <template>
-            // проверив наличие аттрибута content у элемента template
-            if ('content' in document.createElement('template')) {
-
-              // Instantiate the table with the existing HTML tbody and the row with the template
-              var t = document.querySelector('#profile'),
-              p = t.content.querySelectorAll("p");
-              img = t.content.querySelector("img");
-              img.src = s.avatar;
-              img.alt = s.name;
-              img.title = s.name;
-              p[0].textContent = s.name;
-              p[0].className = SUUID.country;
-              p[1].textContent = SUUID.uid;
-
-              // клонируем новую строку и вставляем её в таблицу
-              var emAuth = document.querySelector("#auth");
-              var clone = document.importNode(t.content, true);
-              emAuth.appendChild(clone);
-
-             //  // создаём новую строку
-             //  li[0].textContent = "0384928528";
-             //  li[1].textContent = "Acme Kidney Beans";
-             //
-             // // клонируем новую строку и вставляем её в таблицу
-             //  var clone2 = document.importNode(t.content, true);
-             //  tb[0].appendChild(clone2);
-
-            } else {
-              // необходимо найти другой способ добавить строку в таблицу т.к.
-              // тег <template> не поддерживатся браузером
-            }
-
+            viewUserInfo(s)
         });
     }
 
@@ -145,21 +82,83 @@
 		openedWindow = window.open(identityDomain + uidXmlPath + callback, callback);
 	}
 	postRobot.on('tmp' + callback, function(event) {
-		el.innerHTML += '\n' + event.data.message.uid + ' ' + event.data.message.access_token;
+		// el.innerHTML += '\n' + event.data.message.uid + ' ' + event.data.message.access_token;
 		openedWindow.close();
 		return {
 			message: event.data.message
 		}
 	});
+
+	function viewSocial(value) {
+        // Проверяем поддерживает ли браузер тег <template>
+        // проверив наличие аттрибута content у элемента template
+        if ('content' in document.createElement('template')) {
+            var t = document.querySelector('#social'),
+            p = t.content.querySelectorAll("p");
+            span = t.content.querySelector("span.flag");
+        }
+    }
+
+	function viewUserInfo(s) {
+        // Проверяем поддерживает ли браузер тег <template>
+        // проверив наличие аттрибута content у элемента template
+        if ('content' in document.createElement('template')) {
+            var t = document.querySelector('#profile'),
+            p = t.content.querySelectorAll("p");
+            span = t.content.querySelector("span.flag");
+            img = t.content.querySelector("img");
+            img.src = s.avatar;
+            img.alt = s.name;
+            img.title = s.name;
+            p[0].textContent = s.name;
+            span.className = 'flag flag-' + SUUID.country.toLowerCase();
+            p[1].textContent = SUUID.uid;
+
+            // клонируем и вставляем
+            var emAuth = document.querySelector("#auth");
+            var clone = document.importNode(t.content, true);
+            emAuth.appendChild(clone);
+
+            //  // создаём новую строку
+            //  li[0].textContent = "0384928528";
+            //  li[1].textContent = "Acme Kidney Beans";
+            //
+            // // клонируем новую строку и вставляем её в таблицу
+            //  var clone2 = document.importNode(t.content, true);
+            //  tb[0].appendChild(clone2);
+
+        } else {
+        // необходимо найти другой способ
+        // тег <template> не поддерживатся браузером
+        }
+    }
 </script>
 
 <template id="profile">
     <div class="userInfo">
-        <img src="" alt="ФИО" title="ФИО">
+        <img src="" alt="name" title="name">
         <p>name</p><br />
-        <p>uid</p>
+        <span class="flag flag-es"></span><p>uid</p>
         <button class="btn logout"><span>Logout</span></button>
     </div>
 </template>
+
+<template id="social">
+    <div class="authorizeBtn">
+        <div id="jsEnter" class="wrap notPrint flex-container">
+            <div class="social">
+                <p><strong>Войти через социальную сеть:</strong></p>
+                <div class="wrap">
+                    <div class="social">
+                        <div class="buttons">
+                            <a href="" class="" title="">name</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
 </body>
 </html>
