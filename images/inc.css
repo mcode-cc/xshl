@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -moz-osx-font-smoothing: grayscale;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 span.flag {
     margin-right: 16px;
