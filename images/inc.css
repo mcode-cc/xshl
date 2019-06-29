@@ -1,28 +1,4 @@
 
-.social .dropdown-menu > li .brand {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto 90%;
-    float: left;
-    height: 20px;
-    width: 30px;
-}
-
-.social .dropdown-menu > li > a {
-    padding: 4px;
-}
-
-.social .dropdown-menu > li > a span {
-    display: inline-block;
-}
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    background-color: transparent;
-    color: darkblue;
-    text-decoration: none;
-}
-
-
 span.flag {
     margin-right: 16px;
     margin-top: 8px;
