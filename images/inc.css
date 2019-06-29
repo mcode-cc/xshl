@@ -79,10 +79,10 @@ span.flag {
     margin: 0;
 }
 
-.authorizeBtn .social { width: 100%; display: inline-block; }
+.authorizeBtn .social { width: auto; display: inline-block; }
 .authorizeBtn p {
     color: black;
-    font-family: "OpenSans";
+    font-family: "OpenSans", sans-serif;
     font-size: 15px;
     font-weight: 400;
     line-height: 20px;
@@ -90,8 +90,10 @@ span.flag {
 }
 
 .authorizeBtn .buttons .fb { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/fn-enter.svg") no-repeat 0 0; background-size: contain; }
-.authorizeBtn .buttons .gp { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/gp-enter.svg") no-repeat 0 0; background-size: contain; }
+.authorizeBtn .buttons .gp { background: #ffffff url("//s2.stc.all.kpcdn.net/share/i/beige/0e9da54e1ffedc4813b760962c16eb10.png") no-repeat center center; background-size: auto 75% !important;
+    border: 1px solid #D2D2D2; }
 .authorizeBtn .buttons .mm { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/mm-enter.svg") no-repeat 0 0; background-size: contain; }
+.authorizeBtn .buttons .ya { background: transparent url("//s1.stc.all.kpcdn.net/share/i/cyan/9094f1dc315be0b878d55fd62f1780ce.png") no-repeat 0 0; background-size: contain; }
 .authorizeBtn .buttons .ok { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/ok-enter.svg") no-repeat 0 0; background-size: contain; }
 .authorizeBtn .buttons .tw { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/tw-enter.svg") no-repeat 0 0; background-size: contain; }
 .authorizeBtn .buttons .vk { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/vk-enter.svg") no-repeat 0 0; background-size: contain; }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
     <link rel="stylesheet" media="screen" href="//xshl.org/images/flags.css">
     <link rel="stylesheet" media="screen" href="//xshl.org/images/inc.css">
@@ -55,7 +56,7 @@
                     console.log(client);
                     if (client.uid == SUUID.uid) {
                         // Ситуация номер 1.
-
+                        viewSocial(social)
                     } else {
                         // Генерал! Наши карты – дерьмо.
 
@@ -95,7 +96,20 @@
         if ('content' in document.createElement('template')) {
             var t = document.querySelector('#social'),
             p = t.content.querySelectorAll("p");
-            span = t.content.querySelector("span.flag");
+            p.forEach(function(em){
+                if (value.hasOwnProperty(em.id)) {
+                    em.href = value[em.id]
+                } else {
+                    em.style.display = "none";
+                }
+                console.log(em)
+            });
+            var emAuth = document.querySelector("#auth");
+            var clone = document.importNode(t.content, true);
+            emAuth.appendChild(clone);
+        } else {
+        // необходимо найти другой способ
+        // тег <template> не поддерживатся браузером
         }
     }
 
@@ -118,15 +132,6 @@
             var emAuth = document.querySelector("#auth");
             var clone = document.importNode(t.content, true);
             emAuth.appendChild(clone);
-
-            //  // создаём новую строку
-            //  li[0].textContent = "0384928528";
-            //  li[1].textContent = "Acme Kidney Beans";
-            //
-            // // клонируем новую строку и вставляем её в таблицу
-            //  var clone2 = document.importNode(t.content, true);
-            //  tb[0].appendChild(clone2);
-
         } else {
         // необходимо найти другой способ
         // тег <template> не поддерживатся браузером
@@ -151,7 +156,13 @@
                 <div class="wrap">
                     <div class="social">
                         <div class="buttons">
-                            <a href="" class="" title="">name</a>
+                            <a id="twitter" href="" class="tw" title="Twitter">Twitter</a>
+                            <a id="vk" href="" class="vk" title="VKontakte">VKontakte</a>
+                            <a id="google" href="" class="gp" title="Google">Google</a>
+                            <a id="odnoklassniki" href="" class="ok" title="Одноклассники">Одноклассники</a>
+                            <a id="facebook" href="" class="fb" title="Facebook">Facebook</a>
+                            <a id="mym" href="" class="mm" title="Мой мир">Мой мир</a>
+                            <a id="yandex" href="" class="ya" title="Я.ру">Я.ру</a>
                         </div>
                     </div>
                 </div>
