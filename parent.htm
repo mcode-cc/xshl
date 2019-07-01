@@ -2,17 +2,19 @@
 <html lang="ru">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta name="version" content="0.0.1">
     <script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
     <link rel="stylesheet" media="screen" href="//xshl.org/images/flags.css">
     <link rel="stylesheet" media="screen" href="//xshl.org/images/inc.css">
 </head>
 <body>
 <div id="auth"></div>
+<button onclick="openWindow()">open</button>
 <script>
     var
         callback = Math.random().toString().replace(/[^a-z0-9]+/g, ''),
         openedWindow,
-        SUUID,
+        SUUID, social,
         identityDomain = 'https://identity.kpcdn.net',
         uidJsonPath = '/identity/api/1/auth/uid.json?callback=tmp',
         uidXmlPath =  '/identity/api/1/auth/uid.xml?callback=tmp',
@@ -50,7 +52,7 @@
                 })
                 .then(function (value) {
                     console.log('tmp' + callback);
-                    var social = value['tmp' + callback];
+                    social = value['tmp' + callback];
                     console.log(social);
                     var client = value['client'];
                     console.log(client);
@@ -59,10 +61,30 @@
                         viewSocial(social)
                     } else {
                         // Генерал! Наши карты – дерьмо.
+                        postRobot.bridge.openBridge(identityDomain + bridgePath, identityDomain);
+                        postRobot.on('tmp' + callback, function(event) {
+                            openedWindow.close();
+                            SUUID = event.data.message;
+                            console.log(SUUID);
+                            document.cookie = "uid=" + SUUID.uid;
+                            document.cookie = "access_token=" + SUUID.access_token;
+                            if (SUUID.uid.startsWith("8")) {
+                                loadProfile(profileJsonPath)
+                            } else {
+                                viewSocial(social)
+                            }
+                            return {
+                                message: event.data.message
+                            }
+                        });
 
                     }
                 });
         }
+    }
+
+    function openWindow() {
+        openedWindow = window.open(identityDomain + uidXmlPath + callback, callback);
     }
 
     function loadProfile(url) {
@@ -77,18 +99,6 @@
             viewUserInfo(s)
         });
     }
-
-    postRobot.bridge.openBridge(identityDomain + bridgePath, identityDomain);
-	function openWindow() {
-		openedWindow = window.open(identityDomain + uidXmlPath + callback, callback);
-	}
-	postRobot.on('tmp' + callback, function(event) {
-		// el.innerHTML += '\n' + event.data.message.uid + ' ' + event.data.message.access_token;
-		openedWindow.close();
-		return {
-			message: event.data.message
-		}
-	});
 
 	function viewSocial(value) {
         // Проверяем поддерживает ли браузер тег <template>
@@ -145,7 +155,9 @@
         <img src="" alt="name" title="name">
         <p>name</p><br />
         <span class="flag flag-es"></span><p>uid</p>
-        <button class="btn logout"><span>Logout</span></button>
+        <button class="btn logout" onclick="window.location.href = 'https://identity.kpcdn.net/identity/api/1/auth/logout';">
+            <span>Logout</span>
+        </button>
     </div>
 </template>
 
