@@ -95,6 +95,15 @@ span.flag {
 .authorizeBtn .buttons .tw { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/tw-enter.svg") no-repeat 0 0; background-size: contain; }
 .authorizeBtn .buttons .vk { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/vk-enter.svg") no-repeat 0 0; background-size: contain; }
 
+
+.menuHead  .btn_menu.active span, .menuHead .btn_menu.active span:after, .menuHead .btn_menu.active span:before { width: 24px; }
+body .menuHead .btn_menu.active span { background-color: transparent; }
+.menuHead .btn_menu.active { border-bottom: none; overflow: visible; }
+.menuHead .btn_menu.active:after { opacity: 1; }
+.menuHead .btn_menu.active span:before, .menuHead .btn_menu.active span:after { top: 0; }
+.menuHead .btn_menu.active span:before {  transform: rotate(45deg); }
+.menuHead .btn_menu.active span:after { transform: rotate(-45deg); }
+
 .menuHead .btn_menu {
 	color: #40454c;
 	font-family: "OpenSans", sans-serif;
