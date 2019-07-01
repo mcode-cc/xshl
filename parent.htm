@@ -2,26 +2,30 @@
 <html lang="ru">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
-    <meta name="version" content="0.0.1">
+    <meta name="version" content="0.0.6">
     <script src="https://xshl.org/dist/post-robot.ie.min.js"></script>
     <link rel="stylesheet" media="screen" href="//xshl.org/images/flags.css">
     <link rel="stylesheet" media="screen" href="//xshl.org/images/inc.css">
 </head>
 <body>
+<div class="menuHead"><button class="btn_menu" id="btnMenuJS" onclick="openWindow()"><span></span></button></div>
 <div id="auth"></div>
-<button onclick="openWindow()">open</button>
 <script>
     var
         callback = Math.random().toString().replace(/[^a-z0-9]+/g, ''),
         openedWindow,
         SUUID, social,
+        useBridge = false,
+        btnMenu = document.querySelector('#btnMenuJS'),
         identityDomain = 'https://identity.kpcdn.net',
         uidJsonPath = '/identity/api/1/auth/uid.json?callback=tmp',
         uidXmlPath =  '/identity/api/1/auth/uid.xml?callback=tmp',
         profileJsonPath = '/identity/api/1/auth/profile.json?callback=tmp',
         oauthJsonPath = '/auth/oauth.json?callback=tmp',
-        bridgePath = '/identity/api/1/auth/bridge.xml';
-
+        bridgePath = '/identity/api/1/auth/bridge.xml',
+        redirectURI = '&redirect_uri=' + encodeURI(window.location.href);
+    // Не показываем кнопку гамбургера пока она не нужна
+    btnMenu.style.display = "none";
     // Загружаем SUUID обычным способом из домена идентити
     fetch(identityDomain + uidJsonPath + callback, {credentials: 'include'})
         .then(function (response) {
@@ -46,7 +50,7 @@
             // 1. Не аутентифицирован удачная для нас
             // 2. В дело вмешалось Intelligent Tracking Prevention
             // Запрашиваем список доступных OAuth провайдеров
-            fetch(identityDomain + oauthJsonPath + callback, {credentials: 'include'})
+            fetch(identityDomain + oauthJsonPath + callback + redirectURI, {credentials: 'include'})
                 .then(function (response) {
                     return response.json()
                 })
@@ -61,6 +65,8 @@
                         viewSocial(social)
                     } else {
                         // Генерал! Наши карты – дерьмо.
+                        useBridge = true;
+                        btnMenu.style.display = "block";
                         postRobot.bridge.openBridge(identityDomain + bridgePath, identityDomain);
                         postRobot.on('tmp' + callback, function(event) {
                             openedWindow.close();
@@ -73,6 +79,7 @@
                             } else {
                                 viewSocial(social)
                             }
+                            btnMenu.style.display = "none";
                             return {
                                 message: event.data.message
                             }
@@ -84,7 +91,9 @@
     }
 
     function openWindow() {
-        openedWindow = window.open(identityDomain + uidXmlPath + callback, callback);
+        if (useBridge) {
+            openedWindow = window.open(identityDomain + uidXmlPath + callback, callback);
+        }
     }
 
     function loadProfile(url) {

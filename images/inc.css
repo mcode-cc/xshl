@@ -94,3 +94,55 @@ span.flag {
 .authorizeBtn .buttons .ok { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/ok-enter.svg") no-repeat 0 0; background-size: contain; }
 .authorizeBtn .buttons .tw { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/tw-enter.svg") no-repeat 0 0; background-size: contain; }
 .authorizeBtn .buttons .vk { background: transparent url("//s1.stc.all.kpcdn.net/img/icons/enter/vk-enter.svg") no-repeat 0 0; background-size: contain; }
+
+.menuHead .btn_menu {
+	color: #40454c;
+	font-family: "OpenSans", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 20px;
+	width: 60px;
+	height: 60px;
+	border: none;
+	background-color: #0083cd;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	float: left;
+	z-index: 45;
+	overflow: hidden;
+}
+
+.menuHead .btn_menu:hover { overflow: visible; }
+
+.menuHead .btn_menu span, .menuHead .btn_menu span:before, .menuHead .btn_menu span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 2px;
+	width: 20px;
+	background: white;
+	position: absolute;
+	display: block;
+	content: '';
+}
+
+.menuHead .btn_menu span {
+	right: 20px;
+	top: 50%;
+	margin-top: -1px;
+}
+
+.btn_menu span:after { bottom: -8px; }
+
+.menuHead .btn_menu:after {
+	content: "Меню сайта";
+	opacity: 0;
+	margin-left: 80px;
+	line-height: 60px;
+	display: block;
+	width: 120px;
+	text-align: left;
+
+}
+
+.btn_menu span:before { top: -8px; }
