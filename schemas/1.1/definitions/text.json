@@ -47,11 +47,7 @@
         },
         "stats": {
             "type": "object",
-            "required": [
-                "noun",
-                "text",
-                "words"
-            ],
+            "required": ["noun", "text", "words"],
             "properties": {
                 "noun": {
                     "type": "integer",

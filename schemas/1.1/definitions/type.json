@@ -1,0 +1,7 @@
+{
+    "id": "https://www.w3.org/TR/json-ld11/#typed-values",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Typed Values",
+    "description": "A value with an associated type, also known as a typed value, is indicated by associating a value with an IRI which indicates the value's type.",
+    "type": "string"
+}

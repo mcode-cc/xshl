@@ -6,9 +6,25 @@
     "required": ["base", "entity"],
     "additionalProperties": false,
     "properties": {
-        "spot": {"type": "string"},
-        "base": {"type": "string"},
+        "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
+        "spot": {
+            "id": "http://xshl.org/fields/schema/spot",
+            "title": "Spot",
+            "description": "See, notice, or recognize (someone or something).",
+            "type": "string"
+        },
+        "base": {
+            "id": "http://xshl.org/fields/schema/base",
+            "title": "Base",
+            "description": "He headed back to base",
+            "type": "string"
+        },
         "entity": {
+            "id": "http://xshl.org/fields/schema/entity",
+            "title": "Entity",
+            "description": "Entity class, a thing of interest within an entity–relationship model or diagram",
             "oneOf": [
                 {"type": "number"},
                 {"type": "string"},

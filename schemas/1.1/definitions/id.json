@@ -1,0 +1,8 @@
+{
+    "id": "https://www.w3.org/TR/json-ld11/#node-identifiers",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Node Identifiers",
+    "description": "IRIs are a fundamental concept of Linked Data, for nodes to be truly linked, dereferencing the identifier should result in a representation of that node.",
+    "type": "string",
+    "format": "uri"
+}
