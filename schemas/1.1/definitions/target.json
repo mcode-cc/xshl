@@ -1,0 +1,28 @@
+{
+    "id": "https://www.xshl.org/schemas/1.1/definitions/target.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "A representation objects of target",
+    "type": "object",
+    "required": ["base", "entity"],
+    "additionalProperties": false,
+    "properties": {
+        "spot": {"type": "string"},
+        "base": {"type": "string"},
+        "entity": {
+            "oneOf": [
+                {"type": "number"},
+                {"type": "string"},
+                {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {"type": "number"}
+                },
+                {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {"type": "string"}
+                }
+            ]
+        }
+    }
+}

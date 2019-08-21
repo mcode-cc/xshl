@@ -24,13 +24,13 @@
                 {
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.xshl.org/schemas/2/content/def/text.json"
+                        "$ref": "https://www.xshl.org/schemas/1.1/content/def/text.json"
                     },
                     "minItems": 2,
                     "uniqueItems": true
                 },
                 {
-                    "$ref": "https://www.xshl.org/schemas/2/content/def/text.json"
+                    "$ref": "https://www.xshl.org/schemas/1.1/content/def/text.json"
                 }
             ]
         }

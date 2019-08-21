@@ -1,0 +1,14 @@
+{
+    "meta": [
+        {
+            "spot": "md",
+            "base": "article",
+            "entity": 4081356
+        },
+        {
+            "spot": "ru",
+            "base": "articles",
+            "entity": [4081019, 4081302]
+        }
+    ]
+}
