@@ -12,31 +12,13 @@
         "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
         "@value": {"type": "string"},
         "@language": {"type": "string"},
+        "@graph": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/entities.json"},
         "keywords": {
             "type": "array",
             "minItems": 1,
             "items": {"type": "string"},
             "uniqueItems": true
         },
-        "@graph": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/entities.json"},
-        "stats": {
-            "type": "object",
-            "required": ["noun", "text", "words"],
-            "properties": {
-                "noun": {
-                    "type": "integer",
-                    "minimum": 0
-                },
-                "text": {
-                    "type": "integer",
-                    "minimum": 0
-                },
-                "words": {
-                    "type": "integer",
-                    "minimum": 0
-                }
-            },
-            "additionalProperties": false
-        }
+        "extra": {"type": "object"}
     }
 }
