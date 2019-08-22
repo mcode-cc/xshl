@@ -1,5 +1,5 @@
 {
-    "@context": "http://xshl.org/contexts/1.1/content/chunk/paragraph.jsonld",
+    "@context": "http://xshl.org/contexts/1.1/content/paragraph.json",
     "@value":"Нашли Зарину нижегородские волонтеры 22 августа поздно вечером. По данным волонтеров, в деревню ее принесли в 22.22.",
     "@language": "ru",
     "@graph":[
