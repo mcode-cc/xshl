@@ -3,5 +3,13 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Typed Values",
     "description": "A value with an associated type, also known as a typed value, is indicated by associating a value with an IRI which indicates the value's type.",
-    "type": "string"
+    "type": "string",
+    "oneOf": [
+        {"type": "string"},
+        {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string"}
+        }
+    ]
 }

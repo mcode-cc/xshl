@@ -1,0 +1,25 @@
+{
+    "id": "https://www.xshl.org/schemas/1.1/definitions/entities.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "The entities",
+    "description": "A represantion objects of entities",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "type": "object",
+        "required": ["@value", "indices"],
+        "properties": {
+            "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
+            "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
+            "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
+            "indices": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {"type": "integer", "minimum": 0}
+            },
+            "@value": {"type": "string"}
+        },
+        "additionalProperties": false
+    }
+}

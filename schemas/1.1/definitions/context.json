@@ -3,6 +3,8 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "The Context",
     "description": "When two people communicate with one another, the conversation takes place in a shared environment, typically called \"the context of the conversation\". This shared context allows the individuals to use shortcut terms, like the first name of a mutual friend, to communicate more quickly but without losing accuracy. A context in JSON-LD works in the same way. It allows two applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.",
-    "type": "string",
-    "format": "uri"
+    "oneOf": [
+        {"type": "string", "format": "uri"},
+        {"type": "object"}
+    ]
 }

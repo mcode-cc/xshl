@@ -3,22 +3,11 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A representation of text in paragraph",
     "type": "object",
-    "required": ["@context", "@type", "content"],
+    "required": ["content"],
     "properties": {
-        "@context": {
-            "id": "http://schema.org/url",
-            "title": "Context",
-            "description": "JSON LD context",
-            "type": "string",
-            "format": "uri"
-        },
-        "@type": {
-            "id": "http://schema.org/url",
-            "title": "Context",
-            "description": "JSON LD type",
-            "type": "string",
-            "format": "uri"
-        },
+        "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
         "content": {
             "oneOf": [
                 {
