@@ -1,0 +1,22 @@
+{
+    "@context": "http://xshl.org/contexts/1.1/content/chunk/paragraph.jsonld",
+    "@value":"Нашли Зарину нижегородские волонтеры 22 августа поздно вечером. По данным волонтеров, в деревню ее принесли в 22.22.",
+    "@language": "ru",
+    "@graph":[
+        {
+            "@context":"link",
+            "indices":[
+                0,
+                12
+            ],
+            "@value":"Нашли Зарину",
+            "@id":"https://www.nnov.kp.ru/daily/27015/4081579/"
+        }
+    ],
+    "keywords":["зарина", "данные", "август", "волонтёр", "деревня"],
+    "extra":{
+        "noun":6,
+        "text":116,
+        "words":21
+    }
+}
