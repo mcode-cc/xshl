@@ -12,38 +12,7 @@
     ],
     "additionalProperties": false,
     "properties": {
-        "@context": {
-            "type": "uri",
-            "enum": [
-                "person"
-            ]
-        },
-        "@type": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-        },
-        "@id": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "award": {
-            "id": "http://schema.org/award",
-            "title": "award",
-            "description": "An award won by this person or for this creative work. Supersedes awards.",
-            "type": "string"
-        },
-
+        "name": {"$ref": "https://www.xshl.org/schemas/1.1/content/share/person/name.json"},
         "description": {
             "id": "http://schema.org/description",
             "title": "description",
@@ -56,50 +25,13 @@
             "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
             "type": "string"
         },
-
-        "name": {
-            "id": "http://schema.org/name",
-            "title": "name",
-            "description": "The name of the item.",
-            "type": "string"
-        },
-        "additionalName": {
-            "id": "http://schema.org/additionalName",
-            "title": "additionalName",
-            "description": "An additional name for a Person, can be used for a middle name.",
-            "type": "string"
-        },
-        "familyName": {
-            "id": "http://schema.org/familyName",
-            "title": "familyName",
-            "description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
-            "type": "string"
-        },
-        "givenName": {
-            "id": "http://schema.org/givenName",
-            "title": "givenName",
-            "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
-            "type": "string"
-        },
         "gender": {
             "id": "http://schema.org/gender",
             "title": "gender",
             "description": "Gender of the person.",
-            "type": "string"
+            "type": "string",
+            "enum": ["Female", "Male"]
         },
-        "honorificPrefix": {
-            "id": "http://schema.org/honorificPrefix",
-            "title": "honorificPrefix",
-            "description": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
-            "type": "string"
-        },
-        "honorificSuffix": {
-            "id": "http://schema.org/honorificSuffix",
-            "title": "honorificSuffix",
-            "description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
-            "type": "string"
-        },
-
         "address": {
             "id": "http://schema.org/address",
             "title": "address",
