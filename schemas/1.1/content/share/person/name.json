@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/share/person/name.json",
+    "id": "https://www.xshl.org/schemas/1.1/content/share/person/name.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person name",
     "name": "Name",
