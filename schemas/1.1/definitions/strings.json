@@ -1,0 +1,17 @@
+{
+    "id": "https://www.xshl.org/schemas/1.1/definitions/strings.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "The Strings",
+    "description": "String or array of strings.",
+    "oneOf": [
+        {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 2,
+            "uniqueItems": true
+        },
+        {"type": "string"}
+    ]
+}
