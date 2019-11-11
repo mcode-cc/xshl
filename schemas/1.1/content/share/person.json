@@ -10,6 +10,7 @@
     ],
     "additionalProperties": false,
     "properties": {
+        "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
         "name": {"$ref": "https://www.xshl.org/schemas/1.1/content/share/person/name.json"},
         "gender": {
             "id": "http://schema.org/gender",
