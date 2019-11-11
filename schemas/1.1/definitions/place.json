@@ -1,0 +1,28 @@
+{
+    "id": "https://www.xshl.org/schemas/1.1/definitions/place.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Place",
+    "description": "Area with definite or indefinite boundaries or a portion of space which has a name in an area.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "country": {
+            "id": "http://xshl.org/fields/schema/country",
+            "title": "Country",
+            "description": "A country is a region that is identified as a distinct entity in political geography.",
+            "type": "string"
+        },
+        "region": {
+            "id": "http://xshl.org/fields/schema/region",
+            "title": "Region",
+            "description": "An administrative division, unit, entity, area or region, also referred to as a subnational entity, constituent unit, or country subdivision, is a portion of a country or other region delineated for the purpose of administration.",
+            "type": "string"
+        },
+        "locality": {
+            "id": "http://xshl.org/fields/schema/locality",
+            "title": "Locality",
+            "description": "Locality a city, town, village, or other agglomeration of buildings where people live and work.",
+            "type": "string"
+        }
+    }
+}

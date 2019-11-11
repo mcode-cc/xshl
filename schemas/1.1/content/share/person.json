@@ -6,25 +6,11 @@
     "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
     "required": [
-        "@context",
-        "@type",
         "name"
     ],
     "additionalProperties": false,
     "properties": {
         "name": {"$ref": "https://www.xshl.org/schemas/1.1/content/share/person/name.json"},
-        "description": {
-            "id": "http://schema.org/description",
-            "title": "description",
-            "description": "A short description of the item.",
-            "type": "string"
-        },
-        "disambiguatingDescription": {
-            "id": "http://schema.org/disambiguatingDescription",
-            "title": "Disambiguating Description",
-            "description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-            "type": "string"
-        },
         "gender": {
             "id": "http://schema.org/gender",
             "title": "gender",
@@ -32,64 +18,9 @@
             "type": "string",
             "enum": ["Female", "Male"]
         },
-        "address": {
-            "id": "http://schema.org/address",
-            "title": "address",
-            "description": "Physical address of the item.",
-            "type": "string"
-        },
-        "homepage": {
-            "title": "www",
-            "description": "Homepage address.",
-            "type": "string"
-        },
-        "email": {
-            "id": "http://schema.org/email",
-            "title": "email",
-            "description": "Email address.",
-            "type": "string"
-        },
-        "duns": {
-            "id": "http://schema.org/duns",
-            "title": "duns",
-            "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
-            "type": "string"
-        },
-        "jobTitle": {
-            "id": "http://schema.org/jobTitle",
-            "title": "jobTitle",
-            "description": "The job title of the person (for example, Financial Manager).",
-            "type": "string"
-        },
-        "twitter": {
-            "type": "string"
-        },
-        "telegram": {
-            "type": "string"
-        },
-        "scale": {
-            "type": "string"
-        },
-        "issue": {
-            "type": "string"
-        },
-
-        "additionalType": {
-            "id": "http://schema.org/additionalType",
-            "title": "additionalType",
-            "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-            "type": "string",
-            "format": "uri"
-        },
-        "url": {
-            "id": "http://schema.org/url",
-            "title": "url",
-            "description": "URL of the item.",
-            "type": "string",
-            "format": "uri"
-        },
-        "image": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"
-        }
+        "nationality": {"type": "string"},
+        "birth": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"},
+        "death": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"},
+        "additional": {}
     }
 }
