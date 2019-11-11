@@ -15,22 +15,22 @@
                     "additionalProperties": false,
                     "properties": {
                         "ru": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "en": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "md": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "by": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "kg": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "kz": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         }
                     }
                 },
@@ -44,7 +44,7 @@
                             "enum": ["ru", "en", "md", "by", "kg", "kz"]
                         },
                         "@value": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/content/definitions/strings.json"
+                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
                         }
                     }
                 }
