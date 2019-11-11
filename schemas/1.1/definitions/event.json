@@ -4,7 +4,7 @@
     "title": "Event",
     "description": "Event a thing that happens, especially one of importance.",
     "type": "object",
-    "required": ["date", "place"],
+    "required": ["date"],
     "additionalProperties": false,
     "definitions": {
         "language": {
