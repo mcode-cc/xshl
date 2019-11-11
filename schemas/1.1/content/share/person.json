@@ -17,7 +17,7 @@
             "title": "gender",
             "description": "Gender of the person.",
             "type": "string",
-            "enum": ["Female", "Male"]
+            "enum": ["female", "male"]
         },
         "nationality": {"type": "string"},
         "birth": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"},
