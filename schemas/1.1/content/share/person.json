@@ -20,7 +20,6 @@
         },
         "nationality": {"type": "string"},
         "birth": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"},
-        "death": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"},
-        "additional": {}
+        "death": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"}
     }
 }

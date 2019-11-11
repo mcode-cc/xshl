@@ -56,27 +56,5 @@
                 "@value": "Saint Petersburg, Russian Empire"
             }
         }
-    },
-    "additional": {
-        "en": [
-            {
-                "@type": "paragraph",
-                "@value": "Mikhail Saltykov was born on 27 January 1826 in the village of Spas-Ugol (modern-day Taldomsky District of the Moscow Oblast of Russia) as one of the eight children (five brothers and three sisters) in the large Russian noble family of Yevgraf Vasilievich Saltykov (1776—1851) and Olga Mikhaylovna Saltykova (née Zabelina) (1801—1874). His father belonged to an ancient Saltykov noble house that originated as one of the branches of the Morozov boyar family.[1] According to the Velvet Book, it was founded by Mikhail Ignatievich Morozov nicknamed Saltyk (from the Old Church Slavonic word \"saltyk\" meaning \"one's own way/taste\"[2]), the son of Ignaty Mikhailovich Morozov and a great-grandson of the founder of the dynasty Ivan Semyonovich Moroz who lived during the 14-15th centuries.[3] The Saltykov family also shared the Polish Sołtyk coat of arms.[4] It gave birth to many important political figures throughout history, including the tsaritsa of Russia Praskovia Saltykova and her daughter, the Empress of Russia Anna Ioannovna."
-            },
-            {
-                "@type": "paragraph",
-                "@value": "Saltykov's mother was an heir to a rich Moscow merchant of the 1st level guild Mikhail Petrovich Zabelin whose ancestors belonged to the so-called trading peasants[5] and who was granted hereditary nobility for his handsome donation to the army needs in 1812; his wife Marfa Ivanovna Zabelina also came from wealthy Moscow merchants.[6][7] At the time of Mikhail Saltykov's birth, Yevgraf was fifty years old, while Olga was twenty five.[8] Mikhail spent his early years on his parents' large estate in Spasskoye on the border of the Tver and Yaroslavl governorates, in the Poshekhonye region.[9]"
-            }
-        ],
-        "ru": [
-            {
-                "@type": "header",
-                "@value": "Ранние годы"
-            },
-            {
-                "@type": "paragraph",
-                "@value": "Михаил Евграфович Салтыков родился 15(27) января 1826 года в старинной дворянской семье, в имении родителей, в селе Спас-Угол Калязинского уезда Тверской губернии[3]. Был шестым ребёнком потомственного дворянина и коллежского советника Евграфа Васильевича Салтыкова (1776—1851). Мать писателя, Ольга Михайловна Забелина (1801—1874), была дочерью московского дворянина Михаила Петровича Забелина (1765—1849) и Марфы Ивановны (1770—1814). Хотя в примечании к «Пошехонской старине» Салтыков и просил не смешивать его с личностью Никанора Затрапезного, от имени которого ведётся рассказ, но полнейшее сходство многого из сообщаемого о Затрапезном с несомненными фактами жизни Михаила Салтыкова позволяет предполагать, что «Пошехонская старина» имеет отчасти автобиографический характер."
-            }
-        ]
     }
 }
