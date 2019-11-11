@@ -53,10 +53,12 @@
     },
     "properties": {
         "date": {
-            "type": "date"
+            "type": "string",
+            "format":  "date"
         },
         "time": {
-            "type": "time"
+            "type": "string",
+            "format":  "time"
         },
         "place": {
             "$ref": "#definitions/language"
