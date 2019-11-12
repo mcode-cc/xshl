@@ -1,0 +1,59 @@
+{
+    "schema": "identity",
+    "method": "event",
+    "header": {
+        "@id": "account/person/upsert",
+        "version": 1
+    },
+    "payload": {
+        "args": [
+            {
+                "name": {
+                    "given": {
+                        "ru": "Михаил",
+                        "en": "Mikhail"
+                    },
+                    "additional": {
+                        "ru": "Андреевич"
+                    },
+                    "family": {
+                        "ru": [
+                            "Салтыков",
+                            "Щедрин"
+                        ],
+                        "en": [
+                            "Saltykov",
+                            "Shchedrin"
+                        ]
+                    },
+                    "pseudonym": "Nikolai Shchedrin",
+                    "honorific": {
+                        "prefix": {
+                            "en": "Mr."
+                        },
+                        "suffix": {
+                            "en": "writer"
+                        }
+                    }
+                },
+                "gender": "male",
+                "nationality": "Russian",
+                "birth": {
+                    "date": "1826-01-27",
+                    "place": {
+                        "en": {
+                            "country": "Russian Empire",
+                            "region": "Tver Governorate",
+                            "locality": "village Spas-Ugol, Kalyazin uyezd"
+                        },
+                        "ru": {
+                            "country": "Российская империя",
+                            "region": "Тверская губерния",
+                            "locality": "село Спас-Угол, Калязинский уезд"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

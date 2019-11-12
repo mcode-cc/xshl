@@ -1,0 +1,9 @@
+{
+    "schema": "identity",
+    "method": "event",
+    "header": {
+        "@id": "account/person",
+        "version": 1
+    },
+    "payload": {}
+}
