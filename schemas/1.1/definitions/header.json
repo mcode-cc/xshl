@@ -1,0 +1,16 @@
+{
+    "id": "https://www.xshl.org/schemas/1.1/content/definitions/text.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "The Text",
+    "description": "A represantion objects of TT",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@id"],
+    "properties": {
+        "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
+        "version": {"type": "number"},
+        "schema": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"}
+    }
+}
