@@ -1,37 +1,16 @@
 {
     "id": "https://www.xshl.org/schemas/1.1/rpc/accounts/person/create.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "RPC Accounts create person",
     "description": "A represantion objects of TT",
     "type": "object",
     "additionalProperties": false,
-    "required": ["header", "payload"],
+    "required": ["args"],
     "properties": {
-        "@context": {
-            "$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"
-        },
-        "@type": {
-            "$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"
-        },
-        "@id": {
-            "$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"
-        },
-        "header": {
-            "$ref": "https://www.xshl.org/schemas/1.1/definitions/header.json"
-        },
-        "payload": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["args"],
-            "properties": {
-                "args": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "$ref": "https://www.xshl.org/schemas/1.1/content/share/person.json"
-                    }
-                }
-            }
+        "args": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"$ref": "https://www.xshl.org/schemas/1.1/content/share/person.json"}
         }
     }
 }
