@@ -1,6 +1,6 @@
 {
     "id": "https://www.xshl.org/schemas/1.1/definitions/header.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "JSON RPC Header",
     "description": "A represantion objects of TT",
     "type": "object",
@@ -8,9 +8,9 @@
     "required": ["@id"],
     "properties": {
         "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
-        "@type": {"type": "string"},
-        "@id": {"type": "string"},
-        "version": {"type": "integer"},
+        "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
+        "version": {"type": "number"},
         "schema": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"}
     }
 }
