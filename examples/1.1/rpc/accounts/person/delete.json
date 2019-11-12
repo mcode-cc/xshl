@@ -4,6 +4,5 @@
     "header": {
         "@id": "account/person/delete",
         "version": 1
-    },
-    "payload": {}
+    }
 }
