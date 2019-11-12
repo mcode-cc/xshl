@@ -1,0 +1,71 @@
+{
+    "schema": "identity",
+    "method": "event",
+    "header": {
+        "@id": "account/person/create",
+        "@type": "JSON",
+        "version": 1,
+        "schema": "https://www.xshl.org/schemas/1.1/rpc/accounts/person/create.json"
+    },
+    "payload": {
+        "args": [
+            {
+                "@context": "https://www.xshl.org/contexts/1.1/content/share/person.json",
+                "name": {
+                    "given": {
+                        "ru": "Михаил",
+                        "en": "Mikhail"
+                    },
+                    "additional": {
+                        "ru": "Евграфович"
+                    },
+                    "family": {
+                        "ru": [
+                            "Салтыков",
+                            "Щедрин"
+                        ],
+                        "en": [
+                            "Saltykov",
+                            "Shchedrin"
+                        ]
+                    },
+                    "pseudonym": "Nikolai Shchedrin",
+                    "honorific": {
+                        "prefix": {
+                            "en": "Mr."
+                        },
+                        "suffix": {
+                            "en": "writer"
+                        }
+                    }
+                },
+                "gender": "male",
+                "nationality": "Russian",
+                "birth": {
+                    "date": "1826-01-27",
+                    "place": {
+                        "en": {
+                            "country": "Russian Empire",
+                            "region": "Tver Governorate",
+                            "locality": "village Spas-Ugol, Kalyazin uyezd"
+                        },
+                        "ru": {
+                            "country": "Российская империя",
+                            "region": "Тверская губерния",
+                            "locality": "село Спас-Угол, Калязинский уезд"
+                        }
+                    }
+                },
+                "death": {
+                    "date": "1889-05-10",
+                    "place": {
+                        "ru": {
+                            "country": "Российская империя",
+                            "locality": "Санкт-Петербург"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
