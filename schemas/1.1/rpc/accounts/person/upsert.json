@@ -1,8 +1,8 @@
 {
-    "id": "https://www.xshl.org/schemas/1.1/rpc/accounts/person/create.json",
+    "id": "https://www.xshl.org/schemas/1.1/rpc/accounts/person/upsert.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "RPC: Add person to account",
-    "description": "Add personal information to user account",
+    "title": "RPC: Insert or Update person to account",
+    "description": "Create new or update existing personal information to user account",
     "type": "object",
     "additionalProperties": false,
     "required": ["args"],
