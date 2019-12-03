@@ -22,8 +22,7 @@
                 },
                 "client": {
                     "type": "string",
-                    "format": "uri",
-                    "pattern": "^urn:uuid:"
+                    "format": "uuid"
                 }
             }
         }
