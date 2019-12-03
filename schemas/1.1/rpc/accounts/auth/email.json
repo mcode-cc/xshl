@@ -21,9 +21,18 @@
                     "format": "uri"
                 },
                 "client": {
-                    "type": "string",
-                    "minLength": 24,
-                    "maxLength": 24
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "minLength": 24,
+                            "maxLength": 24
+                        },
+                        {
+                            "type": "string",
+                            "format": "uri",
+                            "pattern": "^urn:uuid:"
+                        }
+                    ]
                 }
             }
         }
