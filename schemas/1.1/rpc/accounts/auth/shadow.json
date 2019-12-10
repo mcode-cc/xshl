@@ -9,12 +9,19 @@
     "properties": {
         "kwargs": {
             "type": "object",
-            "required": ["email", "redirect", "client"],
+            "required": ["login", "password", "redirect", "client"],
             "additionalProperties": false,
             "properties": {
-                "email": {
+                "login": {
                     "type": "string",
                     "format": "idn-email"
+                },
+                "password": {
+                    "type": "string",
+                    "minLength": 8,
+                    "format": "password",
+                    "title": "Password",
+                    "description": "Nueva contraseña."
                 },
                 "redirect": {
                     "type": "string",
