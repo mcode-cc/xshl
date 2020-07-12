@@ -13,8 +13,7 @@
             "type": "object",
             "required": [
                 "class_id",
-                "entity_id",
-                "key"
+                "entity_id"
             ],
             "additionalProperties": false,
             "properties": {
@@ -22,9 +21,6 @@
                     "type": "string"
                 },
                 "entity_id": {
-                    "type": "string"
-                },
-                "key": {
                     "type": "string"
                 }
             }
