@@ -10,7 +10,14 @@
         "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
         "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
         "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
-        "version": {"type": "number"},
+        "version": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+        },
         "schema": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"}
     }
 }
