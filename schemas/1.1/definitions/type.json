@@ -1,7 +1,8 @@
 {
-    "id": "https://www.w3.org/TR/json-ld11/#typed-values",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Typed Values",
+    "$id": "https://www.xshl.org/schemas/1.1/content/definitions/type.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "typed-values",
+    "title": "Typed Values: https://www.w3.org/TR/json-ld11/#typed-values",
     "description": "A value with an associated type, also known as a typed value, is indicated by associating a value with an IRI which indicates the value's type.",
     "type": "string",
     "oneOf": [
