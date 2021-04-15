@@ -48,12 +48,10 @@
     "death": {
         "date": "1889-05-10",
         "place": {
-            "ru": {
-                "country": "Российская империя",
-                "locality": "Санкт-Петербург"
-            },
-            "en": {
-                "@value": "Saint Petersburg, Russian Empire"
+            "@language": "en",
+            "@value": {
+                "country": "Russian Empire",
+                "locality": "Saint Petersburg"
             }
         }
     }

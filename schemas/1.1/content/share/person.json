@@ -1,8 +1,9 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/share/person.json",
+    "$id": "https://www.xshl.org/schemas/1.1/content/share/person.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person",
-    "name": "Person",
+    "name": "xshl-person",
+    "version": "1.0.0",
     "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
     "required": [

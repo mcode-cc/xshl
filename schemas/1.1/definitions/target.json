@@ -1,6 +1,8 @@
 {
-    "id": "https://www.xshl.org/schemas/1.1/definitions/target.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://www.xshl.org/schemas/1.1/definitions/target.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "target",
+    "version": "1.0.0",
     "description": "A representation objects of target",
     "type": "object",
     "required": ["base", "entity"],
@@ -10,19 +12,19 @@
         "@type": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/type.json"},
         "@id": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/id.json"},
         "spot": {
-            "id": "http://xshl.org/fields/schema/spot",
+            "id": "https://xshl.org/fields/schema/spot",
             "title": "Spot",
             "description": "See, notice, or recognize (someone or something).",
             "type": "string"
         },
         "base": {
-            "id": "http://xshl.org/fields/schema/base",
+            "id": "https://xshl.org/fields/schema/base",
             "title": "Base",
             "description": "He headed back to base",
             "type": "string"
         },
         "entity": {
-            "id": "http://xshl.org/fields/schema/entity",
+            "id": "https://xshl.org/fields/schema/entity",
             "title": "Entity",
             "description": "Entity class, a thing of interest within an entity–relationship model or diagram",
             "oneOf": [
