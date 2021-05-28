@@ -1,6 +1,8 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/quote.json",
+    "id": "https://www.xshl.org/schemas/1.1/content/chunk/quote.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "name": "quote",
+    "version": "0.0.1",
     "description": "A represantion object of quote",
     "definitions": {
         "language": {
