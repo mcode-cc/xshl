@@ -1,0 +1,15 @@
+{
+    "@context": "https://www.xshl.org/schemas/1.1/definitions/manifest.json",
+    "version": "0.0.1",
+    "name": "test-manifest",
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "xshl-person",
+            "entity": ">=1.0.0"
+        }
+    ],
+    "permissions": [
+        "hub:roles:be:developer"
+    ]
+}
