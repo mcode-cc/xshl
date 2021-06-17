@@ -1,7 +1,9 @@
 {
-    "id": "https://www.xshl.org/schemas/2/content/chunk/text.json",
+    "id": "https://www.xshl.org/schemas/1.1/content/chunk/text.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A representation of text in paragraph",
+    "name": "xshl-text-def",
+    "version": "0.0.1",
     "type": "object",
     "required": ["content"],
     "properties": {
@@ -13,13 +15,13 @@
                 {
                     "type": "array",
                     "items": {
-                        "$ref": "https://www.xshl.org/schemas/1.1/content/def/text.json"
+                        "$ref": "https://www.xshl.org/schemas/1.1/definitions/text.json"
                     },
                     "minItems": 2,
                     "uniqueItems": true
                 },
                 {
-                    "$ref": "https://www.xshl.org/schemas/1.1/content/def/text.json"
+                    "$ref": "https://www.xshl.org/schemas/1.1/definitions/text.json"
                 }
             ]
         }
