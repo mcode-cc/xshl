@@ -1,0 +1,77 @@
+{
+    "$id": "https://www.xshl.org/schemas/1.1/content/stuff/branding.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "version": "0.0.1",
+    "name": "stuff-branding",
+    "type": "object",
+    "title": "Branding",
+    "description": "Branding settings",
+    "additionalProperties": false,
+    "required": ["enable", "target"],
+    "properties": {
+        "enable": {
+            "type": "boolean",
+            "default": false
+        },
+        "target": {
+            "type": "object",
+            "title": "Target",
+            "description": "Target for Branding",
+            "additionalProperties": false,
+            "required": ["spot"],
+            "properties": {
+                "spot": {
+                    "type": "string",
+                    "title": "Spot",
+                    "description": "Project unique identifier"
+                },
+                "base": {
+                    "type": "string",
+                    "title": "Base",
+                    "description": "Basic page groups",
+                    "enum": ["publication", "media", "digest"]
+                },
+                "entity": {
+                    "type": ["string", "number", "array"],
+                    "title": "Entity",
+                    "description": "Instance unique identifier",
+                    "oneOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                                "type": ["string", "number"]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "beginning": {
+            "type": "string",
+            "format": "datetime",
+            "title": "Beginning",
+            "description": "Beginning date"
+        },
+        "ending": {
+            "type": "string",
+            "format": "datetime",
+            "title": "Beginning",
+            "description": "Beginning date"
+        },
+        "description": {
+            "title": "Description",
+            "description": "Description for Branding",
+            "$ref": "https://www.xshl.org/schemas/1.1/definitions/text.json"
+        },
+        "extra": {
+            "type": "object"
+        }
+    }
+}
