@@ -1,6 +1,8 @@
 {
     "$id": "https://www.xshl.org/schemas/kp/region-quote.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "kp-menu-region",
+    "version": "0.0.1",
     "type": "object",
     "title": "Region Quote",
     "required": [
@@ -24,7 +26,10 @@
         },
         "@type": {
             "type": "string",
-            "enum": ["region", "country"]
+            "enum": [
+                "region",
+                "country"
+            ]
         },
         "url": {
             "type": "string"

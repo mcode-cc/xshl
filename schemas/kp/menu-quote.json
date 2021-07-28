@@ -1,6 +1,8 @@
 {
     "$id": "https://www.xshl.org/schemas/kp/menu-quote.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "kp-menu-quote",
+    "version": "0.0.1",
     "type": "object",
     "title": "Menu Quote",
     "examples": [
