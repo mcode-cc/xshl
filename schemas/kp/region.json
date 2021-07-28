@@ -1,0 +1,128 @@
+{
+    "$id": "https://www.xshl.org/schemas/kp/region-quote.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Region Quote",
+    "required": [
+        "@context",
+        "@id",
+        "@type",
+        "url",
+        "domain",
+        "site_name",
+        "meta",
+        "ru",
+        "radio"
+    ],
+    "properties": {
+        "@context": {
+            "type": "string",
+            "const": "quote"
+        },
+        "@id": {
+            "type": "integer"
+        },
+        "@type": {
+            "type": "string",
+            "enum": ["region", "country"]
+        },
+        "url": {
+            "type": "string"
+        },
+        "domain": {
+            "type": "string"
+        },
+        "site_name": {
+            "type": "string"
+        },
+        "meta": {
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "title": "Meta radio",
+                        "description": "Указывает есть ли у объекта радио?",
+                        "required": [
+                            "name",
+                            "value"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "const": "radio"
+                            },
+                            "value": {
+                                "type": "boolean"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    {
+                        "type": "object",
+                        "title": "Meta advert",
+                        "description": "Ссылка на страницу рекламы?",
+                        "required": [
+                            "name",
+                            "value"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "const": "advert"
+                            },
+                            "value": {
+                                "type": "boolean"
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                ]
+            }
+        },
+        "ru": {
+            "type": "object",
+            "required": [
+                "title",
+                "description"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "radio": {
+            "type": "object",
+            "examples": [
+                {
+                    "url": [
+                        "https://kpradio.hostingradio.ru:8003/128",
+                        "https://kpradio.hostingradio.ru:8003/64",
+                        "https://kpradio.hostingradio.ru:8003/32"
+                    ]
+                }
+            ],
+            "required": [
+                "url"
+            ],
+            "properties": {
+                "url": {
+                    "$id": "#/properties/radio/properties/url",
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

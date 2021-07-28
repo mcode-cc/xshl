@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://www.xshl.org/schemas/kp/menu-quote.json",
+    "type": "object",
+    "title": "Menu Quote",
+    "examples": [
+        {
+            "@context": "quote",
+            "@id": "1643",
+            "@type": "nav",
+            "url": "https://www.msk.kp.ru/daily/theme/85/",
+            "site_name": "Жара в Москве",
+            "menu_type": "kp"
+        }
+    ],
+    "required": [
+        "@context",
+        "@id",
+        "@type",
+        "url",
+        "site_name",
+        "menu_type"
+    ],
+    "properties": {
+        "@context": {
+            "type": "string",
+            "const": "quote"
+        },
+        "@id": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string",
+            "const": "nav"
+        },
+        "url": {
+            "type": "string"
+        },
+        "site_name": {
+            "type": "string"
+        },
+        "menu_type": {
+            "type": "string",
+            "enum": [
+                "kp",
+                "events",
+                "sections",
+                "social",
+                "heading",
+                "special_events",
+                "services"
+            ]
+        }
+    },
+    "additionalProperties": false
+}
