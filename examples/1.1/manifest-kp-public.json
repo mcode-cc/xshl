@@ -6,7 +6,7 @@
         {
             "spot": "src",
             "base": "kp-region-quote",
-            "entity": "0.0.1"
+            "entity": ">=0.0.2"
         },
         {
             "spot": "src",
