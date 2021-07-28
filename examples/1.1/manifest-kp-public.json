@@ -1,0 +1,20 @@
+{
+    "@context": "https://www.xshl.org/schemas/1.1/definitions/manifest-kp-public.json",
+    "version": "0.0.1",
+    "name": "manifest-kp-public",
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "kp-region-quote",
+            "entity": "0.0.1"
+        },
+        {
+            "spot": "src",
+            "base": "kp-menu-quote",
+            "entity": "0.0.1"
+        }
+    ],
+    "permissions": [
+        "hub:roles:be:developer"
+    ]
+}

@@ -1,7 +1,7 @@
 {
-    "@context": "https://www.xshl.org/schemas/1.1/definitions/manifest-kp.json",
+    "@context": "https://www.xshl.org/schemas/1.1/definitions/manifest-kp-editable.json",
     "version": "0.0.1",
-    "name": "manifest-kp",
+    "name": "manifest-kp-editable",
     "requirements": [
         {
             "spot": "src",
