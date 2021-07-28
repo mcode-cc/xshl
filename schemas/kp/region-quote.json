@@ -118,7 +118,6 @@
             ],
             "properties": {
                 "url": {
-                    "$id": "#/properties/radio/properties/url",
                     "type": "array",
                     "additionalItems": false,
                     "items": {
