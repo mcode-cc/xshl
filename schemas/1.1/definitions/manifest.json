@@ -1,0 +1,45 @@
+{
+    "$id": "https://www.xshl.org/schemas/1.1/definitions/manifest.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "manifest",
+    "version": "0.0.1",
+    "title": "Manifest",
+    "description": "",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {
+        "@context": {
+            "$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "name": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string"
+        },
+        "requirements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "spot": {
+                        "type": "string"
+                    },
+                    "base": {
+                        "type": "string"
+                    },
+                    "entity": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "permissions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
