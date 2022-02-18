@@ -1,9 +1,9 @@
 {
-    "$id": "https://www.xshl.org/schemas/1.1/content/share/person/name.json",
+    "$id": "https://xshl.org/schemas/1.1/content/share/person/name.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person name",
     "name": "xshl-person-name",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A person name.",
     "type": "object",
     "additionalProperties": false,
@@ -16,22 +16,22 @@
                     "additionalProperties": false,
                     "properties": {
                         "ru": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "en": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "md": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "by": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "kg": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         },
                         "kz": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         }
                     }
                 },
@@ -45,7 +45,7 @@
                             "enum": ["ru", "en", "md", "by", "kg", "kz"]
                         },
                         "@value": {
-                            "$ref": "https://www.xshl.org/schemas/1.1/definitions/strings.json"
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/strings.json"
                         }
                     }
                 }

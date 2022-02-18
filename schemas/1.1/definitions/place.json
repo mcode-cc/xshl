@@ -1,8 +1,8 @@
 {
-    "$id": "https://www.xshl.org/schemas/1.1/definitions/place.json",
+    "$id": "https://xshl.org/schemas/1.1/definitions/place.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "name": "place",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Place",
     "description": "Area with definite or indefinite boundaries or a portion of space which has a name in an area.",
     "type": "object",

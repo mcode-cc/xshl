@@ -1,9 +1,9 @@
 {
-    "$id": "https://www.xshl.org/schemas/1.1/content/share/person.json",
+    "$id": "https://xshl.org/schemas/1.1/content/share/person.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person",
     "name": "xshl-person",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
     "required": [
@@ -11,8 +11,8 @@
     ],
     "additionalProperties": false,
     "properties": {
-        "@context": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/context.json"},
-        "name": {"$ref": "https://www.xshl.org/schemas/1.1/content/share/person/name.json"},
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "name": {"$ref": "https://xshl.org/schemas/1.1/content/share/person/name.json"},
         "gender": {
             "id": "http://schema.org/gender",
             "title": "gender",
@@ -21,7 +21,7 @@
             "enum": ["female", "male"]
         },
         "nationality": {"type": "string"},
-        "birth": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"},
-        "death": {"$ref": "https://www.xshl.org/schemas/1.1/definitions/event.json"}
+        "birth": {"$ref": "https://xshl.org/schemas/1.1/definitions/event.json"},
+        "death": {"$ref": "https://xshl.org/schemas/1.1/definitions/event.json"}
     }
 }
