@@ -1,6 +1,6 @@
 {
     "id": "https://xshl.org/schemas/1/content/share/person.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person",
     "name": "person",
     "version": "0.0.1",
