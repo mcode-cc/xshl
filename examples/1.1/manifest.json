@@ -1,7 +1,7 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "version": "0.0.1",
-    "name": "test-manifest",
+    "name": "test-manifest1",
     "requirements": [
         {
             "spot": "src",
