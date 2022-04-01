@@ -1,6 +1,6 @@
 {
     "id": "https://xshl.org/schemas/1/content/chunk/header.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "A representation of text in header",
     "type": "object",
     "name": "header",
