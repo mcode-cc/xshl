@@ -1,6 +1,6 @@
 {
     "id": "https://xshl.org/schemas/1/content/section/cope.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "name": "cope",
     "version": "0.0.1",
     "description": "A represantion object of section",
