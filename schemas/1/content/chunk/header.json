@@ -4,10 +4,11 @@
     "description": "A representation of text in header",
     "type": "object",
     "name": "header",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "required": ["@context", "level", "ru"],
     "properties": {
         "@context": {"type": "string"},
+        "meta": {"$ref":  "https://xshl.org/schemas/1/content/def/meta.json"},
         "level": {"type": "integer", "minimum": 0, "maximum": 9},
         "ru": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
         "by": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
