@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/def/locale.json",
+    "id": "https://xshl.org/schemas/1/content/def/locale.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of locale",
     "type": "object",

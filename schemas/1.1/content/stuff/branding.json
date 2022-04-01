@@ -1,5 +1,5 @@
 {
-    "$id": "https://www.xshl.org/schemas/1.1/content/stuff/branding.json",
+    "$id": "https://xshl.org/schemas/1.1/content/stuff/branding.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "version": "0.0.1",
     "name": "stuff-branding",
@@ -68,7 +68,7 @@
         "description": {
             "title": "Description",
             "description": "Description for Branding",
-            "$ref": "https://www.xshl.org/schemas/1.1/definitions/text.json"
+            "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
         },
         "extra": {
             "type": "object"

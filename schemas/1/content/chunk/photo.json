@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/photo.json",
+    "id": "https://xshl.org/schemas/1/content/chunk/photo.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of photo",
     "definitions": {
@@ -8,8 +8,8 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+                "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
             }
         }
     },
@@ -57,11 +57,11 @@
         },
         "author": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/share/person.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -70,11 +70,11 @@
         },
         "person": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/share/person.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -87,7 +87,7 @@
         "md": { "$ref": "#definitions/language"},
         "kg": { "$ref": "#definitions/language"},
         "meta": {
-            "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
+            "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
         }
     }
 }

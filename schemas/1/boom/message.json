@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/boom/message.json",
+    "id": "https://xshl.org/schemas/1/boom/message.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Schema for an boom message",
     "type": "object",

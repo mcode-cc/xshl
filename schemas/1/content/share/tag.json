@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/share/tag.json",
+    "id": "https://xshl.org/schemas/1/content/share/tag.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion object of tag",
     "type": "object",
@@ -11,8 +11,8 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
+                "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
                 "name": {"type": "string"}
             }
         }

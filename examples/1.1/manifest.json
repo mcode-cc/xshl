@@ -1,5 +1,5 @@
 {
-    "@context": "https://www.xshl.org/schemas/1.1/definitions/manifest.json",
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "version": "0.0.1",
     "name": "test-manifest",
     "requirements": [

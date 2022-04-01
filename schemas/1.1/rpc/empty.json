@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1.1/rpc/empty.json",
+    "id": "https://xshl.org/schemas/1.1/rpc/empty.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "RPC: Pass",
     "description": "Method call with any parameters",

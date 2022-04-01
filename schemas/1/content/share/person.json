@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/share/person.json",
+    "id": "https://xshl.org/schemas/1/content/share/person.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Person",
     "name": "Person",
@@ -170,7 +170,7 @@
             "format": "uri"
         },
         "image": {
-            "$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"
+            "$ref": "https://xshl.org/schemas/1/content/chunk/photo.json"
         }
     }
 }

@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/interactive/mistake",
+    "id": "https://xshl.org/schemas/1/interactive/mistake",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Schema for an interactive mistake",
     "type": "object",

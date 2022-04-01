@@ -1,5 +1,5 @@
 {
-    "@context": "https://www.xshl.org/contexts/1.1/content/share/person.json",
+    "@context": "https://xshl.org/contexts/1.1/content/share/person.json",
     "name": {
         "given": {
             "ru": "Михаил",

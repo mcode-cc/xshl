@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/def/meta.json",
+    "id": "https://xshl.org/schemas/1/content/def/meta.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of meta",
     "type": "array",

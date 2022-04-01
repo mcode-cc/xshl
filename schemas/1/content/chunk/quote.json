@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/content/chunk/quote.json",
+    "id": "https://xshl.org/schemas/1/content/chunk/quote.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion object of quote",
     "definitions": {
@@ -8,8 +8,8 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "title": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://www.xshl.org/schemas/1/content/def/locale.json"}
+                "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
+                "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
             }
         }
     },
@@ -62,11 +62,11 @@
         },
         "author": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/share/person.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -75,11 +75,11 @@
         },
         "person": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/share/person.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/share/person.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -88,11 +88,11 @@
         },
         "image": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/chunk/photo.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/chunk/photo.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -101,11 +101,11 @@
         },
         "video": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -114,11 +114,11 @@
         },
         "audio": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -127,11 +127,11 @@
         },
         "animation": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/media.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -140,11 +140,11 @@
         },
         "photo": {
             "anyOf": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"},
+                {"$ref": "https://xshl.org/schemas/1/content/chunk/photo.json"},
                 {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://www.xshl.org/schemas/1/content/chunk/photo.json"}
+                        {"$ref": "https://xshl.org/schemas/1/content/chunk/photo.json"}
                     ],
                     "minItems": 1,
                     "uniqueItems": true
@@ -168,7 +168,7 @@
         "tags": {
             "type": "array",
             "items": [
-                {"$ref": "https://www.xshl.org/schemas/1/content/share/tag.json"}
+                {"$ref": "https://xshl.org/schemas/1/content/share/tag.json"}
             ],
             "minItems": 1,
             "uniqueItems": true
@@ -179,7 +179,7 @@
         "md": { "$ref": "#definitions/language"},
         "kg": { "$ref": "#definitions/language"},
         "meta": {
-            "$ref": "https://www.xshl.org/schemas/1/content/def/meta.json"
+            "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
         }
     }
 }

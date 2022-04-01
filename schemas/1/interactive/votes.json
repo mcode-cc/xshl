@@ -1,5 +1,5 @@
 {
-    "id": "https://www.xshl.org/schemas/1/interactive/votes.json",
+    "id": "https://xshl.org/schemas/1/interactive/votes.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Request of contest",
     "additionalProperties": false,
