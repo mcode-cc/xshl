@@ -1,6 +1,8 @@
 {
     "id": "https://xshl.org/schemas/1/content/chunk/photo.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "name": "photo",
+    "version": "0.0.1",
     "description": "A represantion objects of photo",
     "definitions": {
         "language": {

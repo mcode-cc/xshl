@@ -3,6 +3,8 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A representation of text in header",
     "type": "object",
+    "name": "header",
+    "version": "0.0.1",
     "required": ["@context", "level", "ru"],
     "properties": {
         "@context": {"type": "string"},

@@ -1,6 +1,8 @@
 {
     "id": "https://xshl.org/schemas/1/content/chunk/paragraph.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "name": "paragraph",
+    "version": "0.0.1",
     "description": "A representation of text in paragraph",
     "type": "object",
     "required": ["@context", "ru"],

@@ -2,6 +2,8 @@
     "id": "https://xshl.org/schemas/1/content/chunk/media.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "A represantion objects of multimedia",
+    "name": "media",
+    "version": "0.0.1",
     "definitions": {
         "language": {
             "id": "#definitions/language",
