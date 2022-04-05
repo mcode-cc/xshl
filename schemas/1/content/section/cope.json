@@ -6,7 +6,7 @@
     "description": "A represantion object of section",
     "type": "object",
     "additionalProperties": false,
-    "required": ["@id", "@class", "@context", "@type", "@tag"],
+    "required": ["@id", "@class", "@context", "@type"],
     "properties": {
         "@id": {
             "oneOf": [
