@@ -24,6 +24,12 @@
     "@context": {
       "type": "string"
     },
+    "@class": {
+      "type": "string"
+    },
+    "meta": {
+      "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
+    },
     "ru": {
       "$ref": "https://xshl.org/schemas/1/content/def/locale.json"
     },
