@@ -146,6 +146,10 @@
     "telegram": {
       "type": "string"
     },
+    "social": {
+      "type": "object",
+      "additionalProperties": true
+    },
     "scale": {
       "type": "string"
     },
