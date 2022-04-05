@@ -1,79 +1,104 @@
 {
-    "id": "https://xshl.org/schemas/1/content/share/tag.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "tag",
-    "version": "0.0.3",
-    "description": "A represantion object of tag",
-    "type": "object",
-    "additionalProperties": false,
-    "required": ["@id", "@class", "@context", "@type", "name"],
-    "definitions": {
-        "language": {
-            "id": "#definitions/language",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-                "name": {"type": "string"}
-            }
-        }
-    },
-    "properties": {
-        "@id": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
+  "id": "https://xshl.org/schemas/1/content/share/tag.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "tag",
+  "version": "0.0.3",
+  "description": "A represantion object of tag",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "@id",
+    "@class",
+    "@context",
+    "@type",
+    "name"
+  ],
+  "definitions": {
+    "language": {
+      "id": "#definitions/language",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "$ref": "https://xshl.org/schemas/1/content/def/locale.json"
         },
-        "@class": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "@context": {
-            "type": "string",
-            "enum": ["tag"]
-        },
-        "@type": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true
+        "description": {
+          "$ref": "https://xshl.org/schemas/1/content/def/locale.json"
         },
         "name": {
-            "type": "string"
-        },
-        "scale": {
-            "type": "string"
-        },
-        "url": {
-            "type": "string"
-        },
-        "links": {
-            "$ref": "https://xshl.org/schemas/1/content/section/cope.json"
-        },
-        "meta": {
-            "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
-        },
-        "ru": { "$ref": "#definitions/language"},
-        "en": { "$ref": "#definitions/language"},
-        "by": { "$ref": "#definitions/language"},
-        "md": { "$ref": "#definitions/language"},
-        "kg": { "$ref": "#definitions/language"}
+          "type": "string"
+        }
+      }
     }
+  },
+  "properties": {
+    "@id": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "@class": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "@context": {
+      "type": "string",
+      "enum": [
+        "tag"
+      ]
+    },
+    "@type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "scale": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "meta": {
+      "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
+    },
+    "ru": {
+      "$ref": "#definitions/language"
+    },
+    "en": {
+      "$ref": "#definitions/language"
+    },
+    "by": {
+      "$ref": "#definitions/language"
+    },
+    "md": {
+      "$ref": "#definitions/language"
+    },
+    "kg": {
+      "$ref": "#definitions/language"
+    }
+  }
 }
 
