@@ -71,6 +71,9 @@
     "name": {
       "type": "string"
     },
+    "cover": {
+      "type": "integer"
+    },
     "scale": {
       "type": "string"
     },
