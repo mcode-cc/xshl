@@ -2,7 +2,7 @@
   "id": "https://xshl.org/schemas/1/content/share/tag.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "name": "tag",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A represantion object of tag",
   "type": "object",
   "additionalProperties": false,
@@ -71,6 +71,9 @@
       "type": "string"
     },
     "cover": {
+      "type": "integer"
+    },
+    "subscribe": {
       "type": "integer"
     },
     "scale": {
