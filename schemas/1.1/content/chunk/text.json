@@ -1,10 +1,12 @@
 {
     "id": "https://xshl.org/schemas/1.1/content/chunk/text.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A representation of text in paragraph",
-    "name": "xshl-text-def",
-    "version": "0.0.1",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Text",
+    "name": "text-chunk-content-xshl",
+    "version": "1.2.3",
+    "description": "A representation of text in header, paragraph, description etc",
     "type": "object",
+    "additionalProperties": false,
     "required": ["content"],
     "properties": {
         "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
@@ -25,6 +27,5 @@
                 }
             ]
         }
-    },
-    "additionalProperties": false
+    }
 }
