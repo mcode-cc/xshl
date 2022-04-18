@@ -4,23 +4,24 @@
     "description": "A represantion objects of multimedia: audio, video, image etc",
     "type": "object",
     "additionalProperties": false,
-    "required": ["@id", "@class", "@context"],
+    "required": ["@graph", "@context", "@type"],
     "properties": {
         "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
         "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
         "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
         "@graph": {
-            "oneOf": [
+            "type": "array",
+            "items": [
+                {"$ref": "https://xshl.org/schemas/1.1/content/share/tag.json"},
                 {"$ref": "https://xshl.org/schemas/1.1/content/share/person.json"},
                 {"$ref": "https://xshl.org/schemas/1.1/definitions/audio.json"},
                 {"$ref": "https://xshl.org/schemas/1.1/definitions/video.json"},
                 {"$ref": "https://xshl.org/schemas/1.1/definitions/image.json"},
                 {"$ref": "https://xshl.org/schemas/1.1/definitions/text.json"}
-
-            ]
-        },
-        "meta": {
-            "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
+            ],
+            "minItems": 1,
+            "uniqueItems": true
         }
     }
 }

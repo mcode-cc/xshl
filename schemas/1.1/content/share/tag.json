@@ -1,70 +1,34 @@
 {
-    "id": "https://xshl.org/schemas/1/content/share/tag.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "A represantion object of tag",
+    "id": "https://xshl.org/schemas/1.1/content/share/tag.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Tag",
+    "name": "tag-share-content",
+    "version": "1.2.0",
+    "description": "A represantion object of tag.",
     "type": "object",
     "additionalProperties": false,
-    "required": ["@id", "@class", "@context", "@type", "name"],
-    "definitions": {
-        "language": {
-            "id": "#definitions/language",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-                "name": {"type": "string"}
-            }
-        }
-    },
+    "required": ["@value", "@language"],
     "properties": {
-        "@id": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+        "parent": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+        "@value": {"type": "string"},
+        "text": {
             "oneOf": [
                 {
-                    "type": "integer",
-                    "minimum": 1
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
+                    },
+                    "minItems": 2,
+                    "uniqueItems": true
                 },
                 {
-                    "type": "string"
+                    "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
                 }
             ]
-        },
-        "@class": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "@context": {
-            "type": "string",
-            "enum": ["tag"]
-        },
-        "@type": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-        },
-        "name": {
-            "type": "string"
-        },
-        "scale": {
-            "type": "string"
-        },
-        "url": {
-            "type": "string"
-        },
-        "ru": { "$ref": "#definitions/language"},
-        "en": { "$ref": "#definitions/language"},
-        "by": { "$ref": "#definitions/language"},
-        "md": { "$ref": "#definitions/language"},
-        "kg": { "$ref": "#definitions/language"}
+        }
     }
 }
