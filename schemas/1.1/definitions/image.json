@@ -1,0 +1,28 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/definitions/image.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Image",
+    "name": "image-xshl",
+    "version": "1.2.1",
+    "description": "A represantion objects of image",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@value"],
+    "properties": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "@value": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+        "mimetype": {
+            "id": "https://www.iana.org/assignments/media-types/media-types.xhtml",
+            "title": "Media Type",
+            "description": "Multipurpose Internet Mail Extensions.",
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "ratio": {"type": "number"},
+        "watermark": {"$ref": "https://xshl.org/schemas/1.1/definitions/watermark.json"},
+        "extra": {"type": "object"}
+    }
+}
