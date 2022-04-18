@@ -1,134 +1,45 @@
 {
-    "id": "https://xshl.org/schemas/1/content/section/cope.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://xshl.org/schemas/1.1/content/section/cope.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "COPE",
+    "name": "cope-section-content",
+    "version": "1.2.0",
     "description": "A represantion object of section",
     "type": "object",
     "additionalProperties": false,
-    "required": ["@id", "@class", "@context", "@type", "@tag"],
+    "required": ["@value", "target"],
     "properties": {
-        "@id": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "@class": {
-            "oneOf": [
-                {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "@context": {
-            "type": "string",
-            "enum": ["page", "cope", "digest"]
-        },
-        "@type": {
-            "type": "array",
-            "items": {"type": "string"},
-            "minItems": 1,
-            "uniqueItems": true
-        },
-        "@tag": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true
-        },
-        "author": {
-            "anyOf": [
-                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
-                {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+        "created": {"type": "string", "format": "date-time"},
+        "modified": {"type": "string", "format": "date-time"},
+        "@value": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["preview"],
+            "properties": {
+                "files": {
                     "type": "array",
-                    "items": [
-                        {"$ref": "https://xshl.org/schemas/1/content/share/person.json"}
-                    ],
+                    "items": {"$ref": "https://xshl.org/schemas/1.1/definitions/file.json"},
                     "minItems": 1,
                     "uniqueItems": true
-                }
-            ]
-        },
-        "person": {
-            "anyOf": [
-                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
-                {
+                },
+                "preview": {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://xshl.org/schemas/1/content/share/person.json"}
+                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"},
+                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"},
+                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"},
+                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"}
                     ],
                     "minItems": 1,
+                    "maxItems": 256,
                     "uniqueItems": true
                 }
-            ]
+            }
         },
-        "childs": {
-            "type": "array",
-            "items": [
-                {
-                    "anyOf": [
-                        {"$ref": "https://xshl.org/schemas/1/content/chunk/header.json"},
-                        {"$ref": "https://xshl.org/schemas/1/content/chunk/media.json"},
-                        {"$ref": "https://xshl.org/schemas/1/content/chunk/paragraph.json"},
-                        {"$ref": "https://xshl.org/schemas/1/content/chunk/photo.json"},
-                        {"$ref": "https://xshl.org/schemas/1/content/chunk/quote.json"},
-                        {"$ref": "https://xshl.org/schemas/1/content/section/cope.json"}
-                    ]
-                }
-            ],
-            "minItems": 1,
-            "uniqueItems": true
-        },
-        "url": {
-            "type": "string",
-            "format": "uriref"
-        },
-        "scale": {
-            "type": "string"
-        },
-        "issue": {
-            "type": "string"
-        },
-        "tags": {
-            "type": "array",
-            "items": [
-                {"$ref": "https://xshl.org/schemas/1/content/share/tag.json"}
-            ],
-            "minItems": 1,
-            "uniqueItems": true
-        },
-        "ru": {
-            "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "en": {
-            "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "by": {
-            "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "md": {
-            "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "kg": {
-            "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-            "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
-        },
-        "meta": {
-            "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
-        }
+        "version": {"type": "string"}
     }
 }
