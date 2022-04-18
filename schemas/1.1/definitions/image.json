@@ -4,7 +4,7 @@
     "title": "Image",
     "name": "image-xshl",
     "version": "1.2.1",
-    "description": "A represantion objects of image",
+    "description": "A representation objects of image",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value"],

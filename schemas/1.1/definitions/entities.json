@@ -4,7 +4,7 @@
     "name": "entities-xshl",
     "version": "1.2.0",
     "title": "The entities",
-    "description": "A represantion objects of entities",
+    "description": "A representation objects of entities",
     "type": "array",
     "minItems": 1,
     "items": {

@@ -1,10 +1,10 @@
 {
-    "id": "https://xshl.org/schemas/1.1/content/section/cope.json",
+    "id": "https://xshl.org/schemas/1.1/content/section/comments.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "COPE",
-    "name": "cope-section-content",
+    "title": "Comments",
+    "name": "comments-section-content",
     "version": "1.2.0",
-    "description": "A representation object of article or news channel",
+    "description": "A representation object of channel comments",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value", "target"],
@@ -20,6 +20,13 @@
             "additionalProperties": false,
             "required": ["preview"],
             "properties": {
+                "count": {
+                    "type": "object",
+                    "properties": {
+                        "top": {"type": "integer", "minimum": 1},
+                        "total": {"type": "integer", "minimum": 1}
+                    }
+                },
                 "files": {
                     "type": "array",
                     "items": {"$ref": "https://xshl.org/schemas/1.1/definitions/file.json"},
@@ -28,17 +35,13 @@
                 },
                 "preview": {
                     "type": "array",
-                    "items": [
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"},
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"},
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"},
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"}
-                    ],
+                    "items": {"type": "object"},
                     "minItems": 1,
-                    "maxItems": 256,
+                    "maxItems": 3,
                     "uniqueItems": true
                 }
             }
-        }
+        },
+        "version": {"type": "string"}
     }
 }

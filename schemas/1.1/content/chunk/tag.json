@@ -4,7 +4,7 @@
     "title": "Tag",
     "name": "tag-chunk-content",
     "version": "1.2.4",
-    "description": "A represantion object of tag.",
+    "description": "A representation object of tag.",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value", "target"],

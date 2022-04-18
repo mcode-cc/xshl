@@ -4,7 +4,7 @@
     "title": "Media",
     "name": "media-chunk-content",
     "version": "1.2.3",
-    "description": "A represantion objects of multimedia: audio, video, image etc",
+    "description": "A representation objects of multimedia: audio, video, image etc",
     "type": "object",
     "additionalProperties": false,
     "required": ["@graph", "target"],

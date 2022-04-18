@@ -4,7 +4,7 @@
     "name": "text-xshl",
     "version": "1.2.0",
     "title": "The Text",
-    "description": "A represantion objects of TT",
+    "description": "A representation objects of TT",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value"],
