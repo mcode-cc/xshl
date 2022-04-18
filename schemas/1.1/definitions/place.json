@@ -1,13 +1,18 @@
 {
     "$id": "https://xshl.org/schemas/1.1/definitions/place.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "place",
-    "version": "0.0.2",
+    "name": "place-xshl",
+    "version": "1.2.0",
     "title": "Place",
     "description": "Area with definite or indefinite boundaries or a portion of space which has a name in an area.",
     "type": "object",
+    "required": ["country", "@language"],
     "additionalProperties": false,
     "properties": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "@language": {"type": "string", "enum": ["ru", "en", "md", "by", "kg", "kz"]},
         "country": {
             "id": "https://xshl.org/fields/schema/country",
             "title": "Country",

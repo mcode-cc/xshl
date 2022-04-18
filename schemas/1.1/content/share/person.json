@@ -2,17 +2,81 @@
     "$id": "https://xshl.org/schemas/1.1/content/share/person.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person",
-    "name": "xshl-person",
-    "version": "1.0.1",
+    "name": "person-share-content",
+    "version": "1.2.0",
     "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
-    "required": [
-        "name"
-    ],
+    "required": ["name"],
     "additionalProperties": false,
     "properties": {
         "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
-        "name": {"$ref": "https://xshl.org/schemas/1.1/content/share/person/name.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "name": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/name.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://xshl.org/schemas/1.1/definitions/name.json"}
+                    ],
+                    "minItems": 2,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "image": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/image.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://xshl.org/schemas/1.1/definitions/image.json"}
+                    ],
+                    "minItems": 2,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "about": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/text.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://xshl.org/schemas/1.1/definitions/text.json"}
+                    ],
+                    "minItems": 2,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "address": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/place.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://xshl.org/schemas/1.1/definitions/place.json"}
+                    ],
+                    "minItems": 2,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "contacts": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+                {
+                    "type": "array",
+                    "items": [
+                        {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"}
+                    ],
+                    "minItems": 2,
+                    "uniqueItems": true
+                }
+            ]
+        },
         "gender": {
             "id": "http://schema.org/gender",
             "title": "gender",

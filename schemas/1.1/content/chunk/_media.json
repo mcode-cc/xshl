@@ -1,0 +1,26 @@
+{
+    "id": "https://xshl.org/schemas/1.1/content/chunk/media.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "A represantion objects of multimedia: audio, video, image etc",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@id", "@class", "@context"],
+    "properties": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "@graph": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/content/share/person.json"},
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/audio.json"},
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/video.json"},
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/image.json"},
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/text.json"}
+
+            ]
+        },
+        "meta": {
+            "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
+        }
+    }
+}
