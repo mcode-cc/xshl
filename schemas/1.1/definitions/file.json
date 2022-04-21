@@ -1,0 +1,54 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/definitions/file.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "file-xshl",
+    "version": "1.2.0",
+    "title": "The entities",
+    "description": "Publish Package File Metadata (PPMF).",
+    "type": "object",
+    "required": ["target", "version"],
+    "properties": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+        "version": {
+            "id": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html#version-ids",
+            "title": "Version",
+            "description": "S3 Versioning.",
+            "type": "string"
+        },
+        "mimetype": {
+            "id": "https://www.iana.org/assignments/media-types/media-types.xhtml",
+            "title": "Media Type",
+            "description": "Multipurpose Internet Mail Extensions.",
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "count": {
+            "title": "Counters",
+            "description": "Counters of objects in the composition of the PPMF.",
+            "type": "object",
+            "properties": {
+                "top": {"type": "integer", "minimum": 0},
+                "total": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": true
+        },
+        "created": {"type": "string", "format": "date-time"},
+        "modified": {"type": "string", "format": "date-time"},
+        "etag": {
+            "id": "https://httpwg.org/specs/rfc7232.html#header.etag",
+            "title": "eTag",
+            "description": "Identifier for a specific version of a resource.",
+            "type": "string"
+        },
+        "pid": {
+            "id": "https://datatracker.ietf.org/doc/html/rfc4122",
+            "title": "PID",
+            "description": "Public Universally unique identifier.",
+            "type": "string"
+        },
+        "size": {"type": "integer", "minimum": 1}
+    },
+    "additionalProperties": false
+}
