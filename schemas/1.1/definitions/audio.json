@@ -1,0 +1,24 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/definitions/audio.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Audio",
+    "name": "audio-xshl",
+    "version": "1.2.0",
+    "description": "A representation objects of audio",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@value"],
+    "properties": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
+        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "@value": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
+        "mimetype": {
+            "id": "https://www.iana.org/assignments/media-types/media-types.xhtml",
+            "title": "Media Type",
+            "description": "Multipurpose Internet Mail Extensions.",
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "extra": {"type": "object"}
+    }
+}
