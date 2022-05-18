@@ -1,0 +1,15 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "version": "0.0.1",
+    "name": "public-cope-manifest",
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "cope-section-content",
+            "entity": ">=1.2.0"
+        }
+    ],
+    "permissions": [
+        "hub:roles:be:developer"
+    ]
+}
