@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "COPE",
     "name": "cope-section-content",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "A representation object of article or news channel",
     "type": "object",
     "additionalProperties": false,
@@ -30,10 +30,22 @@
                 "payloads": {
                     "type": "array",
                     "items": [
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"},
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"},
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"},
-                        {"$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"}
+                        {
+                            "anyOf": [
+                                {
+                                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+                                },
+                                {
+                                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+                                },
+                                {
+                                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
+                                },
+                                {
+                                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+                                }
+                            ]
+                        }
                     ],
                     "minItems": 1,
                     "uniqueItems": true
