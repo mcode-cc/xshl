@@ -3,11 +3,11 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "COPE",
     "name": "cope-section-content",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "A representation object of article or news channel",
     "type": "object",
     "additionalProperties": false,
-    "required": ["@value", "target"],
+    "required": ["@value", "target", "version"],
     "properties": {
         "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
         "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
@@ -15,6 +15,7 @@
         "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
         "created": {"type": "string", "format": "date-time"},
         "modified": {"type": "string", "format": "date-time"},
+        "version": {"type": "string"},
         "@value": {
             "type": "object",
             "additionalProperties": false,
