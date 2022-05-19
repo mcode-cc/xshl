@@ -6,7 +6,7 @@
         {
             "spot": "src",
             "base": "cope-section-content",
-            "entity": ">=1.2.0"
+            "entity": ">=1.2.2"
         }
     ],
     "permissions": [
