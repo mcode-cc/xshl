@@ -3,28 +3,48 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Media",
     "name": "media-chunk-content",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "description": "A representation objects of multimedia: audio, video, image etc",
     "type": "object",
     "additionalProperties": false,
     "required": ["@graph", "target"],
     "properties": {
-        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
-        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
-        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
-        "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
-        "created": {"type": "string", "format": "date-time"},
-        "modified": {"type": "string", "format": "date-time"},
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "@id": { "$ref": "https://xshl.org/schemas/1.1/definitions/id.json" },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "created": { "type": "string", "format": "date-time" },
+        "modified": { "type": "string", "format": "date-time" },
         "@graph": {
             "type": "array",
-            "items": [
-                {"$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"},
-                {"$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"},
-                {"$ref": "https://xshl.org/schemas/1.1/definitions/audio.json"},
-                {"$ref": "https://xshl.org/schemas/1.1/definitions/video.json"},
-                {"$ref": "https://xshl.org/schemas/1.1/definitions/image.json"},
-                {"$ref": "https://xshl.org/schemas/1.1/definitions/text.json"}
-            ],
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+                    },
+                    {
+                        "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+                    },
+                    {
+                        "$ref": "https://xshl.org/schemas/1.1/definitions/audio.json"
+                    },
+                    {
+                        "$ref": "https://xshl.org/schemas/1.1/definitions/video.json"
+                    },
+                    {
+                        "$ref": "https://xshl.org/schemas/1.1/definitions/image.json"
+                    },
+                    {
+                        "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
+                    }
+                ]
+            },
             "minItems": 1,
             "uniqueItems": true
         }
