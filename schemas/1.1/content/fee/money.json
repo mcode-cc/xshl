@@ -1,0 +1,27 @@
+{
+  "$id": "https://xshl.org/schemas/1.1/fee/money.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Money",
+  "name": "fee-money",
+  "version": "1.0.0",
+  "description": "An amount of money in a specific currency.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["@value", "currency"],
+  "properties": {
+    "@context": {
+      "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+    },
+    "@value": {
+      "description": "The net monetary value.",
+      "example": 3456.78,
+      "type": "number"
+    },
+    "currency": {
+      "description": "The [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) for this monetary value. This is always upper case ASCII.",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    }
+  }
+}
