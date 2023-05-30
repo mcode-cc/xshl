@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Person",
     "name": "person-chunk-content",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
     "additionalProperties": false,
@@ -27,12 +27,8 @@
                 {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
                                 "$ref": "https://xshl.org/schemas/1.1/definitions/name.json"
-                            }
-                        ]
-                    },
+                            },
                     "minItems": 2,
                     "uniqueItems": true
                 }
@@ -46,12 +42,8 @@
                 {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
                                 "$ref": "https://xshl.org/schemas/1.1/definitions/image.json"
-                            }
-                        ]
-                    },
+                            },
                     "minItems": 2,
                     "uniqueItems": true
                 }
@@ -65,12 +57,8 @@
                 {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
                                 "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
-                            }
-                        ]
-                    },
+                            },
                     "minItems": 2,
                     "uniqueItems": true
                 }
@@ -84,12 +72,8 @@
                 {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
                                 "$ref": "https://xshl.org/schemas/1.1/definitions/place.json"
-                            }
-                        ]
-                    },
+                            },
                     "minItems": 2,
                     "uniqueItems": true
                 }
@@ -103,12 +87,8 @@
                 {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
-                            }
-                        ]
-                    },
+                                "$ref": "https://xshl.org/schemas/1.1/definitions/place.json"
+                            },
                     "minItems": 2,
                     "uniqueItems": true
                 }
@@ -122,12 +102,8 @@
                 {
                     "type": "array",
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
-                            }
-                        ]
-                    },
+                                "$ref": "https://xshl.org/schemas/1.1/definitions/place.json"
+                            },
                     "minItems": 2,
                     "uniqueItems": true
                 }
