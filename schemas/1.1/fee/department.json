@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Department",
     "name": "fee-department",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Fee department",
     "type": "object",
     "additionalProperties": false,
