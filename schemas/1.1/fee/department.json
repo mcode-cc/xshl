@@ -1,55 +1,43 @@
 {
-  "$id": "https://xshl.org/schemas/1.1/fee/department.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Department",
-  "name": "fee-department",
-  "version": "1.0.0",
-  "description": "Fee department",
-  "type": "object",
-  "additionalProperties": false,
-  "required": ["title", "lead"],
-  "properties": {
-    "@context": {
-      "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
-    },
-    "@type": {
-      "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
-    },
-    "title": {
-      "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
-    },
-    "description": {
-      "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
-    },
-    "lead": {
-      "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
-    },
-    "personnel": {
-      "oneOf": [
-        {
-          "$ref": "https://xshl.org/schemas/1.1/fee/employee.json"
+    "$id": "https://xshl.org/schemas/1.1/fee/department.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Department",
+    "name": "fee-department",
+    "version": "1.0.0",
+    "description": "Fee department",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["title", "lead"],
+    "properties": {
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
         },
-        {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "https://xshl.org/schemas/1.1/fee/employee.json"
-              }
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "title": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
+        },
+        "description": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
+        },
+        "lead": {
+            "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+        },
+        "personnel": {
+            "oneOf": [
+                {
+                    "$ref": "https://xshl.org/schemas/1.1/fee/employee.json"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://xshl.org/schemas/1.1/fee/employee.json"
+                    },
+                    "minItems": 2,
+                    "uniqueItems": true
+                }
             ]
-          },
-          "minItems": 2,
-          "uniqueItems": true
         }
-      ]
-    },
-    "created": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "modified": {
-      "type": "string",
-      "format": "date-time"
     }
-  }
 }
