@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Money",
   "name": "fee-money",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An amount of money in a specific currency.",
   "type": "object",
   "additionalProperties": false,
