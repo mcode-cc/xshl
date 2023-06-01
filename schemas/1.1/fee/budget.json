@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Budget",
     "name": "fee-budget",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Fee budget",
     "type": "object",
     "additionalProperties": false,
