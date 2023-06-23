@@ -1,0 +1,19 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/definitions/reference.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "reference-xshl",
+    "version": "0.0.1",
+    "title": "The Reference",
+    "description": "A representation objects of reference",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["$ref"],
+    "properties": {
+        "$ref": {
+            "oneOf": [
+                {"type": "string", "format": "uri"},
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"}
+            ]
+        }
+    }
+}
