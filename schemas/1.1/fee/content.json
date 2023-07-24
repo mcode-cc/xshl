@@ -1,0 +1,35 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/fee/content.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Content",
+    "name": "fee-content",
+    "version": "1.0.0",
+    "description": "Fee content (media or note) item and additional properties",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["content"],
+    "properties": {
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "content": {
+            "oneOf": [
+                {
+                    "$ref": "https://xshl.org/schemas/1.1/content/section/cope.json"
+                },
+                {
+                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
+                }
+            ]
+        },
+        "ignoreInCalculation": {
+            "type": "boolean"
+        },
+        "moneyAmountAdjustment": {
+            "$ref": "https://xshl.org/schemas/1.1/fee/money.json"
+        }
+    }
+}
