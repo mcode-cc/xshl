@@ -1,6 +1,6 @@
 {
     "$id": "https://xshl.org/schemas/1.1/definitions/watermark.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "watermark-xshl",
     "version": "1.2.0",
     "title": "Watermark",
