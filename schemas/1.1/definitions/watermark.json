@@ -3,8 +3,8 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "watermark-xshl",
     "version": "1.2.1",
-    "title": "Watermark",
-    "description": "A watermark is an identifying image or pattern.",
+    "title": "Watermark.",
+    "description": "A watermark is an identifying image or pattern",
     "oneOf": [
         {"type": "boolean"},
         {"type": "string"},

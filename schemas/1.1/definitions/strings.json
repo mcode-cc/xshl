@@ -3,8 +3,8 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "strings",
     "version": "1.0.2",
-    "title": "The Strings",
-    "description": "String or array of strings.",
+    "title": "The Strings.",
+    "description": "String or array of strings",
     "oneOf": [
         {
             "type": "array",
