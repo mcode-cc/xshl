@@ -1,10 +1,10 @@
 {
     "$id": "https://xshl.org/schemas/1.1/definitions/video.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Video",
+    "title": "Video.",
     "name": "video-xshl",
-    "version": "1.2.0",
-    "description": "A representation objects of video",
+    "version": "1.2.1",
+    "description": "A representation objects of video.",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value"],

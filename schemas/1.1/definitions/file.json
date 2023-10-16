@@ -2,9 +2,9 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/file.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "file-xshl",
-    "version": "1.2.0",
-    "title": "PPMF",
-    "description": "Publish Package File Metadata (PPMF).",
+    "version": "1.2.1",
+    "title": "PPMF.",
+    "description": "Publish Package File Metadata (PPMF)",
     "type": "object",
     "required": ["target", "version"],
     "properties": {

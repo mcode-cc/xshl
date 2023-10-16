@@ -1,10 +1,10 @@
 {
     "$id": "https://xshl.org/schemas/1.1/definitions/audio.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Audio",
+    "title": "Audio.",
     "name": "audio-xshl",
-    "version": "1.2.0",
-    "description": "A representation objects of audio",
+    "version": "1.2.1",
+    "description": "A representation objects of audio.",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value"],

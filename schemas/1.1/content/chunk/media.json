@@ -1,10 +1,10 @@
 {
     "id": "https://xshl.org/schemas/1.1/content/chunk/media.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Media",
+    "title": "Media.",
     "name": "media-chunk-content",
-    "version": "1.2.4",
-    "description": "A representation objects of multimedia: audio, video, image etc",
+    "version": "1.2.5",
+    "description": "A representation objects of multimedia: audio, video, image etc.",
     "type": "object",
     "additionalProperties": false,
     "required": ["@graph", "target"],
