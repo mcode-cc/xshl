@@ -2,7 +2,7 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/id.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "node-identifiers",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Node Identifiers: https://www.w3.org/TR/json-ld11/#node-identifiers",
     "description": "IRIs are a fundamental concept of Linked Data, for nodes to be truly linked, dereferencing the identifier should result in a representation of that node.",
     "type": "string",

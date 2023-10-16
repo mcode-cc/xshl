@@ -2,7 +2,7 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/strings.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "strings",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "title": "The Strings",
     "description": "String or array of strings.",
     "oneOf": [

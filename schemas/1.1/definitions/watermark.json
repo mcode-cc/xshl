@@ -2,7 +2,7 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/watermark.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "watermark-xshl",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "title": "Watermark",
     "description": "A watermark is an identifying image or pattern.",
     "oneOf": [
