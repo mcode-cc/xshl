@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Tag",
     "name": "tag-chunk-content",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "A representation object of tag.",
     "type": "object",
     "additionalProperties": false,
