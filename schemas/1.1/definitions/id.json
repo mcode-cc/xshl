@@ -4,7 +4,7 @@
     "name": "node-identifiers",
     "version": "1.0.1",
     "title": "Node Identifiers: https://www.w3.org/TR/json-ld11/#node-identifiers",
-    "description": "IRIs are a fundamental concept of Linked Data, for nodes to be truly linked, dereferencing the identifier should result in a representation of that node.",
+    "description": "IRIs are a fundamental concept of Linked Data, for nodes to be truly linked, dereferencing the identifier should result in a representation of that node",
     "type": "string",
     "format": "uri"
 }
