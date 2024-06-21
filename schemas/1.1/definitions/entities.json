@@ -1,8 +1,8 @@
 {
     "$id": "https://xshl.org/schemas/1.1/definitions/entities.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "entities-xshl",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "title": "The entities",
     "description": "A representation objects of entities",
     "type": "array",

@@ -1,6 +1,6 @@
 {
     "id": "https://xshl.org/schemas/1.1/rpc/accounts/person/update.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "RPC: Update person to account",
     "description": "Update personal information to user account",
     "type": "object",

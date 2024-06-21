@@ -1,13 +1,17 @@
 {
-    "id": "https://xshl.org/schemas/1.1/content/section/cope.json",
+    "id": "https://xshl.org/schemas/1.1/content/section/container.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "COPE.",
-    "name": "cope-section-content",
+    "title": "CONTAINER",
+    "name": "container-section-content",
     "version": "1.2.4",
-    "description": "A representation object of article or news channel.",
+    "description": "A representation object of public container",
     "type": "object",
     "additionalProperties": false,
-    "required": ["@value", "target", "version"],
+    "required": [
+        "@value",
+        "target",
+        "version"
+    ],
     "properties": {
         "@context": {
             "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
@@ -15,17 +19,29 @@
         "@type": {
             "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
         },
-        "@id": { "$ref": "https://xshl.org/schemas/1.1/definitions/id.json" },
+        "@id": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/id.json"
+        },
         "target": {
             "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
         },
-        "created": { "type": "string", "format": "date-time" },
-        "modified": { "type": "string", "format": "date-time" },
-        "version": { "type": "string" },
+        "created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "version": {
+            "type": "string"
+        },
         "@value": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["payloads"],
+            "required": [
+                "payloads"
+            ],
             "properties": {
                 "files": {
                     "type": "array",
@@ -40,16 +56,16 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
-                            },
-                            {
-                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+                                "$ref": "https://xshl.org/schemas/1.1/content/section/cope.json"
                             },
                             {
                                 "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
                             },
                             {
                                 "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+                            },
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
                             },
                             {
                                 "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
