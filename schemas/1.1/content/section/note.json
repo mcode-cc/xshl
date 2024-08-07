@@ -41,7 +41,7 @@
                     "required": ["title"],
                     "properties": {
                         "title": {
-                            "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
+                            "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
                         },
                         "description": {
                             "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
