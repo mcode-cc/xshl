@@ -50,7 +50,12 @@
                             "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
                         },
                         "author": {
-                            "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+                            "type": "array",
+                            "items": {
+                                 "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"   
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
                         }
                     }
                 },
