@@ -6,7 +6,7 @@
     "title": "PPMF.",
     "description": "Publish Package File Metadata (PPMF)",
     "type": "object",
-    "required": ["target", "version"],
+    "required": ["target"],
     "properties": {
         "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
         "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
