@@ -2,11 +2,11 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/file.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "file-xshl",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "title": "PPMF.",
     "description": "Publish Package File Metadata (PPMF)",
     "type": "object",
-    "required": ["target", "version"],
+    "required": ["target"],
     "properties": {
         "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
         "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
@@ -24,16 +24,6 @@
             "description": "Multipurpose Internet Mail Extensions.",
             "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
         },
-        "count": {
-            "title": "Counters",
-            "description": "Counters of objects in the composition of the PPMF.",
-            "type": "object",
-            "properties": {
-                "top": {"type": "integer", "minimum": 0},
-                "total": {"type": "integer", "minimum": 0}
-            },
-            "additionalProperties": true
-        },
         "created": {"type": "string", "format": "date-time"},
         "modified": {"type": "string", "format": "date-time"},
         "etag": {
@@ -42,6 +32,7 @@
             "description": "Identifier for a specific version of a resource.",
             "type": "string"
         },
+        "extra": {"type": "object"},
         "pid": {
             "id": "https://datatracker.ietf.org/doc/html/rfc4122",
             "title": "PID",
