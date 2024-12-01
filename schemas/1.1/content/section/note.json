@@ -1,0 +1,89 @@
+{
+    "id": "https://xshl.org/schemas/1.1/content/section/note.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Note",
+    "name": "note-section-content",
+    "version": "1.2.4",
+    "description": "A representation object of note",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@value", "target", "version"],
+    "properties": {
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "@id": { "$ref": "https://xshl.org/schemas/1.1/definitions/id.json" },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "created": { "type": "string", "format": "date-time" },
+        "modified": { "type": "string", "format": "date-time" },
+        "version": { "type": "string" },
+        "@value": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["preview"],
+            "properties": {
+                "files": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://xshl.org/schemas/1.1/definitions/file.json"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "preview": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["title"],
+                    "properties": {
+                        "title": {
+                            "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+                        },
+                        "description": {
+                            "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+                        },
+                        "cover": {
+                            "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
+                        },
+                        "author": {
+                            "type": "array",
+                            "items": {
+                                 "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"   
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        }
+                    }
+                },
+                "payloads": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+                            },
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+                            },
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
+                            },
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+                            },
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            }
+        }
+    }
+}
