@@ -1,0 +1,58 @@
+{
+    "id": "https://xshl.org/schemas/1.1/content/containers/quote.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Quote",
+    "name": "quote-container-content",
+    "version": "1.2.4",
+    "description": "A representation object of quote",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["title", "target"],
+    "properties": {
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "@id": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/id.json"
+        },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "title": {
+            "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+        },
+        "description": {
+            "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+        },
+        "cover": {
+            "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
+        },
+        "authors": {
+            "type": "array",
+            "items": {
+                "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    }
+}
