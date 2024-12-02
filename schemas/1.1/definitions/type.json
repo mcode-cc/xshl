@@ -4,7 +4,7 @@
     "name": "typed-values",
     "version": "0.0.2",
     "title": "Typed Values: https://www.w3.org/TR/json-ld11/#typed-values",
-    "description": "A value with an associated type, also known as a typed value, is indicated by associating a value with an IRI which indicates the value's type.",
+    "description": "A value with an associated type, also known as a typed value, is indicated by associating a value with an IRI which indicates the value's type",
     "oneOf": [
         {"type": "string"},
         {
