@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Content",
     "name": "fee-content",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Fee content (media or note) item and additional properties",
     "type": "object",
     "additionalProperties": false,
