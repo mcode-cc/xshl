@@ -3,20 +3,28 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Tag",
     "name": "tag-chunk-content",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "A representation object of tag.",
     "type": "object",
     "additionalProperties": false,
     "required": ["@value", "target"],
     "properties": {
-        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
-        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
-        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
-        "target": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
-        "parent": {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"},
-        "created": {"type": "string", "format": "date-time"},
-        "modified": {"type": "string", "format": "date-time"},
-        "@value": {"type": "string"},
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "@id": { "$ref": "https://xshl.org/schemas/1.1/definitions/id.json" },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "parent": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "created": { "type": "string", "format": "date-time" },
+        "modified": { "type": "string", "format": "date-time" },
+        "@value": { "type": "string" },
         "image": {
             "oneOf": [
                 {

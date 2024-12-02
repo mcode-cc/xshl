@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Media.",
     "name": "media-chunk-content",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "description": "A representation objects of multimedia: audio, video, image etc.",
     "type": "object",
     "additionalProperties": false,
