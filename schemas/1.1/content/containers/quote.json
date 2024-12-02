@@ -36,7 +36,7 @@
             "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
         },
         "cover": {
-            "$ref": "https://xshl.org/schemas/1.1/content/chunk/media.json"
+            "$ref": "https://xshl.org/schemas/1.1/content/containers/media.json"
         },
         "authors": {
             "type": "array",

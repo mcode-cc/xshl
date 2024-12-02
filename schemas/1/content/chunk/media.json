@@ -1,5 +1,5 @@
 {
-    "id": "https://xshl.org/schemas/1/content/chunk/media.json",
+    "id": "https://xshl.org/schemas/1/content/containers/media.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "A represantion objects of multimedia",
     "name": "media",
@@ -10,8 +10,12 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "title": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"},
-                "description": {"$ref": "https://xshl.org/schemas/1/content/def/locale.json"}
+                "title": {
+                    "$ref": "https://xshl.org/schemas/1/content/def/locale.json"
+                },
+                "description": {
+                    "$ref": "https://xshl.org/schemas/1/content/def/locale.json"
+                }
             }
         }
     },
@@ -57,15 +61,23 @@
             "type": "string",
             "format": "uriref"
         },
-        "height": {"type": "integer", "minimum": 1},
-        "width": {"type": "integer", "minimum": 1},
-        "banner": {"ref": "https://xshl.org/schemas/1/content/chunk/photo.json"},
+        "height": { "type": "integer", "minimum": 1 },
+        "width": { "type": "integer", "minimum": 1 },
+        "banner": {
+            "ref": "https://xshl.org/schemas/1/content/chunk/photo.json"
+        },
         "author": {
             "anyOf": [
-                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "$ref": "https://xshl.org/schemas/1/content/share/person.json"
+                },
                 {
                     "type": "array",
-                    "items": [{"$ref": "https://xshl.org/schemas/1/content/share/person.json"}],
+                    "items": [
+                        {
+                            "$ref": "https://xshl.org/schemas/1/content/share/person.json"
+                        }
+                    ],
                     "minItems": 1,
                     "uniqueItems": true
                 }
@@ -73,20 +85,26 @@
         },
         "person": {
             "anyOf": [
-                {"$ref": "https://xshl.org/schemas/1/content/share/person.json"},
+                {
+                    "$ref": "https://xshl.org/schemas/1/content/share/person.json"
+                },
                 {
                     "type": "array",
-                    "items": [{"$ref": "https://xshl.org/schemas/1/content/share/person.json"}],
+                    "items": [
+                        {
+                            "$ref": "https://xshl.org/schemas/1/content/share/person.json"
+                        }
+                    ],
                     "minItems": 1,
                     "uniqueItems": true
                 }
             ]
         },
-        "ru": { "$ref": "#definitions/language"},
-        "en": { "$ref": "#definitions/language"},
-        "by": { "$ref": "#definitions/language"},
-        "md": { "$ref": "#definitions/language"},
-        "kg": { "$ref": "#definitions/language"},
+        "ru": { "$ref": "#definitions/language" },
+        "en": { "$ref": "#definitions/language" },
+        "by": { "$ref": "#definitions/language" },
+        "md": { "$ref": "#definitions/language" },
+        "kg": { "$ref": "#definitions/language" },
         "meta": {
             "$ref": "https://xshl.org/schemas/1/content/def/meta.json"
         }
