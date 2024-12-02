@@ -9,9 +9,16 @@
     "additionalProperties": false,
     "required": ["content"],
     "properties": {
-        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
-        "@type": {"$ref": "https://xshl.org/schemas/1.1/definitions/type.json"},
-        "@id": {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "@id": { "$ref": "https://xshl.org/schemas/1.1/definitions/id.json" },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
         "content": {
             "oneOf": [
                 {
