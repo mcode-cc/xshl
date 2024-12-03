@@ -1,15 +1,14 @@
 {
-  "name": "manifest-fee",
-  "version": "0.0.4",
-  "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
-  "obligation": [
-    "obligation:all@validate"
-  ],
-  "requirements": [
-    {
-      "spot": "src",
-      "base": "fee-budget",
-      "entity": "1.0.2"
-    }
-  ]
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "name": "manifest-fee",
+    "version": "0.0.4",
+    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+    "obligation": ["obligation:all@validate"],
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "fee-budget",
+            "entity": "1.0.2"
+        }
+    ]
 }
