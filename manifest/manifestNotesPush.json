@@ -1,0 +1,24 @@
+{
+    "name": "manifest-notes-push",
+    "version": "0.0.4",
+    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+    "subscription": [
+        {
+            "attributes": {
+                "@value": "$public",
+                "target": "$target.#dictionary"
+            },
+            "defaults": {
+                "host": "https://core.developers.kp.house"
+            },
+            "name": "net.kpcdn.dev.cannes.push"
+        }
+    ],
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "media-chunk-content",
+            "entity": "1.2.7"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "manifest-global",
+  "version": "0.0.4",
+  "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+  "obligation": [],
+  "requirements": []
+}

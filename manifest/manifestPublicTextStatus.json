@@ -1,0 +1,12 @@
+{
+  "name": "manifest-public-text-status",
+  "version": "0.0.4",
+  "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+  "requirements": [
+    {
+      "spot": "src",
+      "base": "tag-chunk-content",
+      "entity": "1.2.6"
+    }
+  ]
+}

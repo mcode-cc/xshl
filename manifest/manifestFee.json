@@ -1,0 +1,15 @@
+{
+  "name": "manifest-fee",
+  "version": "0.0.4",
+  "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+  "obligation": [
+    "obligation:all@validate"
+  ],
+  "requirements": [
+    {
+      "spot": "src",
+      "base": "fee-budget",
+      "entity": "1.0.2"
+    }
+  ]
+}

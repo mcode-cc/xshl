@@ -1,0 +1,17 @@
+{
+    "name": "manifest-notes-operation-notify.json",
+    "version": "0.0.4",
+    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+    "obligation": [],
+    "subscription": [
+        {
+            "attributes": {
+                "@value": "$public",
+                "scope": "$scope.#dictionary",
+                "subscriber": "$target.base"
+            },
+            "name": "net.kpcdn.private.notify"
+        }
+    ],
+    "requirements": []
+}
