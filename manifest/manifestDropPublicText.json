@@ -1,0 +1,42 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "name": "manifest-drop-public-text",
+    "version": "0.0.4",
+    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+    "obligation": [],
+    "subscription": [
+        {
+            "attributes": {
+                "@value": "$target",
+                "pid": "$pid",
+                "subscriber": "$target.base"
+            },
+            "defaults": {
+                "event": "deleted"
+            },
+            "name": "net.kpcdn.private.notify"
+        },
+        {
+            "attributes": {
+                "pid": "$pid"
+            },
+            "defaults": {
+                "event": "deleted",
+                "host": "https://core.developers.kp.house/"
+            },
+            "name": "net.kpcdn.public.text"
+        }
+    ],
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "note-section-content",
+            "entity": "1.2.6"
+        },
+        {
+            "spot": "src",
+            "base": "cope-section-content",
+            "entity": "1.2.4"
+        }
+    ]
+}
