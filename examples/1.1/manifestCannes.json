@@ -3,6 +3,13 @@
   "name": "cannes",
   "version": "0.0.1",
   "obligation": [],
+  "subscription": [
+      {
+        "attributes": { "pid": "$pid" },
+        "defaults": { "host": "https://core.developers.kp.house", "indent": 4, "sub": 0 },
+        "name": "net.kpcdn.public.text"
+      }
+  ],
   "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user", "hub:roles:cannes:editor"],
   "requirements": [
     {
