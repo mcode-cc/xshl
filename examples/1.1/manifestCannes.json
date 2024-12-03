@@ -1,0 +1,19 @@
+{
+  "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+  "name": "cannes",
+  "version": "0.0.1",
+  "obligation": [],
+  "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user", "hub:roles:cannes:editor"],
+  "requirements": [
+    {
+      "spot": "src",
+      "base": "note-section-content",
+      "entity": "1.2.6"
+    },
+    {
+      "spot": "src",
+      "base": "cope-section-content",
+      "entity": "1.2.4"
+    }
+  ]
+}
