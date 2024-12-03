@@ -2,22 +2,19 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "manifest",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Manifest",
     "description": "",
     "type": "object",
     "additionalProperties": false,
-    "required": [],
+    "required": ["name", "version"],
     "properties": {
-        "@context": {
-            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
-        },
-        "name": {
-            "type": "string"
-        },
-        "version": {
-            "type": "string"
-        },
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "obligation": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "advice": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "subscription": {"type": "object"},
         "requirements": {
             "type": "array",
             "items": {
@@ -35,11 +32,6 @@
                 }
             }
         },
-        "permissions": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        }
+        "permissions": {"type": "array", "items": {"type": "string"}}
     }
 }
