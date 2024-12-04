@@ -1,0 +1,22 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "name": "manifest-private-notify",
+    "version": "0.0.4",
+    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
+    "subscription": [
+        {
+            "attributes": {
+                "@value": "$public",
+                "subscriber": "$target.base"
+            },
+            "name": "net.kpcdn.private.notify"
+        }
+    ],
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "media-chunk-content",
+            "entity": "1.2.7"
+        }
+    ]
+}
