@@ -1,8 +1,12 @@
 {
-  "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
-  "name": "manifest-global",
-  "version": "0.0.4",
-  "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
-  "obligation": [],
-  "requirements": []
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "name": "manifest-global",
+    "version": "0.0.4",
+    "permissions": [
+        "hub:roles:be:developer",
+        "hub:roles:cannes:user",
+        "hub:roles:cannes:project-admin"
+    ],
+    "obligation": [],
+    "requirements": []
 }
