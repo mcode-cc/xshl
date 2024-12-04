@@ -40,7 +40,7 @@
         {
             "spot": "src",
             "base": "cope-section-content",
-            "entity": "1.2.4"
+            "entity": "1.2.5"
         }
     ]
 }
