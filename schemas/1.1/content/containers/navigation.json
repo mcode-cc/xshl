@@ -1,0 +1,49 @@
+{
+    "id": "https://xshl.org/schemas/1.1/content/containers/schemas/1.1/content/containers/navigation.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Navigation",
+    "name": "navigation-container-content",
+    "version": "1.2.0",
+    "description": "A representation object of navigation",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["title", "target", "sites", "items", "created"],
+    "properties": {
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "created": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "title": {
+            "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
+        },
+        "sites": {
+            "type": "array",
+            "items": {
+                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    }
+}
