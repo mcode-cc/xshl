@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "COPE.",
     "name": "cope-section-content",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "A representation object of article or news channel",
     "type": "object",
     "additionalProperties": false,
@@ -39,6 +39,9 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
+                            {
+                                "$ref": "https://xshl.org/schemas/1.1/content/section/cope.json"
+                            },
                             {
                                 "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
                             },
