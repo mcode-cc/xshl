@@ -1,0 +1,22 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "name": "manifest-export-dzen",
+    "version": "0.0.4",
+    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user", "hub:roles:cannes:project-admin"],
+    "obligation": [ "VALIDATE"],
+    "advice": [
+      {
+        "@type": "/less",
+        "base": "s3",
+        "entity": "cos",
+        "spot": "upsert"
+      }
+    ],
+    "requirements": [
+        {
+            "spot": "src",
+            "base": "export-dzen",
+            "entity": "0.0.1"
+        },
+    ]
+}
