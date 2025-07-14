@@ -17,6 +17,6 @@
             "spot": "src",
             "base": "export-dzen",
             "entity": "0.0.1"
-        },
+        }
     ]
 }
