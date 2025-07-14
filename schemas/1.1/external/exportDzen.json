@@ -5,8 +5,6 @@
     "name": "export-dzen",
     "type": "array",
     "title": "Экспортный файл для дзен темы",
-    "additionalProperties": false,
-    "required": ["enable", "target"],
     "description": "Экспортный файл для Дзен",
     "minItems": 1,
     "uniqueItems": true,
