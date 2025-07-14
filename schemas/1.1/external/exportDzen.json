@@ -1,0 +1,38 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/external/exportDzen.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "version": "0.0.1",
+    "name": "export-dzen",
+    "type": "array",
+    "title": "Экспортный файл для дзен темы",
+    "additionalProperties": false,
+    "required": ["enable", "target"],
+    "description": "Экспортный файл для Дзен",
+    "minItems": 1,
+    "uniqueItems": true,
+    "items": {
+        "type": "object",
+        "properties": {
+            "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://",
+                "description": "Адрес страницы"
+            },
+            "name": {
+                "type": "string",
+                "description": "Название события или страницы"
+            },
+            "description": {
+                "type": "string",
+                "description": "Описание события или страницы"
+            },
+            "tag": {
+                "type": "string",
+                "description": "Тег или идентификатор"
+            }
+        },
+        "required": ["url", "name", "description", "tag"],
+        "additionalProperties": false
+    }
+}
