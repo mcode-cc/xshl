@@ -1,18 +1,23 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "name": "manifest-notes-push",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
-    "subscription": [
+    "advice": [
         {
-            "attributes": {
-                "@value": "$public",
-                "target": "$target.#dictionary"
+            "@context": {
+                "attributes": {
+                    "@value": "$public",
+                    "target": "$target.#dictionary"
+                },
+                "defaults": {
+                    "host": "https://core.developers.kp.house"
+                }
             },
-            "defaults": {
-                "host": "https://core.developers.kp.house"
-            },
-            "name": "net.kpcdn.dev.cannes.push"
+            "@type": "/extension",
+            "base": "boom",
+            "entity": "net.kpcdn.dev.cannes.push",
+            "spot": "send"
         }
     ],
     "requirements": [

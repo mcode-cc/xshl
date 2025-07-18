@@ -1,32 +1,31 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "name": "manifest-public-text",
-    "version": "0.0.4",
-    "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user", "hub:roles:cannes:project-admin"],
+    "version": "0.0.5",
+    "permissions": [
+        "hub:roles:be:developer",
+        "hub:roles:cannes:user",
+        "hub:roles:cannes:project-admin"
+    ],
     "obligation": ["BUILD", "VALIDATE"],
-    "subscription": [
+    "advice": [
         {
-            "attributes": {
-                "pid": "$pid"
-            },
-            "defaults": {
-                "host": "https://core.developers.kp.house",
-                "indent": 4,
-                "sub": 0
-            },
-            "name": "net.kpcdn.public.text"
+            "@type": "/less",
+            "base": "s3",
+            "entity": "cos",
+            "spot": "upsert"
         }
     ],
     "requirements": [
         {
             "spot": "src",
             "base": "note-section-content",
-            "entity": "1.2.6"
+            "entity": "1.2.7"
         },
         {
             "spot": "src",
-            "base": "cope-section-content",
-            "entity": "1.2.4"
+            "base": "navigation-container-content",
+            "entity": "1.2.0"
         }
     ]
 }

@@ -1,20 +1,15 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "name": "manifest-public-text-news",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
     "obligation": ["obligation:news@build"],
-    "subscription": [
+    "advice": [
         {
-            "attributes": {
-                "pid": "$pid"
-            },
-            "defaults": {
-                "host": "https://core.developers.kp.house",
-                "indent": 4,
-                "sub": 0
-            },
-            "name": "net.kpcdn.public.text"
+            "@type": "/less",
+            "base": "s3",
+            "entity": "cos",
+            "spot": "upsert"
         }
     ],
     "requirements": []

@@ -1,15 +1,20 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "name": "manifest-private-notify",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
-    "subscription": [
+    "advice": [
         {
-            "attributes": {
-                "@value": "$public",
-                "subscriber": "$target.base"
+            "@context": {
+                "attributes": {
+                    "@value": "$public",
+                    "subscriber": "$target.base"
+                }
             },
-            "name": "net.kpcdn.private.notify"
+            "@type": "/extension",
+            "base": "boom",
+            "entity": "net.kpcdn.private.notify",
+            "spot": "send"
         }
     ],
     "requirements": [
