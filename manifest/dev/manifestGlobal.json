@@ -1,7 +1,6 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "name": "manifest-global",
-    "description": "Global cannes manifest",
     "version": "0.0.5",
     "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
     "obligation": [],
