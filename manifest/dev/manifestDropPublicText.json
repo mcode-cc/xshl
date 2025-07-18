@@ -22,6 +22,10 @@
             "entity": "net.kpcdn.private.notify",
             "spot": "send"
         },
-        "delete:cos@s3"
+        {
+            "spot": "delete",
+            "base": "s3",
+            "entity": "cos"
+        }
     ]
 }
