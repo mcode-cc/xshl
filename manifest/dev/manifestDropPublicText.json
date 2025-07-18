@@ -4,6 +4,7 @@
     "version": "0.0.5",
     "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
     "obligation": [],
+    "requirements": [],
     "advice": [
         {
             "@context": {
