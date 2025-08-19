@@ -2,18 +2,64 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "manifest",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "title": "Manifest",
     "description": "",
     "type": "object",
     "additionalProperties": false,
     "required": ["name", "version", "permissions", "requirements"],
     "properties": {
-        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
-        "name": {"type": "string"},
-        "version": {"type": "string"},
-        "obligation": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-        "advice": {"type": "array", "items": {"type": "object"}, "uniqueItems": true},
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "obligation": {
+            "type": "array",
+            "items": {
+                "allOf": [
+                    { "type": "string" },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "spot": {
+                                "type": "string"
+                            },
+                            "base": {
+                                "type": "string"
+                            },
+                            "entity": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "uniqueItems": true
+        },
+        "advice": {
+            "type": "array",
+            "items": {
+                "allOf": [
+                    { "type": "string" },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "spot": {
+                                "type": "string"
+                            },
+                            "base": {
+                                "type": "string"
+                            },
+                            "entity": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "uniqueItems": true
+        },
         "requirements": {
             "type": "array",
             "items": {
@@ -31,6 +77,29 @@
                 }
             }
         },
-        "permissions": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}
+        "permissions": {
+            "type": "array",
+            "items": {
+                "allOf": [
+                    { "type": "string" },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "spot": {
+                                "type": "string"
+                            },
+                            "base": {
+                                "type": "string"
+                            },
+                            "entity": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
     }
 }
