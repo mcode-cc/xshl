@@ -41,19 +41,17 @@
         "requirements": {
             "type": "array",
             "items": {
-                "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
-            }
-        },
-        "permissions": {
-            "type": "array",
-            "items": {
                 "anyOf": [
                     { "type": "string" },
                     {
                         "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
                     }
                 ]
-            },
+            }
+        },
+        "permissions": {
+            "type": "array",
+            "items": { "type": "string" },
             "minItems": 1,
             "uniqueItems": true
         }
