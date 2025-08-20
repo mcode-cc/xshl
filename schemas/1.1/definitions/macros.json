@@ -1,0 +1,23 @@
+{
+    "$id": "https://xshl.org/schemas/1.1/definitions/macros.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "name": "macros",
+    "version": "0.0.1",
+    "title": "Draft/Directive macros",
+    "description": "Специализированный язык программирования, созданный для реализации бизнес-логики приложений в системе управления контентом и документами Draft.",
+    "type": "object",
+    "required": ["pipeline"],
+    "properties": {
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "pipeline": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+                    {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"}
+                ]
+            },
+            "uniqueItems": true
+        }
+    }
+}
