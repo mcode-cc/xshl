@@ -47,7 +47,7 @@
             "properties": {
                 "obligation": {"$ref": "#/$defs/pipeline"},
                 "advice": {"$ref": "#/$defs/pipeline"},
-                "requirements": {"$ref": "#/$defs/pipeline"},
+                "schemes": {"$ref": "#/$defs/pipeline"},
                 "permissions": {
                     "type": "array",
                     "items": {"type": "string"},
