@@ -1,0 +1,16 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
+    "target": "manifest0.0.1@macros",
+    "daubs": {
+        "delete": {"permissions": ["hub:roles:cannes:project-admin"]},
+        "append": {
+            "permissions": ["hub:roles:cannes:project-admin"]
+        },
+        "upsert": {
+            "permissions": ["hub:roles:cannes:project-admin"],
+            "requirements": ["src:0.0.1@macros"]
+        },
+        "build": {"permissions": ["hub:roles:cannes:project-admin"]},
+        "send": {"permissions": ["hub:roles:cannes:project-admin"]}
+    }
+}

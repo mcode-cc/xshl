@@ -2,58 +2,59 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "manifest",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "title": "Manifest",
     "description": "",
     "type": "object",
     "additionalProperties": false,
-    "required": ["name", "version", "permissions", "requirements"],
+    "required": ["target", "daubs"],
     "properties": {
-        "@context": {
-            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
+        "target": {
+            "oneOf": [
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+                {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"}
+            ]
         },
-        "name": { "type": "string" },
-        "version": { "type": "string" },
-        "obligation": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    { "type": "string" },
-                    {
-                        "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
-                    }
-                ]
-            },
-            "uniqueItems": true
-        },
-        "advice": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    { "type": "string" },
-                    {
-                        "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
-                    }
-                ]
-            },
-            "uniqueItems": true
-        },
-        "requirements": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    { "type": "string" },
-                    {
-                        "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
-                    }
-                ]
+        "daubs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["delete", "append", "upsert", "build", "send"],
+            "properties": {
+                "delete": {"$ref": "#/$defs/daubs"},
+                "append": {"$ref": "#/$defs/daubs"},
+                "upsert": {"$ref": "#/$defs/daubs"},
+                "build": {"$ref": "#/$defs/daubs"},
+                "send": {"$ref": "#/$defs/daubs"}
             }
-        },
-        "permissions": {
+        }
+    },
+    "$defs": {
+        "pipeline": {
             "type": "array",
-            "items": { "type": "string" },
-            "minItems": 1,
+            "items": {
+                "anyOf": [
+                    {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
+                    {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"}
+                ]
+            },
             "uniqueItems": true
+        },
+        "daubs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["permissions"],
+            "properties": {
+                "obligation": {"$ref": "#/$defs/pipeline"},
+                "advice": {"$ref": "#/$defs/pipeline"},
+                "requirements": {"$ref": "#/$defs/pipeline"},
+                "permissions": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            }
         }
     }
 }
