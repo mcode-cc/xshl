@@ -1,6 +1,6 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/manifest.json",
-    "target": "manifest0.0.1@macros",
+    "target": "publicspace:0.0.1@macros",
     "daubs": {
         "delete": {"permissions": ["hub:roles:cannes:project-admin"]},
         "append": {
