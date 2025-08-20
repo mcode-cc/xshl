@@ -8,7 +8,7 @@
         },
         "upsert": {
             "permissions": ["hub:roles:cannes:project-admin"],
-            "schemes": ["src:>=0.0.1@macros"]
+            "schemes": ["src:>=1.1.3@the-context","src:>=0.0.1@macros"]
         },
         "build": {"permissions": ["hub:roles:cannes:project-admin"]},
         "send": {"permissions": ["hub:roles:cannes:project-admin"]}
