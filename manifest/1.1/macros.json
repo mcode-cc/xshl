@@ -3,16 +3,18 @@
     "target": "publicspace:0.0.2@macros#https://xshl.org/manifest/1.1/macros.json",
     "daubs": {
         "delete": {
-            "permissions": ["hub:roles:cannes:project-admin"],
-            "schemes": ["src:>=1.0.1@node-identifiers"]
+            "permissions": ["hub:roles:cannes:project-admin"]
         },
         "append": {
             "permissions": ["hub:roles:cannes:project-admin"],
-            "schemes": ["src:>=1.0.1@target"]
+            "sources": ["schema:>=1.0.1@target"]
         },
         "upsert": {
             "permissions": ["hub:roles:cannes:project-admin"],
-            "schemes": ["src:>=1.1.3@the-context","src:>=0.0.1@macros"]
+            "sources": [
+                "schema:>=1.1.3@the-context",
+                "schema:>=0.0.1@macros"
+            ]
         },
         "build": {"permissions": ["hub:roles:cannes:project-admin"]},
         "send": {"permissions": ["hub:roles:cannes:project-admin"]}
