@@ -1,0 +1,28 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/macros.json",
+    "title": "Upsert macros",
+    "name": "upsert-macros",
+    "version": "0.0.1",
+    "description": "Loading file, validating received data, creating draft database record",
+    "definitions": {
+        "spot": "macros",
+        "url_schema": "https://xshl.org/schemas/1.1/definitions/macros.json"
+    },
+    "pipeline": [
+        "upsert:file@context/wget/url",
+        "upsert:_@context/empty/file/pipeline#rd:macros.body.pipeline@key",
+        "upsert:_@context/empty/file/definitions#rd:macros.body.@context@key",
+        "upsert:_@context/empty/url#rd:macros.target.@id@key",
+        "upsert:_@context/empty/spot#rd:macros.target.spot@key",
+        "upsert:_@context/empty/file/name#rd:macros.target.base@key",
+        "upsert:_@context/empty/file/version#rd:macros.target.entity@key",
+        "delete:_@context#rd:file@key",
+        "delete:_@context#rd:url@key",
+        "delete:_@context#rd:spot@key",
+        "build:result@context/empty/macros#rd:data@container",
+        "delete:_@context#rd:macros@key",
+        "upsert:schema@context/wget/url_schema",
+        "build:result@context/empty/data/@value#schema:schema@validate",
+        "upsert:result@draft#container:_@revision"
+    ]
+}

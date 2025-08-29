@@ -1,0 +1,24 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/macros.json",
+    "title": "Upsert schema",
+    "name": "upsert-schema",
+    "version": "0.0.1",
+    "description": "Loading file, validating received data, creating draft database record",
+    "definitions": {
+        "spot": "schema"
+    },
+    "pipeline": [
+        "upsert:file@context/wget/url",
+        "build:result@context/empty/file#schema:_@check",
+        "upsert:_@context/empty/file#rd:schema.body@key",
+        "upsert:_@context/empty/url#rd:schema.target.@id@key",
+        "upsert:_@context/empty/spot#rd:schema.target.spot@key",
+        "upsert:_@context/empty/file/name#rd:schema.target.base@key",
+        "upsert:_@context/empty/file/version#rd:schema.target.entity@key",
+        "delete:_@context#rd:file@key",
+        "delete:_@context#rd:url@key",
+        "delete:_@context#rd:spot@key",
+        "build:result@context/empty/schema#rd:data@container",
+        "upsert:result@draft#container:_@revision"
+    ]
+}
