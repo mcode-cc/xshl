@@ -1,0 +1,12 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/macros.json",
+    "title": "Upsert COS",
+    "name": "cos",
+    "version": "0.0.1",
+    "description": "Upload data in COS",
+    "definitions": {},
+    "pipeline": [
+        "upsert:cos@s3/less",
+        "upsert:chunk@draft/empty/cos#content:cos@scope"
+      ]
+}

@@ -1,0 +1,62 @@
+{
+    "@context": "https://xshl.org/schemas/1.1/definitions/macros.json",
+    "title": "Upsert COS",
+    "name": "upsert-ydb",
+    "version": "0.0.1",
+    "description": "Create or update nodes & edges in YDB",
+    "definitions": {},
+    "pipeline": [
+        {
+            "spot": "upsert",
+            "base": "context",
+            "entity": "_",
+            "@id": "rd:node@key",
+            "@type": "/extension",
+            "@context": {
+                "defaults": {
+                    "status": 0
+                },
+                "attributes": {
+                    "pid": "$pid",
+                    "created": "$created",
+                    "modified": "$modified"
+                }
+            }
+        },
+        "upsert:_@context/empty/cos#rd:node.@value@key",
+        {
+            "spot": "upsert",
+            "base": "context",
+            "entity": "_",
+            "@id": "rd:edges@key",
+            "@type": "/extension",
+            "@context": {
+                "defaults": {
+                    "ns": "requirements",
+                    "priority.@type": "/rd/map",
+                    "status.@type": "/rd/map",
+                    "status.default": 0
+                },
+                "attributes": {
+                    "head": "$pid",
+                    "tail": "$requirements.entity",
+                    "priority.@value": "$priority",
+                    "priority.default": "$priority.published",
+                    "status.@value": "$requirements.#ENTITY_SPOT",
+                    "created": "$created",
+                    "modified": "$modified"
+                }
+            }
+        },
+        {
+            "spot": "upsert",
+            "base": "context",
+            "entity": "_",
+            "@id": "rd:edges.status.@value@replace",
+            "@context": [["public", 0], ["private", 1]]
+        },
+        "append:edges@context/empty/edges#rd:tail@map",
+        "upsert:node_errors@ydb/empty/node#air:_@node",
+        "upsert:edges_errors@ydb/empty/edges#air:_@edges"
+    ]
+}
