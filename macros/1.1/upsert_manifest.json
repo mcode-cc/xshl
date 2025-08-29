@@ -1,9 +1,9 @@
 {
     "@context": "https://xshl.org/schemas/1.1/definitions/macros.json",
-    "title": "Person name",
+    "title": "Upsert manifest",
     "name": "upsert-manifest",
     "version": "0.0.1",
-    "description": "Loading file, validating received data, creating database record",
+    "description": "Loading file, validating received data, creating draft database record",
     "definitions": {
        "spot": "manifest",
        "url_schema": "https://xshl.org/schemas/1.1/definitions/manifest.json"
