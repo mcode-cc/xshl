@@ -5,14 +5,23 @@
     "version": "0.0.1",
     "description": "Loading file, validating received data, creating database record",
     "definitions": {
-        "url_manifest_schema": "https://xshl.org/schemas/1.1/definitions/manifest.json"
+       "spot": "manifest",
+       "url_schema": "https://xshl.org/schemas/1.1/definitions/manifest.json"
     },
     "pipeline": [
-        "upsert:manifest@context/wget/url_manifest",
-        "upsert:schema@context/wget/url_manifest_schema",
-        "build:errors@context/empty/manifest#schema:schema@validate",
-        "upsert:_@context/empty/manifest/daubs#rd:manifest.@value@key",
-        "build:result@context/empty/manifest#rd:manifest@container",
-        "upsert:result@draft#container:manifest@revision"
+        "upsert:file@context/wget/url",
+        "upsert:_@context/empty/file/daubs#rd:manifest.body@key",
+        "upsert:_@context/empty/url#rd:manifest.target.@id@key",
+        "upsert:_@context/empty/spot#rd:manifest.target.spot@key",
+        "upsert:_@context/empty/file/name#rd:manifest.target.base@key",
+        "upsert:_@context/empty/file/version#rd:manifest.target.entity@key",
+        "delete:_@context#rd:file@key",
+        "delete:_@context#rd:url@key",
+        "delete:_@context#rd:spot@key",
+        "build:result@context/empty/manifest#rd:data@container",
+        "delete:_@context#rd:manifest@key",
+        "upsert:schema@context/wget/url_schema",
+        "build:result@context/empty/data/@value#schema:schema@validate",
+        "upsert:result@draft#container:_@revision"
     ]
 }
