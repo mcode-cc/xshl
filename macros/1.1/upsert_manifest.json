@@ -1,9 +1,13 @@
 {
-    "target": "macros:0.0.1@upman#https://xshl.org/macros/1.1/upsert_manifest.json",
-    "@context": {
+    "@context": "https://xshl.org/schemas/1.1/definitions/macros.json",
+    "title": "Person name",
+    "name": "upsert-manifest",
+    "version": "0.0.1",
+    "description": "Loading file, validating received data, creating database record",
+    "definitions": {
         "url_manifest_schema": "https://xshl.org/schemas/1.1/definitions/manifest.json"
     },
-    "@graph": [
+    "pipeline": [
         "upsert:manifest@context/wget/url_manifest",
         "upsert:schema@context/wget/url_manifest_schema",
         "build:errors@context/empty/manifest#schema:schema@validate",
