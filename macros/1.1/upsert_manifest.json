@@ -1,0 +1,14 @@
+{
+    "target": "macros:0.0.1@upman#https://xshl.org/macros/1.1/upsert_manifest.json",
+    "@context": {
+        "url_manifest_schema": "https://xshl.org/schemas/1.1/definitions/manifest.json"
+    },
+    "@graph": [
+        "upsert:manifest@context/wget/url_manifest",
+        "upsert:schema@context/wget/url_manifest_schema",
+        "build:errors@context/empty/manifest#schema:schema@validate",
+        "upsert:_@context/empty/manifest/daubs#rd:manifest.@value@key",
+        "build:result@context/empty/manifest#rd:manifest@container",
+        "upsert:result@draft#container:manifest@revision"
+    ]
+}
