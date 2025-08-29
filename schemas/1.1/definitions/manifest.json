@@ -2,32 +2,18 @@
     "$id": "https://xshl.org/schemas/1.1/definitions/manifest.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "manifest",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "title": "Manifest",
     "description": "",
     "type": "object",
     "additionalProperties": false,
-    "required": ["target", "daubs"],
+    "required": ["delete", "append", "upsert", "build", "send"],
     "properties": {
-        "@context": {"$ref": "https://xshl.org/schemas/1.1/definitions/context.json"},
-        "target": {
-            "oneOf": [
-                {"$ref": "https://xshl.org/schemas/1.1/definitions/id.json"},
-                {"$ref": "https://xshl.org/schemas/1.1/definitions/target.json"}
-            ]
-        },
-        "daubs": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["delete", "append", "upsert", "build", "send"],
-            "properties": {
-                "delete": {"$ref": "#/$defs/daubs"},
-                "append": {"$ref": "#/$defs/daubs"},
-                "upsert": {"$ref": "#/$defs/daubs"},
-                "build": {"$ref": "#/$defs/daubs"},
-                "send": {"$ref": "#/$defs/daubs"}
-            }
-        }
+        "delete": {"$ref": "#/$defs/daubs"},
+        "append": {"$ref": "#/$defs/daubs"},
+        "upsert": {"$ref": "#/$defs/daubs"},
+        "build": {"$ref": "#/$defs/daubs"},
+        "send": {"$ref": "#/$defs/daubs"}
     },
     "$defs": {
         "pipeline": {
