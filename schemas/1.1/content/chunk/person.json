@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Person",
     "name": "person-chunk-content",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "description": "A person (alive, dead, undead, or fictional).",
     "type": "object",
     "additionalProperties": false,
@@ -29,7 +29,7 @@
                     "items": {
                         "$ref": "https://xshl.org/schemas/1.1/definitions/name.json"
                     },
-                    "minItems": 2,
+                    "minItems": 1,
                     "uniqueItems": true
                 }
             ]
@@ -44,7 +44,7 @@
                     "items": {
                         "$ref": "https://xshl.org/schemas/1.1/definitions/file.json"
                     },
-                    "minItems": 2,
+                    "minItems": 1,
                     "uniqueItems": true
                 }
             ]
@@ -59,7 +59,7 @@
                     "items": {
                         "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
                     },
-                    "minItems": 2,
+                    "minItems": 1,
                     "uniqueItems": true
                 }
             ]
@@ -74,7 +74,7 @@
                     "items": {
                         "$ref": "https://xshl.org/schemas/1.1/definitions/text.json"
                     },
-                    "minItems": 2,
+                    "minItems": 1,
                     "uniqueItems": true
                 }
             ]
@@ -89,7 +89,7 @@
                     "items": {
                         "$ref": "https://xshl.org/schemas/1.1/definitions/place.json"
                     },
-                    "minItems": 2,
+                    "minItems": 1,
                     "uniqueItems": true
                 }
             ]
@@ -104,7 +104,7 @@
                     "items": {
                         "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
                     },
-                    "minItems": 2,
+                    "minItems": 1,
                     "uniqueItems": true
                 }
             ]
