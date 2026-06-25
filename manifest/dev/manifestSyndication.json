@@ -3,7 +3,7 @@
     "name": "manifest-syndication",
     "version": "0.0.5",
     "permissions": ["hub:roles:be:developer", "hub:roles:cannes:user"],
-    "obligation": ["VALIDATE"],
+    "obligation": ["obligation:all@validate"],
     "requirements": [
         {
             "spot": "src",
