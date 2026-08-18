@@ -1,24 +1,1103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XSHL Catalog</title>
+  <meta
+    name="description"
+    content="XSHL: JSON Schema, JSON-LD контексты, примеры и макросы для объектов связанных данных."
+  >
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --panel-strong: #ffffff;
+      --border: #e2e8f2;
+      --text: #1a2740;
+      --muted: #5c6b85;
+      --accent: #2563eb;
+      --accent-soft: #eef3fe;
+      --shadow: 0 10px 40px rgba(23, 43, 84, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max-width: 1240px;
+    }
 
-  <head>
-      <meta charset="utf-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      <title>JSON Schema</title>
-      <meta name="description" content="The home of JSON Schema"/>
-  </head>
+    * {
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <body>
-    <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15" width="18px" height="15px">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-    <a href="http://json-schema.org/">JSON Schema</a>
-    <a href="https://xshl.org/schemas/1/content/chunk/photo.json">Photo</a>
-  </body>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.07), transparent 36%),
+        radial-gradient(circle at top right, rgba(56, 152, 224, 0.06), transparent 30%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand span,
+    .hero p,
+    .section-intro,
+    .item-description,
+    .empty-state {
+      color: var(--muted);
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .topnav a,
+    .anchor-link {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      color: #1d4fd8;
+      transition: 0.2s ease;
+    }
+
+    .topnav a:hover,
+    .anchor-link:hover,
+    .item-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(37, 99, 235, 0.4);
+      background: #e3ecfd;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+      gap: 24px;
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #ffffff, #f2f6fe);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.1), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1d4fd8;
+      font-size: 0.92rem;
+      border: 1px solid rgba(37, 99, 235, 0.16);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.7rem);
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      font-size: 1.06rem;
+      line-height: 1.72;
+      max-width: 62ch;
+      margin: 0 0 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button-primary,
+    .button-secondary,
+    .item-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #3b76f0, var(--accent));
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.28);
+    }
+
+    .button-primary:hover,
+    .button-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .stat-card,
+    .search-panel,
+    .section-card,
+    .info-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      box-shadow: 0 4px 18px rgba(23, 43, 84, 0.05);
+    }
+
+    .stat-card {
+      padding: 20px;
+    }
+
+    .stat-card small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .search-panel {
+      grid-column: span 12;
+      padding: 22px;
+      background: var(--panel-strong);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .search-panel input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: #fbfcfe;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    .search-panel input:focus {
+      border-color: rgba(37, 99, 235, 0.5);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s ease;
+    }
+
+    .pill:hover,
+    .pill.active {
+      border-color: rgba(37, 99, 235, 0.4);
+      background: var(--accent-soft);
+      color: #1d4fd8;
+    }
+
+    .section-card {
+      grid-column: span 6;
+      padding: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .count-badge {
+      min-width: 44px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      text-align: center;
+      color: #1d4fd8;
+      background: var(--accent-soft);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      font-weight: 700;
+    }
+
+    .item-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .item-card {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: #fbfcfe;
+    }
+
+    .item-card[hidden],
+    .section-card[hidden] {
+      display: none;
+    }
+
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1d4fd8;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      font-size: 0.88rem;
+    }
+
+    .item-title {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .item-description {
+      margin: 0 0 14px;
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    .item-link {
+      background: #ffffff;
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      color: #1d4fd8;
+      font-weight: 600;
+      font-size: 0.92rem;
+      word-break: break-all;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .info-card {
+      padding: 22px;
+    }
+
+    .info-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--muted);
+    }
+
+    .empty-state {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px dashed rgba(37, 99, 235, 0.25);
+      background: #fbfcfe;
+    }
+
+    code {
+      font-family: "SFMono-Regular", SFMono-Regular, ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      color: #1d4fd8;
+      background: var(--accent-soft);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .search-row,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        grid-column: span 12;
+      }
+
+      .topbar {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 14px;
+        padding-bottom: 44px;
+      }
+
+      .hero,
+      .search-panel,
+      .section-card,
+      .info-card,
+      .footer {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <strong>XSHL Catalog</strong>
+        <span>JSON-LD schemas, contexts, examples and macros</span>
+      </div>
+      <nav class="topnav" aria-label="Разделы каталога">
+        <a href="#schemas">Schemas</a>
+        <a href="#contexts">Contexts</a>
+        <a href="#examples">Examples</a>
+        <a href="#macros">Macros</a>
+        <a href="#manifest">Manifest</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Linked Data · JSON-LD · JSON Schema</div>
+        <h1>XSHL 1.1</h1>
+        <p>
+          Схемы, контексты и примеры для описания объектов связанных данных.
+          JSON Schema задаёт структуру и валидацию, JSON-LD контексты связывают
+          поля документов со словарями вроде schema.org.
+        </p>
+        <div class="hero-actions">
+          <a class="button-primary" href="#catalog">Открыть каталог</a>
+          <a class="button-secondary" href="#about">Что внутри</a>
+        </div>
+      </div>
+
+      <div class="hero-side" aria-label="Сводка каталога">
+        <article class="stat-card">
+          <small>Версия</small>
+          <strong>1.1</strong>
+          <span>Актуальная ветка схем и контекстов.</span>
+        </article>
+        <article class="stat-card">
+          <small>Ресурсов</small>
+          <strong>66</strong>
+          <span>Схемы, контексты, примеры, макросы и манифесты.</span>
+        </article>
+      </div>
+    </section>
+
+    <main id="catalog" class="section-grid">
+      <section class="search-panel" aria-labelledby="search-title">
+        <h2 id="search-title">Быстрый поиск</h2>
+        <p class="section-intro">
+          Фильтруйте по имени файла, пути или типу ресурса. Например:
+          <code>person</code>, <code>rpc</code>, <code>definitions</code>, <code>branding</code>.
+        </p>
+        <div class="search-row">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Найти схему, пример, контекст или макрос"
+            aria-label="Поиск по каталогу"
+          >
+          <a class="anchor-link" href="#about">О JSON-LD</a>
+        </div>
+        <div class="pill-row" role="list" aria-label="Фильтр по разделам">
+          <button class="pill active" type="button" data-filter="all">Все</button>
+          <button class="pill" type="button" data-filter="schemas">Schemas</button>
+          <button class="pill" type="button" data-filter="contexts">Contexts</button>
+          <button class="pill" type="button" data-filter="examples">Examples</button>
+          <button class="pill" type="button" data-filter="macros">Macros</button>
+          <button class="pill" type="button" data-filter="manifest">Manifest</button>
+        </div>
+        <div id="emptyState" class="empty-state" hidden>
+          Ничего не найдено. Попробуйте сократить запрос или выбрать другой раздел.
+        </div>
+      </section>
+
+      <section id="schemas" class="section-card" data-section="schemas">
+        <div class="section-head">
+          <div>
+            <h2>Schemas</h2>
+            <p class="section-intro">JSON Schema описания доменных сущностей, RPC, контента и служебных структур.</p>
+          </div>
+          <div class="count-badge">42</div>
+        </div>
+        <div class="item-list">
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content section comments json comments content section">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Section</span></div>
+            <h3 class="item-title">Comments Section</h3>
+            <p class="item-description">Схема секции комментариев для контентных объектов.</p>
+            <a class="item-link" href="schemas/1.1/content/section/comments.json">schemas/1.1/content/section/comments.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions reference json reference definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Reference Definition</h3>
+            <p class="item-description">Базовое описание ссылок на связанные сущности в модели JSON-LD.</p>
+            <a class="item-link" href="schemas/1.1/definitions/reference.json">schemas/1.1/definitions/reference.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 fee content json fee content">
+            <div class="item-meta"><span class="tag">Fee</span></div>
+            <h3 class="item-title">Fee Content</h3>
+            <p class="item-description">Структура данных, связанная с финансовым контентом и расчётами.</p>
+            <a class="item-link" href="schemas/1.1/fee/content.json">schemas/1.1/fee/content.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content stuff branding json branding content stuff">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Stuff</span></div>
+            <h3 class="item-title">Branding</h3>
+            <p class="item-description">Схема брендовых атрибутов и визуальных идентификаторов.</p>
+            <a class="item-link" href="schemas/1.1/content/stuff/branding.json">schemas/1.1/content/stuff/branding.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions macros json macros definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Macros Definition</h3>
+            <p class="item-description">Описание структуры макросов, используемых в манифестах и автоматизации.</p>
+            <a class="item-link" href="schemas/1.1/definitions/macros.json">schemas/1.1/definitions/macros.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions manifest json manifest definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Manifest Definition</h3>
+            <p class="item-description">Схема метаданных публикации и описания контентного манифеста.</p>
+            <a class="item-link" href="schemas/1.1/definitions/manifest.json">schemas/1.1/definitions/manifest.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc accounts auth shadow json rpc auth shadow">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Auth</span></div>
+            <h3 class="item-title">Auth Shadow RPC</h3>
+            <p class="item-description">RPC-схема для теневого или служебного сценария аутентификации.</p>
+            <a class="item-link" href="schemas/1.1/rpc/accounts/auth/shadow.json">schemas/1.1/rpc/accounts/auth/shadow.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc share delete json rpc share delete">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Share</span></div>
+            <h3 class="item-title">Share Delete RPC</h3>
+            <p class="item-description">Удаление связанных данных или общего ресурса через RPC.</p>
+            <a class="item-link" href="schemas/1.1/rpc/share/delete.json">schemas/1.1/rpc/share/delete.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions header json header definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Header Definition</h3>
+            <p class="item-description">Стандартный заголовок объекта и базовые поля верхнего уровня.</p>
+            <a class="item-link" href="schemas/1.1/definitions/header.json">schemas/1.1/definitions/header.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content chunk person json person content chunk">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Chunk</span></div>
+            <h3 class="item-title">Person Chunk</h3>
+            <p class="item-description">Фрагмент контента для представления персоны в связанных данных.</p>
+            <a class="item-link" href="schemas/1.1/content/chunk/person.json">schemas/1.1/content/chunk/person.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc pure json rpc pure">
+            <div class="item-meta"><span class="tag">RPC</span></div>
+            <h3 class="item-title">Pure RPC</h3>
+            <p class="item-description">Упрощённый базовый RPC-контракт без прикладных полей.</p>
+            <a class="item-link" href="schemas/1.1/rpc/pure.json">schemas/1.1/rpc/pure.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions context json context definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Context Definition</h3>
+            <p class="item-description">Описание структуры `@context` и поддержки терминов JSON-LD.</p>
+            <a class="item-link" href="schemas/1.1/definitions/context.json">schemas/1.1/definitions/context.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 external exportdzen json external export dzen">
+            <div class="item-meta"><span class="tag">External</span></div>
+            <h3 class="item-title">Export Dzen</h3>
+            <p class="item-description">Внешняя схема для экспорта данных в формат Dzen.</p>
+            <a class="item-link" href="schemas/1.1/external/exportDzen.json">schemas/1.1/external/exportDzen.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content containers media json media container">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Container</span></div>
+            <h3 class="item-title">Media Container</h3>
+            <p class="item-description">Контейнер для медиаобъектов, вложений и связанных блоков.</p>
+            <a class="item-link" href="schemas/1.1/content/containers/media.json">schemas/1.1/content/containers/media.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content section note json note section">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Section</span></div>
+            <h3 class="item-title">Note Section</h3>
+            <p class="item-description">Секция заметки в составе публикации или документа.</p>
+            <a class="item-link" href="schemas/1.1/content/section/note.json">schemas/1.1/content/section/note.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc accounts person update json rpc accounts person update">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Update RPC</h3>
+            <p class="item-description">RPC-контракт для обновления данных персоны.</p>
+            <a class="item-link" href="schemas/1.1/rpc/accounts/person/update.json">schemas/1.1/rpc/accounts/person/update.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions name json name definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Name Definition</h3>
+            <p class="item-description">Типовая структура имени и локализованных вариантов написания.</p>
+            <a class="item-link" href="schemas/1.1/definitions/name.json">schemas/1.1/definitions/name.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions text json text definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Text Definition</h3>
+            <p class="item-description">Описание текстовых блоков, локализаций и мультиязычных значений.</p>
+            <a class="item-link" href="schemas/1.1/definitions/text.json">schemas/1.1/definitions/text.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 fee money json fee money">
+            <div class="item-meta"><span class="tag">Fee</span></div>
+            <h3 class="item-title">Money</h3>
+            <p class="item-description">Денежная величина, валюта и связанные финансовые поля.</p>
+            <a class="item-link" href="schemas/1.1/fee/money.json">schemas/1.1/fee/money.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions id json id definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">ID Definition</h3>
+            <p class="item-description">Единый формат идентификаторов для сущностей и ссылок.</p>
+            <a class="item-link" href="schemas/1.1/definitions/id.json">schemas/1.1/definitions/id.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions watermark json watermark definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Watermark Definition</h3>
+            <p class="item-description">Описание водяных знаков и их параметров отображения.</p>
+            <a class="item-link" href="schemas/1.1/definitions/watermark.json">schemas/1.1/definitions/watermark.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content containers navigation json navigation container">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Container</span></div>
+            <h3 class="item-title">Navigation Container</h3>
+            <p class="item-description">Контейнер навигационных элементов и связанных ссылок.</p>
+            <a class="item-link" href="schemas/1.1/content/containers/navigation.json">schemas/1.1/content/containers/navigation.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc accounts person create json rpc accounts person create">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Create RPC</h3>
+            <p class="item-description">RPC-схема для создания записи персоны.</p>
+            <a class="item-link" href="schemas/1.1/rpc/accounts/person/create.json">schemas/1.1/rpc/accounts/person/create.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc accounts person upsert json rpc accounts person upsert">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Upsert RPC</h3>
+            <p class="item-description">RPC-контракт для создания или обновления данных персоны.</p>
+            <a class="item-link" href="schemas/1.1/rpc/accounts/person/upsert.json">schemas/1.1/rpc/accounts/person/upsert.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions type json type definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Type Definition</h3>
+            <p class="item-description">Общее описание типа сущности и словаря допустимых значений.</p>
+            <a class="item-link" href="schemas/1.1/definitions/type.json">schemas/1.1/definitions/type.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content chunk text json text chunk">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Chunk</span></div>
+            <h3 class="item-title">Text Chunk</h3>
+            <p class="item-description">Фрагмент текстового контента для структурированных публикаций.</p>
+            <a class="item-link" href="schemas/1.1/content/chunk/text.json">schemas/1.1/content/chunk/text.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content containers quote json quote container">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Container</span></div>
+            <h3 class="item-title">Quote Container</h3>
+            <p class="item-description">Контейнер цитаты с вложенными ссылками и авторством.</p>
+            <a class="item-link" href="schemas/1.1/content/containers/quote.json">schemas/1.1/content/containers/quote.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions entities json entities definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Entities Definition</h3>
+            <p class="item-description">Набор общих правил для связанных сущностей доменной модели.</p>
+            <a class="item-link" href="schemas/1.1/definitions/entities.json">schemas/1.1/definitions/entities.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 fee department json fee department">
+            <div class="item-meta"><span class="tag">Fee</span></div>
+            <h3 class="item-title">Department Fee</h3>
+            <p class="item-description">Финансовые данные, привязанные к подразделению или отделу.</p>
+            <a class="item-link" href="schemas/1.1/fee/department.json">schemas/1.1/fee/department.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions place json place definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Place Definition</h3>
+            <p class="item-description">Описание места, локации и адресной информации.</p>
+            <a class="item-link" href="schemas/1.1/definitions/place.json">schemas/1.1/definitions/place.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions target json target definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Target Definition</h3>
+            <p class="item-description">Описание целевого объекта, связанного действия или адресата.</p>
+            <a class="item-link" href="schemas/1.1/definitions/target.json">schemas/1.1/definitions/target.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 fee budget json fee budget">
+            <div class="item-meta"><span class="tag">Fee</span></div>
+            <h3 class="item-title">Budget</h3>
+            <p class="item-description">Схема бюджетных данных и связанных ограничений.</p>
+            <a class="item-link" href="schemas/1.1/fee/budget.json">schemas/1.1/fee/budget.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content chunk organization json organization chunk">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Chunk</span></div>
+            <h3 class="item-title">Organization Chunk</h3>
+            <p class="item-description">Фрагмент контента для организаций и связанных профилей.</p>
+            <a class="item-link" href="schemas/1.1/content/chunk/organization.json">schemas/1.1/content/chunk/organization.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content section cope json cope section">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Section</span></div>
+            <h3 class="item-title">Cope Section</h3>
+            <p class="item-description">Секция структурированного контента формата Cope.</p>
+            <a class="item-link" href="schemas/1.1/content/section/cope.json">schemas/1.1/content/section/cope.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions file json file definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">File Definition</h3>
+            <p class="item-description">Метаданные файла, вложения и медиа-ресурса.</p>
+            <a class="item-link" href="schemas/1.1/definitions/file.json">schemas/1.1/definitions/file.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions scope json scope definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Scope Definition</h3>
+            <p class="item-description">Схема области видимости, ограничений доступа и контекста применения.</p>
+            <a class="item-link" href="schemas/1.1/definitions/scope.json">schemas/1.1/definitions/scope.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content chunk status json status chunk">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Chunk</span></div>
+            <h3 class="item-title">Status Chunk</h3>
+            <p class="item-description">Фрагмент статуса для публикации, процесса или объекта.</p>
+            <a class="item-link" href="schemas/1.1/content/chunk/status.json">schemas/1.1/content/chunk/status.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc accounts auth email json rpc auth email">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Auth</span></div>
+            <h3 class="item-title">Auth Email RPC</h3>
+            <p class="item-description">Контракт аутентификации по email и связанным реквизитам.</p>
+            <a class="item-link" href="schemas/1.1/rpc/accounts/auth/email.json">schemas/1.1/rpc/accounts/auth/email.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions strings json strings definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Strings Definition</h3>
+            <p class="item-description">Повторно используемые строковые типы и ограничения форматов.</p>
+            <a class="item-link" href="schemas/1.1/definitions/strings.json">schemas/1.1/definitions/strings.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 content chunk tag json tag chunk">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Chunk</span></div>
+            <h3 class="item-title">Tag Chunk</h3>
+            <p class="item-description">Фрагмент тегов и тематических меток для связанных данных.</p>
+            <a class="item-link" href="schemas/1.1/content/chunk/tag.json">schemas/1.1/content/chunk/tag.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 rpc empty json rpc empty">
+            <div class="item-meta"><span class="tag">RPC</span></div>
+            <h3 class="item-title">Empty RPC</h3>
+            <p class="item-description">Пустая схема запроса или ответа для служебных RPC-операций.</p>
+            <a class="item-link" href="schemas/1.1/rpc/empty.json">schemas/1.1/rpc/empty.json</a>
+          </article>
+          <article class="item-card" data-type="schemas" data-search="schemas 1.1 definitions event json event definitions">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Event Definition</h3>
+            <p class="item-description">Описание событий, временных отметок и связанных атрибутов.</p>
+            <a class="item-link" href="schemas/1.1/definitions/event.json">schemas/1.1/definitions/event.json</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contexts" class="section-card" data-section="contexts">
+        <div class="section-head">
+          <div>
+            <h2>Contexts</h2>
+            <p class="section-intro">JSON-LD контексты для публикации терминов и связывания словаря полей с IRI.</p>
+          </div>
+          <div class="count-badge">2</div>
+        </div>
+        <div class="item-list">
+          <article class="item-card" data-type="contexts" data-search="contexts 1.1 content share person json context share person">
+            <div class="item-meta"><span class="tag">JSON-LD</span><span class="tag">Share</span></div>
+            <h3 class="item-title">Person Share Context</h3>
+            <p class="item-description">Контекст JSON-LD для публикации и обмена данными о персоне.</p>
+            <a class="item-link" href="contexts/1.1/content/share/person.json">contexts/1.1/content/share/person.json</a>
+          </article>
+          <article class="item-card" data-type="contexts" data-search="contexts 1.1 content paragraph json context paragraph">
+            <div class="item-meta"><span class="tag">JSON-LD</span></div>
+            <h3 class="item-title">Paragraph Context</h3>
+            <p class="item-description">Контекст для абзацев и текстовых блоков в связанных данных.</p>
+            <a class="item-link" href="contexts/1.1/content/paragraph.json">contexts/1.1/content/paragraph.json</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="examples" class="section-card" data-section="examples">
+        <div class="section-head">
+          <div>
+            <h2>Examples</h2>
+            <p class="section-intro">Готовые JSON-документы, которые показывают, как применять схемы на практике.</p>
+          </div>
+          <div class="count-badge">16</div>
+        </div>
+        <div class="item-list">
+          <article class="item-card" data-type="examples" data-search="examples 1.1 content share person json example share person">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Share</span></div>
+            <h3 class="item-title">Person Share Example</h3>
+            <p class="item-description">Пример JSON-LD документа для обмена данными о персоне.</p>
+            <a class="item-link" href="examples/1.1/content/share/person.json">examples/1.1/content/share/person.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 manifest kp editable json manifest kp editable">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Manifest KP Editable</h3>
+            <p class="item-description">Редактируемый пример манифеста для рабочего сценария KP.</p>
+            <a class="item-link" href="examples/1.1/manifest-kp-editable.json">examples/1.1/manifest-kp-editable.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 definitions text json example definitions text">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Text Definition Example</h3>
+            <p class="item-description">Пример значения, соответствующего текстовой схеме.</p>
+            <a class="item-link" href="examples/1.1/definitions/text.json">examples/1.1/definitions/text.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 content chunk social json social chunk">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Chunk</span></div>
+            <h3 class="item-title">Social Chunk Example</h3>
+            <p class="item-description">Пример социального блока или профиля в контентной структуре.</p>
+            <a class="item-link" href="examples/1.1/content/chunk/social.json">examples/1.1/content/chunk/social.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 rpc accounts person upsert json example rpc accounts person upsert">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Upsert Example</h3>
+            <p class="item-description">Пример запроса или ответа для операции upsert по персоне.</p>
+            <a class="item-link" href="examples/1.1/rpc/accounts/person/upsert.json">examples/1.1/rpc/accounts/person/upsert.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 rpc accounts person update json example rpc accounts person update">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Update Example</h3>
+            <p class="item-description">Пример операции обновления данных персоны.</p>
+            <a class="item-link" href="examples/1.1/rpc/accounts/person/update.json">examples/1.1/rpc/accounts/person/update.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 content stuff branding json example branding">
+            <div class="item-meta"><span class="tag">Content</span><span class="tag">Stuff</span></div>
+            <h3 class="item-title">Branding Example</h3>
+            <p class="item-description">Пример данных брендинга для использования с соответствующей схемой.</p>
+            <a class="item-link" href="examples/1.1/content/stuff/branding.json">examples/1.1/content/stuff/branding.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 rpc accounts person create json example rpc accounts person create">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Create Example</h3>
+            <p class="item-description">Пример создания новой записи персоны.</p>
+            <a class="item-link" href="examples/1.1/rpc/accounts/person/create.json">examples/1.1/rpc/accounts/person/create.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 manifest json example manifest">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Manifest Example</h3>
+            <p class="item-description">Базовый пример контентного манифеста XSHL.</p>
+            <a class="item-link" href="examples/1.1/manifest.json">examples/1.1/manifest.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 definitions scope json example definitions scope">
+            <div class="item-meta"><span class="tag">Definitions</span></div>
+            <h3 class="item-title">Scope Example</h3>
+            <p class="item-description">Пример структуры области видимости и её ограничений.</p>
+            <a class="item-link" href="examples/1.1/definitions/scope.json">examples/1.1/definitions/scope.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 manifesdraftinpublishing json draft publishing manifest">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Draft In Publishing</h3>
+            <p class="item-description">Черновой пример манифеста для сценария публикации.</p>
+            <a class="item-link" href="examples/1.1/manifesDraftInPublishing.json">examples/1.1/manifesDraftInPublishing.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 rpc accounts person delete json example rpc accounts person delete">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person Delete Example</h3>
+            <p class="item-description">Пример удаления записи персоны через RPC.</p>
+            <a class="item-link" href="examples/1.1/rpc/accounts/person/delete.json">examples/1.1/rpc/accounts/person/delete.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 manifest kp public json manifest kp public">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Manifest KP Public</h3>
+            <p class="item-description">Публичная версия манифеста для сценария KP.</p>
+            <a class="item-link" href="examples/1.1/manifest-kp-public.json">examples/1.1/manifest-kp-public.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 manifest cope public json manifest cope public">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Manifest Cope Public</h3>
+            <p class="item-description">Публичный пример манифеста для формата Cope.</p>
+            <a class="item-link" href="examples/1.1/manifest-cope-public.json">examples/1.1/manifest-cope-public.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 manifest cannes json manifest cannes">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Manifest Cannes</h3>
+            <p class="item-description">Пример манифеста для кейса Cannes.</p>
+            <a class="item-link" href="examples/1.1/manifestCannes.json">examples/1.1/manifestCannes.json</a>
+          </article>
+          <article class="item-card" data-type="examples" data-search="examples 1.1 rpc accounts person json example rpc accounts person">
+            <div class="item-meta"><span class="tag">RPC</span><span class="tag">Accounts</span></div>
+            <h3 class="item-title">Person RPC Example</h3>
+            <p class="item-description">Общий пример данных по RPC-модели персоны.</p>
+            <a class="item-link" href="examples/1.1/rpc/accounts/person.json">examples/1.1/rpc/accounts/person.json</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="macros" class="section-card" data-section="macros">
+        <div class="section-head">
+          <div>
+            <h2>Macros</h2>
+            <p class="section-intro">Макросы для генерации, преобразования и upsert-операций поверх описанных схем.</p>
+          </div>
+          <div class="count-badge">5</div>
+        </div>
+        <div class="item-list">
+          <article class="item-card" data-type="macros" data-search="macros 1.1 upsert schema json macro upsert schema">
+            <div class="item-meta"><span class="tag">Upsert</span></div>
+            <h3 class="item-title">Upsert Schema</h3>
+            <p class="item-description">Макрос для операций upsert, связанных с реестром схем.</p>
+            <a class="item-link" href="macros/1.1/upsert_schema.json">macros/1.1/upsert_schema.json</a>
+          </article>
+          <article class="item-card" data-type="macros" data-search="macros 1.1 upsert ydb json macro upsert ydb">
+            <div class="item-meta"><span class="tag">Upsert</span></div>
+            <h3 class="item-title">Upsert YDB</h3>
+            <p class="item-description">Макрос интеграции и сохранения данных в YDB.</p>
+            <a class="item-link" href="macros/1.1/upsert_ydb.json">macros/1.1/upsert_ydb.json</a>
+          </article>
+          <article class="item-card" data-type="macros" data-search="macros 1.1 upsert cos json macro upsert cos">
+            <div class="item-meta"><span class="tag">Upsert</span></div>
+            <h3 class="item-title">Upsert COS</h3>
+            <p class="item-description">Макрос для сохранения и обновления данных в COS-хранилище.</p>
+            <a class="item-link" href="macros/1.1/upsert_cos.json">macros/1.1/upsert_cos.json</a>
+          </article>
+          <article class="item-card" data-type="macros" data-search="macros 1.1 upsert manifest json macro upsert manifest">
+            <div class="item-meta"><span class="tag">Upsert</span></div>
+            <h3 class="item-title">Upsert Manifest</h3>
+            <p class="item-description">Макрос для генерации или обновления контентного манифеста.</p>
+            <a class="item-link" href="macros/1.1/upsert_manifest.json">macros/1.1/upsert_manifest.json</a>
+          </article>
+          <article class="item-card" data-type="macros" data-search="macros 1.1 upsert macros json macro upsert macros">
+            <div class="item-meta"><span class="tag">Upsert</span></div>
+            <h3 class="item-title">Upsert Macros</h3>
+            <p class="item-description">Сводный макрос для операций над макросами и зависимыми сущностями.</p>
+            <a class="item-link" href="macros/1.1/upsert_macros.json">macros/1.1/upsert_macros.json</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="manifest" class="section-card" data-section="manifest">
+        <div class="section-head">
+          <div>
+            <h2>Manifest</h2>
+            <p class="section-intro">Служебные структуры манифеста, вынесенные в отдельный версионированный каталог.</p>
+          </div>
+          <div class="count-badge">1</div>
+        </div>
+        <div class="item-list">
+          <article class="item-card" data-type="manifest" data-search="manifest 1.1 macros json manifest macros">
+            <div class="item-meta"><span class="tag">Manifest</span></div>
+            <h3 class="item-title">Manifest Macros</h3>
+            <p class="item-description">Связанный файл манифеста с набором макросов и описанием зависимостей.</p>
+            <a class="item-link" href="manifest/1.1/macros.json">manifest/1.1/macros.json</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section id="about" class="info-grid">
+      <article class="info-card">
+        <h3>JSON-LD</h3>
+        <p>
+          Объекты описываются как связанные данные: контексты сопоставляют поля документов
+          терминам словарей schema.org, Dublin Core и других, что делает данные машиночитаемыми
+          и совместимыми между системами.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>JSON Schema</h3>
+        <p>
+          Каждая сущность — персона, организация, манифест, RPC-запрос — имеет формальную схему,
+          по которой документы валидируются на этапе создания и обмена.
+        </p>
+      </article>
+      <article class="info-card">
+        <h3>Версионирование</h3>
+        <p>
+          Версия входит в путь каждого ресурса, например <code>schemas/1.1/…</code>.
+          Это позволяет развивать схемы, не ломая документы, ссылающиеся на предыдущие версии.
+        </p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      XSHL — схемы и словари для объектов связанных данных.
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var searchInput = document.getElementById("searchInput");
+      var pills = Array.prototype.slice.call(document.querySelectorAll(".pill"));
+      var cards = Array.prototype.slice.call(document.querySelectorAll(".item-card"));
+      var sections = Array.prototype.slice.call(document.querySelectorAll(".section-card[data-section]"));
+      var emptyState = document.getElementById("emptyState");
+      var activeFilter = "all";
+
+      function applyFilters() {
+        var query = (searchInput.value || "").trim().toLowerCase();
+        var anyVisible = false;
+
+        sections.forEach(function (section) {
+          var visibleInSection = 0;
+          var sectionCards = section.querySelectorAll(".item-card");
+
+          Array.prototype.forEach.call(sectionCards, function (card) {
+            var matchesFilter = activeFilter === "all" || card.dataset.type === activeFilter;
+            var searchIndex = card.dataset.search || "";
+            var matchesQuery = !query || searchIndex.indexOf(query) !== -1;
+            var isVisible = matchesFilter && matchesQuery;
+
+            card.hidden = !isVisible;
+
+            if (isVisible) {
+              visibleInSection += 1;
+              anyVisible = true;
+            }
+          });
+
+          section.hidden = visibleInSection === 0;
+        });
+
+        emptyState.hidden = anyVisible;
+      }
+
+      pills.forEach(function (pill) {
+        pill.addEventListener("click", function () {
+          activeFilter = pill.getAttribute("data-filter");
+          pills.forEach(function (button) {
+            button.classList.toggle("active", button === pill);
+          });
+          applyFilters();
+        });
+      });
+
+      searchInput.addEventListener("input", applyFilters);
+      applyFilters();
+    }());
+  </script>
+</body>
 </html>
