@@ -30,7 +30,7 @@
                 "preview": {
                     "$ref": "https://xshl.org/schemas/1.1/content/containers/quote.json"
                 },
-                "presentation": {
+                "introduction": {
                     "$ref": "https://xshl.org/schemas/1.1/content/section/note.json"
                 },
                 "payload": {
