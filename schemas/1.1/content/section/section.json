@@ -30,6 +30,9 @@
                 "preview": {
                     "$ref": "https://xshl.org/schemas/1.1/content/containers/quote.json"
                 },
+                "presentation": {
+                    "$ref": "https://xshl.org/schemas/1.1/content/section/note.json"
+                },
                 "payload": {
                     "type": "object",
                     "oneOf": [
@@ -37,53 +40,7 @@
                             "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
                         },
                         {
-                            "type": "object",
-                            "additionalProperties": false,
-                            "required": ["@graph", "limit", "offset"],
-                            "properties": {
-                                "@graph": {
-                                    "type": "array",
-                                    "items": {
-                                        "anyOf": [
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/section/cope.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/section/note.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/person.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/containers/media.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/text.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/containers/quote.json"
-                                            },
-                                            {
-                                                "$ref": "https://xshl.org/schemas/1.1/content/chunk/organization.json"
-                                            }
-                                        ]
-                                    },
-                                    "minItems": 1,
-                                    "uniqueItems": true
-                                },
-                                "limit": {
-                                    "type": "integer"
-                                },
-                                "offset": {
-                                    "type": "integer"
-                                }
-                            }
+                            "$ref": "https://xshl.org/schemas/1.1/content/section/air.json"
                         }
                     ]
                 },
