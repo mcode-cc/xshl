@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Note",
     "name": "note-section-content",
-    "version": "1.2.8",
+    "version": "1.2.7",
     "description": "A representation object of note",
     "type": "object",
     "additionalProperties": false,
