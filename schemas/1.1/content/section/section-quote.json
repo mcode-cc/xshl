@@ -30,9 +30,6 @@
                 "preview": {
                     "$ref": "https://xshl.org/schemas/1.1/content/containers/quote.json"
                 },
-                "introduction": {
-                    "$ref": "https://xshl.org/schemas/1.1/content/section/note.json"
-                },
                 "payload": {
                     "$ref": "https://xshl.org/schemas/1.1/content/section/air-quote.json"
                 },
