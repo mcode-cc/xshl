@@ -1,0 +1,52 @@
+{
+    "id": "https://xshl.org/schemas/1.1/content/section/site-configuration.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Site configuration",
+    "name": "section-site-configuration",
+    "version": "1.2.0",
+    "description": "A representation object of site configuration",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@value", "target", "version"],
+    "properties": {
+        "@context": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/context.json"
+        },
+        "@type": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/type.json"
+        },
+        "@id": { "$ref": "https://xshl.org/schemas/1.1/definitions/id.json" },
+        "target": {
+            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+        },
+        "created": { "type": "string", "format": "date-time" },
+        "modified": { "type": "string", "format": "date-time" },
+        "version": { "type": "string" },
+        "@value": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["site"],
+            "properties": {
+                "site": {
+                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/tag.json"
+                },
+                "navigations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://xshl.org/schemas/1.1/content/containers/navigation.json"
+                    },
+                    "minItems": 1
+                },
+                "parameters": {
+                    "$ref": "https://xshl.org/schemas/1.1/content/section/cope.json"
+                },
+                "organization": {
+                    "$ref": "https://xshl.org/schemas/1.1/content/chunk/organization.json"
+                },
+                "extra": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
