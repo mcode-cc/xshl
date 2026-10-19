@@ -34,7 +34,15 @@
                     "$ref": "https://xshl.org/schemas/1.1/content/section/note.json"
                 },
                 "payload": {
-                    "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+                    "type": "object",
+                    "oneOf": [
+                        {
+                            "$ref": "https://xshl.org/schemas/1.1/definitions/target.json"
+                        },
+                        {
+                            "$ref": "https://xshl.org/schemas/1.1/content/section/air.json"
+                        }
+                    ]
                 },
                 "extra": {
                     "type": "object"

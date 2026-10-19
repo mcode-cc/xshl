@@ -1,0 +1,27 @@
+{
+    "id": "https://xshl.org/schemas/1.1/content/section/air.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Air",
+    "name": "air-section-content-quote",
+    "version": "1.2.0",
+    "description": "A representation object of air graph",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@graph", "limit", "offset"],
+    "properties": {
+        "@graph": {
+            "type": "array",
+            "items": {
+                "$ref": "https://xshl.org/schemas/1.1/content/containers/quote.json"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "limit": {
+            "type": "integer"
+        },
+        "offset": {
+            "type": "integer"
+        }
+    }
+}
