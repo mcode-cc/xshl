@@ -37,6 +37,9 @@
             "minItems": 1,
             "uniqueItems": true
         },
+         "parent": {
+            "$ref": "https://xshl.org/schemas/1.1/content/containers/navigation.json"
+        },
         "items": {
             "type": "array",
             "items": {
